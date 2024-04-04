@@ -26,6 +26,9 @@ function App() {
   }
   return (
     <div className="App">
+      <p>Corey Mitterer</p>
+      <p>Ian Duffy</p>
+      <p>Logan Ponik</p>
       <p>Junpuyin Wei</p>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
