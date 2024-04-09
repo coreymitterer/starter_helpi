@@ -27,9 +27,7 @@ function App() {
   return (
     <div className="App">
       <Pages></Pages>
-      <Survey></Survey>
-
-
+      
     </div>
   );
 }
