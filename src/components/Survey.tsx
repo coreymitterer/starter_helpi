@@ -31,7 +31,7 @@ export function Survey(): JSX.Element {
     <div>
       <RevealButton setVisible={setVisible} visible={visible} />
       {visible && (
-        <Form.Group controlId="Prefered level of">
+        <Form.Group controlId="Prefered level of Education">
           <Form.Label>What is the highest education you would be willing to do?</Form.Label>
           <Form.Select value={education} onChange={updateEducation}>
             {EDUCATIONS.map((education: string) => (
