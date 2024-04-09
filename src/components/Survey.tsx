@@ -1,6 +1,5 @@
 import React, { ChangeEvent, useState } from "react";
 import { Button, Form } from "react-bootstrap";
-
 interface RevealButtonProps {
   setVisible: (newVisibility: boolean) => void;
   visible: boolean;
@@ -15,7 +14,12 @@ function RevealButton({ setVisible, visible }: RevealButtonProps): JSX.Element {
     </div>
   );
 }
-
+// const Popup = props => {
+//   return (
+//     <div className="popup-box">
+//     </div>
+//   )
+// }
 const EDUCATIONS = ["None", "Associates", "Bachelors", "Masters", "Doctorate"];
 const DEFAULT_EDUCATION = EDUCATIONS[0];
 
