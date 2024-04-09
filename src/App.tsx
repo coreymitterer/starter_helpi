@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import { Button, Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap"
+import { Survey } from "./components/Survey"
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -26,6 +27,7 @@ function App() {
   }
   return (
     <div className="App">
+      <Survey></Survey>
       <p>Corey Mitterer</p>
       <p>Ian Duffy</p>
       <p>Logan Ponik</p>
