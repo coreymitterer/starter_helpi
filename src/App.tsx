@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import { Button, Form } from "react-bootstrap"
 import { Survey } from "./components/Survey"
 import { Pages } from "./components/Pages"
 
@@ -30,36 +28,8 @@ function App() {
     <div className="App">
       <Pages></Pages>
       <Survey></Survey>
-      <p>Corey Mitterer</p>
-      <p>Ian Duffy</p>
-      <p>Logan Ponik</p>
-      <p>Junpuyin Wei</p>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <Form>
-        <Form.Label>API Key:</Form.Label>
-        <Form.Control
-          type="password"
-          placeholder="Insert API Key Here"
-          onChange={changeKey}
-        ></Form.Control>
-        <br></br>
-        <Button className="Submit-Button" onClick={handleSubmit}>
-          Submit
-        </Button>
-      </Form>
+
+
     </div>
   );
 }
