@@ -1,5 +1,6 @@
 import React, { ChangeEvent, useState } from "react";
 import { Button, Form } from "react-bootstrap";
+export default Survey;
 
 interface RevealButtonProps {
   setVisible: (newVisibility: boolean) => void;
@@ -9,7 +10,7 @@ interface RevealButtonProps {
 function RevealButton({ setVisible, visible }: RevealButtonProps): JSX.Element {
   return (
     <div>
-      <Button onClick={() => setVisible(!visible)}>
+      <Button className = "button" onClick={() => setVisible(!visible)}>
         {visible ? 'Close' : 'Survey'}
       </Button>
     </div>
@@ -45,3 +46,5 @@ export function Survey(): JSX.Element {
     </div>
   );
 }
+
+
