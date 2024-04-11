@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (36 ms)
+  ✕ renders learn react link (42 ms)
 
   ● renders learn react link
 
@@ -21,7 +21,15 @@ FAIL src/App.test.tsx
             [36m>[39m
               [36m<div>[39m
                 [36m<button[39m
-                  [33mclass[39m=[32m"button btn btn-primary"[39m
+                  [33mclass[39m=[32m"btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mBasic[0m
+                [36m</button>[39m
+              [36m</div>[39m
+              [36m<div>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"btn btn-primary"[39m
                   [33mdisabled[39m=[32m""[39m
                   [33mtype[39m=[32m"button"[39m
                 [36m>[39m
@@ -30,15 +38,7 @@ FAIL src/App.test.tsx
               [36m</div>[39m
               [36m<div>[39m
                 [36m<button[39m
-                  [33mclass[39m=[32m"button btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
-                [36m>[39m
-                  [0mBasic[0m
-                [36m</button>[39m
-              [36m</div>[39m
-              [36m<div>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"button btn btn-primary"[39m
+                  [33mclass[39m=[32m"btn btn-primary"[39m
                   [33mtype[39m=[32m"button"[39m
                 [36m>[39m
                   [0mDetailed[0m
@@ -105,19 +105,19 @@ FAIL src/App.test.tsx
 ---------------------|---------|----------|---------|---------|-------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ---------------------|---------|----------|---------|---------|-------------------
-All files            |   32.35 |    42.85 |   33.33 |   32.35 |                   
+All files            |   37.83 |    42.85 |   33.33 |   37.83 |                   
  src                 |    8.33 |        0 |   33.33 |    8.33 |                   
   App.tsx            |     100 |      100 |     100 |     100 |                   
   index.tsx          |       0 |      100 |     100 |       0 | 7-19              
   reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
- src/components      |   45.45 |       60 |   33.33 |   45.45 |                   
-  Pages.tsx          |   30.76 |    66.66 |      25 |   30.76 | 12-26             
+ src/components      |      52 |       60 |   33.33 |      52 |                   
+  Pages.tsx          |   43.75 |    66.66 |      25 |   43.75 | 30-44             
   Survey.tsx         |   66.66 |       50 |      40 |   66.66 | 14,29,40          
 ---------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.778 s
+Time:        2.763 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
