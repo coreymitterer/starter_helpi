@@ -1,17 +1,17 @@
 .button {
-  background-color: #0a0a23;
+  background-color: #357ed7;
   color: #fff;
   padding: 10px 20px;
   transition: background-color 0.3s ease;
 }
 
 .button:hover {
-  background-color: #333366;
+  background-color: #357ed7;
 }
 .nav {
   display: flex;
   justify-content: space-around;
-  background-color: #0a0a23;
+  background-color: #357ed7;
   padding: 10px 0;
 }
 
