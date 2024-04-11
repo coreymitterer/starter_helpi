@@ -2,6 +2,7 @@ import React, { ChangeEvent, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 export default Survey;
 
+
 interface RevealButtonProps {
   setVisible: (newVisibility: boolean) => void;
   visible: boolean;
