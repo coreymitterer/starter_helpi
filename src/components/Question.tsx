@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./Question.css";
-import { Form } from "react-bootstrap";
 
 const Qquestion = [
   {
@@ -32,16 +31,18 @@ const Qquestion = [
 export function LQuestion() {
   const QS = Qquestion;
   const [dropdown, setDropdown] = useState("take up");
-  const [isCheck, setChecked] = useState(false);
-  const [radio, setRadio] = useState("take up");
+  const [isCheck1, setChecked1] = useState(false);
+  const [isCheck2, setChecked2] = useState(false);
+  const [isCheck3, setChecked3] = useState(false);
+  // const [radio, setRadio] = useState("take up");
 
-  const format = QS.map((Q) => <form className="Q1"></form>);
+  // const format = QS.map((Q) => <form className="Q1"></form>);
   return (
     <>
+      <h1>Selection is : {dropdown}</h1>
+
       <form className="question">
-        <h1>Selection is : {dropdown}</h1>
-        <h1>Checkbox is :{isCheck ? "True" : "Fasle"}</h1>
-        <h1>Q1 {QS[0].question}</h1>
+        <h1 className="q">Q1 {QS[0].question}</h1>
         <select
           value={dropdown}
           onChange={(e) => {
@@ -61,41 +62,44 @@ export function LQuestion() {
         <label>C:take up</label>
         <input
           type="checkbox"
-          checked={isCheck}
+          checked={isCheck1}
           onChange={(e) => {
-            setChecked(e.target.checked);
+            setChecked1(e.target.checked);
           }}
         />
+
         <label>D:take off</label>
         <input type="checkbox" />
+        <h1 className="q">Question 1 is :{isCheck1 ? "True" : "Fasle"}</h1>
       </form>
       <form className="question">
-        <h1>Q2 {QS[1].question}</h1>
+        <h1 className="q">Q2 {QS[1].question}</h1>
         <br />
         <label>A:said</label>
         <input type="checkbox" />
         <label>B:told</label>
         <input
           type="checkbox"
-          checked={isCheck}
+          checked={isCheck2}
           onChange={(e) => {
-            setChecked(e.target.checked);
+            setChecked2(e.target.checked);
           }}
         />
         <label>C:suggested</label>
         <input type="checkbox" />
         <label>D:made</label>
         <input type="checkbox" />
+        <h1 className="q">Question 2 is :{isCheck2 ? "True" : "Fasle"}</h1>
       </form>
       <form className="question">
-        <h1>Q3 {QS[2].question}</h1>
+        <h1 className="q">Q3 {QS[2].question}</h1>
         <br />
         <label>A:as if</label>
         <input
           type="checkbox"
-          checked={isCheck}
+          checked={isCheck3}
           onChange={(e) => {
-            setChecked(e.target.checked);
+            setChecked3(e.target.checked);
           }}
         />
         <label>B:as</label>
@@ -104,6 +108,7 @@ export function LQuestion() {
         <input type="checkbox" />
         <label>D:if</label>
         <input type="checkbox" />
+        <h1 className="q">Question 3 is :{isCheck3 ? "True" : "Fasle"}</h1>
       </form>
     </>
   );
