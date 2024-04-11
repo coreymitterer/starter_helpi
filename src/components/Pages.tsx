@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+import "../index.css";
+import Survey from "./Survey";
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 
@@ -45,29 +47,41 @@ export function Pages(): JSX.Element {
 
     return (
         <div>
-            <OverlayTrigger
+            <div className = "nav">
+                <div>
+                <OverlayTrigger
             placement="bottom"
             delay={{ show: 250, hide: 400 }}
             overlay={basicTooltip}
             >
       <Button onClick={updateSetBasic} disabled={isBasic}>Basic</Button>
     </OverlayTrigger>
-            <OverlayTrigger
+                </div>
+                <div>
+                <OverlayTrigger
             placement="bottom"
             delay={{ show: 250, hide: 400 }}
             overlay={homeTooltip}
             >
                 <Button onClick={updateSetHome} disabled={isHome}>Home</Button>
             </OverlayTrigger>
-            <OverlayTrigger
+                </div>
+                <div>
+                <OverlayTrigger
             placement="bottom"
             delay={{ show: 100, hide: 100 }}
             overlay={detailedTooltip}
             >
                 <Button onClick={updateSetDetailed} disabled={isDetailed}>Detailed</Button>
             </OverlayTrigger>
-            {isHome && (
+                </div>
                 <div>
+                    <Survey></Survey>
+                </div>
+            </div>
+
+            {isHome && (
+                <div className = "home">
                     <h1>Home</h1>
                     <p>Welcome to the home page!</p>
                     <p>Corey Mitterer</p>
@@ -77,7 +91,7 @@ export function Pages(): JSX.Element {
                 </div>
             )}
             {isBasic && (
-                <div>
+                <div className = "basic">
                     <h1>Basic</h1>
                     <p>Welcome to the basic page!</p>
                     <p>Discover your career preferences and strengths with our Basic Career Quiz! Answer simple questions about your interests, skills, and goals to gain insights into potential career paths that align with your personality and aspirations. This quiz provides a starting point for your career journey.</p>
@@ -85,12 +99,13 @@ export function Pages(): JSX.Element {
             )}
             {isDetailed && (
                 // Put the content of the 'Detailed' page here
-                <div>
+                <div className = "detailed">
                     <h1>Detailed</h1>
                     <p>Welcome to the detailed page!</p>
                     <p>Take your career exploration to the next level with our Detailed Career Quiz! Dive deep into various aspects of your professional life, including your skills, values, work environment preferences, and career goals. This comprehensive quiz is tailored for you and your unique strengths and aspirations. This quiz provides a deeper dive into potential careers so you can make informed choices.</p>
                 </div>
             )}
+            
         </div>
     );
 }
