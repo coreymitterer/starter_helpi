@@ -11,7 +11,8 @@
 .nav {
   display: flex;
   justify-content: space-around;
-  background-color: #0a0a23;
+  background-color: #134265;
+
   padding: 10px 0;
 }
 
@@ -22,8 +23,9 @@
 }
 
 .nav .button:hover {
-  background-color: #fff;
+  background-color: #b4d8fd;
   color: #0a0a23;
+  
 }
 
 .home, .basic, .detailed {
@@ -33,4 +35,13 @@
   justify-content: center;
   height: 100vh;
   text-align: center;
+}
+
+.App{
+  background-color: #99cff8;
+  
+}
+html, body {
+  margin: 0;
+  padding: 0;
 }
