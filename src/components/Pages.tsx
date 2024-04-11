@@ -54,7 +54,7 @@ export function Pages(): JSX.Element {
             delay={{ show: 250, hide: 400 }}
             overlay={basicTooltip}
             >
-      <Button onClick={updateSetBasic} disabled={isBasic}>Basic</Button>
+      <Button className = "button" onClick={updateSetBasic} disabled={isBasic}>Basic</Button>
     </OverlayTrigger>
                 </div>
                 <div>
@@ -63,7 +63,7 @@ export function Pages(): JSX.Element {
             delay={{ show: 250, hide: 400 }}
             overlay={homeTooltip}
             >
-                <Button onClick={updateSetHome} disabled={isHome}>Home</Button>
+                <Button className = "button" onClick={updateSetHome} disabled={isHome}>Home</Button>
             </OverlayTrigger>
                 </div>
                 <div>
@@ -72,7 +72,7 @@ export function Pages(): JSX.Element {
             delay={{ show: 100, hide: 100 }}
             overlay={detailedTooltip}
             >
-                <Button onClick={updateSetDetailed} disabled={isDetailed}>Detailed</Button>
+                <Button className = "button" onClick={updateSetDetailed} disabled={isDetailed}>Detailed</Button>
             </OverlayTrigger>
                 </div>
                 <div>
