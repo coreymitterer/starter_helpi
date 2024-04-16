@@ -1,5 +1,7 @@
 import React, { ChangeEvent, useState } from "react";
 import { Button, Form } from "react-bootstrap";
+export default Survey;
+
 
 interface RevealButtonProps {
   setVisible: (newVisibility: boolean) => void;
@@ -9,7 +11,7 @@ interface RevealButtonProps {
 function RevealButton({ setVisible, visible }: RevealButtonProps): JSX.Element {
   return (
     <div>
-      <Button onClick={() => setVisible(!visible)}>
+      <Button className = "button" onClick={() => setVisible(!visible)}>
         {visible ? 'Close' : 'Survey'}
       </Button>
     </div>
@@ -22,15 +24,19 @@ const DEFAULT_EDUCATION = EDUCATIONS[0];
 export function Survey(): JSX.Element {
   const [education, setEducation] = useState<string>(DEFAULT_EDUCATION);
   const [visible, setVisible] = useState<boolean>(false);
-
+  const [income, setIncome] = useState<number>(0);
   function updateEducation(event: ChangeEvent<HTMLSelectElement>): void {
     setEducation(event.target.value);
+  }
+  function updateIncome(event: ChangeEvent<HTMLInputElement>): void {
+    setIncome(parseInt(event.target.value));
   }
 
   return (
     <div>
       <RevealButton setVisible={setVisible} visible={visible} />
       {visible && (
+        <Form>
         <Form.Group controlId="Prefered level of Education">
           <Form.Label>What is the highest education you would be willing to do?</Form.Label>
           <Form.Select value={education} onChange={updateEducation}>
@@ -41,6 +47,12 @@ export function Survey(): JSX.Element {
             ))}
           </Form.Select>
         </Form.Group>
+        <Form.Group controlId="incomePreference">
+            <Form.Label>Preferred Income:</Form.Label>
+            <Form.Control type="range" min={0} max={100000} value={income} onChange={updateIncome} />
+            <Form.Label>{income.toLocaleString()}</Form.Label>
+        </Form.Group>
+        </Form>
       )}
     </div>
   );
