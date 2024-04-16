@@ -1,7 +1,10 @@
 //import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
-import { Pages } from "./components/Pages"
+
+import { Survey } from "./components/Survey";
+import { Pages } from "./components/Pages";
+import { LQuestion } from "./components/Question";
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 // let keyData = "";
@@ -27,7 +30,8 @@ function App() {
   return (
     <div className="App">
       <Pages></Pages>
-      
+      <Survey></Survey>
+      <LQuestion />
     </div>
   );
 }
