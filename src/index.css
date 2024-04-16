@@ -37,8 +37,7 @@
 }
 
 .App{
-  background-color: #99cff8;
-  
+    background: linear-gradient(to right, #99cff8, #49779a); 
 }
 html, body {
   margin: 0;
