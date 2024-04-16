@@ -2,8 +2,41 @@
 > starter_helpi@0.1.0 test
 > react-scripts test --coverage
 
+  console.error
+    Warning: [react-bootstrap] Specifying only the `"hover"` trigger limits the visibility of the overlay to just mouse users. Consider also including the `"focus"` trigger so that touch and keyboard only users can see the overlay as well.
+
+      4 |
+      5 | test('renders learn react link', () => {
+    > 6 |   render(<App />);
+        |         ^
+      7 |   const linkElement = screen.getByText(/learn react/i);
+      8 |   expect(linkElement).toBeInTheDocument();
+      9 | });
+
+      at printWarning (node_modules/warning/warning.js:34:15)
+      at warning (node_modules/warning/warning.js:57:20)
+      at OverlayTrigger (node_modules/react-bootstrap/cjs/OverlayTrigger.js:121:66)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at mountIndeterminateComponent (node_modules/react-dom/cjs/react-dom.development.js:20074:13)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21587:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (src/App.test.tsx:6:9)
+      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
+      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
+      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
+      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
+
 FAIL src/App.test.tsx
-  ✕ renders learn react link (41 ms)
+  ✕ renders learn react link (71 ms)
 
   ● renders learn react link
 
@@ -24,7 +57,11 @@ FAIL src/App.test.tsx
                   [33mclass[39m=[32m"button btn btn-primary"[39m
                   [33mtype[39m=[32m"button"[39m
                 [36m>[39m
-                  [0mBasic[0m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"button-span"[39m
+                  [36m>[39m
+                    [0mBasic[0m
+                  [36m</span>[39m
                 [36m</button>[39m
               [36m</div>[39m
               [36m<div>[39m
@@ -33,7 +70,11 @@ FAIL src/App.test.tsx
                   [33mdisabled[39m=[32m""[39m
                   [33mtype[39m=[32m"button"[39m
                 [36m>[39m
-                  [0mHome[0m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"button-span"[39m
+                  [36m>[39m
+                    [0mHome[0m
+                  [36m</span>[39m
                 [36m</button>[39m
               [36m</div>[39m
               [36m<div>[39m
@@ -41,7 +82,11 @@ FAIL src/App.test.tsx
                   [33mclass[39m=[32m"button btn btn-primary"[39m
                   [33mtype[39m=[32m"button"[39m
                 [36m>[39m
-                  [0mDetailed[0m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"button-span"[39m
+                  [36m>[39m
+                    [0mDetailed[0m
+                  [36m</span>[39m
                 [36m</button>[39m
               [36m</div>[39m
               [36m<div>[39m
@@ -108,16 +153,16 @@ File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #
 All files            |   38.46 |    42.85 |   30.76 |   38.46 |                   
  src                 |    8.33 |        0 |   33.33 |    8.33 |                   
   App.tsx            |     100 |      100 |     100 |     100 |                   
-  index.tsx          |       0 |      100 |     100 |       0 | 7-19              
+  index.tsx          |       0 |      100 |     100 |       0 | 8-20              
   reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
  src/components      |   51.85 |       60 |      30 |   51.85 |                   
-  Pages.tsx          |   43.75 |    66.66 |      25 |   43.75 | 30-44             
+  Pages.tsx          |   43.75 |    66.66 |      25 |   43.75 | 35-49             
   Survey.tsx         |   63.63 |       50 |   33.33 |   63.63 | 14,29-32,44       
 ---------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.75 s
+Time:        2.938 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
