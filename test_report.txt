@@ -36,7 +36,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (85 ms)
+  ✕ renders learn react link (66 ms)
 
   ● renders learn react link
 
@@ -125,165 +125,6 @@ FAIL src/App.test.tsx
               [36m</p>[39m
             [36m</div>[39m
           [36m</div>[39m
-          [36m<div>[39m
-            [36m<div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"button btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mSurvey[0m
-              [36m</button>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<h1>[39m
-            [0mSelection is : [0m
-            [0mtake up[0m
-          [36m</h1>[39m
-          [36m<form[39m
-            [33mclass[39m=[32m"question"[39m
-          [36m>[39m
-            [36m<h1[39m
-              [33mclass[39m=[32m"q"[39m
-            [36m>[39m
-              [0mQ1 [0m
-              [0mYou should ______ swimming.[0m
-            [36m</h1>[39m
-            [36m<select>[39m
-              [36m<option[39m
-                [33mvalue[39m=[32m"start up"[39m
-              [36m>[39m
-                [0mA:start up[0m
-              [36m</option>[39m
-              [36m<option[39m
-                [33mvalue[39m=[32m"get off"[39m
-              [36m>[39m
-                [0mB:get off [0m
-              [36m</option>[39m
-              [36m<option[39m
-                [33mvalue[39m=[32m"take up"[39m
-              [36m>[39m
-                [0mC:take up[0m
-              [36m</option>[39m
-              [36m<option[39m
-                [33mvalue[39m=[32m"take off"[39m
-              [36m>[39m
-                [0mD:take off[0m
-              [36m</option>[39m
-            [36m</select>[39m
-            [36m<br />[39m
-            [36m<label>[39m
-              [0mA:start up[0m
-            [36m</label>[39m
-            [36m<input[39m
-              [33mtype[39m=[32m"checkbox"[39m
-            [36m/>[39m
-            [36m<label>[39m
-              [0mB:get off[0m
-            [36m</label>[39m
-            [36m<input[39m
-              [33mtype[39m=[32m"checkbox"[39m
-            [36m/>[39m
-            [36m<label>[39m
-              [0mC:take up[0m
-            [36m</label>[39m
-            [36m<input[39m
-              [33mtype[39m=[32m"checkbox"[39m
-            [36m/>[39m
-            [36m<label>[39m
-              [0mD:take off[0m
-            [36m</label>[39m
-            [36m<input[39m
-              [33mtype[39m=[32m"checkbox"[39m
-            [36m/>[39m
-            [36m<h1[39m
-              [33mclass[39m=[32m"q"[39m
-            [36m>[39m
-              [0mQuestion 1 is :[0m
-              [0mFasle[0m
-            [36m</h1>[39m
-          [36m</form>[39m
-          [36m<form[39m
-            [33mclass[39m=[32m"question"[39m
-          [36m>[39m
-            [36m<h1[39m
-              [33mclass[39m=[32m"q"[39m
-            [36m>[39m
-              [0mQ2 [0m
-              [0mShe ______ me to go to school.[0m
-            [36m</h1>[39m
-            [36m<br />[39m
-            [36m<label>[39m
-              [0mA:said[0m
-            [36m</label>[39m
-            [36m<input[39m
-              [33mtype[39m=[32m"checkbox"[39m
-            [36m/>[39m
-            [36m<label>[39m
-              [0mB:told[0m
-            [36m</label>[39m
-            [36m<input[39m
-              [33mtype[39m=[32m"checkbox"[39m
-            [36m/>[39m
-            [36m<label>[39m
-              [0mC:suggested[0m
-            [36m</label>[39m
-            [36m<input[39m
-              [33mtype[39m=[32m"checkbox"[39m
-            [36m/>[39m
-            [36m<label>[39m
-              [0mD:made[0m
-            [36m</label>[39m
-            [36m<input[39m
-              [33mtype[39m=[32m"checkbox"[39m
-            [36m/>[39m
-            [36m<h1[39m
-              [33mclass[39m=[32m"q"[39m
-            [36m>[39m
-              [0mQuestion 2 is :[0m
-              [0mFasle[0m
-            [36m</h1>[39m
-          [36m</form>[39m
-          [36m<form[39m
-            [33mclass[39m=[32m"question"[39m
-          [36m>[39m
-            [36m<h1[39m
-              [33mclass[39m=[32m"q"[39m
-            [36m>[39m
-              [0mQ3 [0m
-              [0mShe looks ______ she's going to be sick.[0m
-            [36m</h1>[39m
-            [36m<br />[39m
-            [36m<label>[39m
-              [0mA:as if[0m
-            [36m</label>[39m
-            [36m<input[39m
-              [33mtype[39m=[32m"checkbox"[39m
-            [36m/>[39m
-            [36m<label>[39m
-              [0mB:as[0m
-            [36m</label>[39m
-            [36m<input[39m
-              [33mtype[39m=[32m"checkbox"[39m
-            [36m/>[39m
-            [36m<label>[39m
-              [0mC:like[0m
-            [36m</label>[39m
-            [36m<input[39m
-              [33mtype[39m=[32m"checkbox"[39m
-            [36m/>[39m
-            [36m<label>[39m
-              [0mD:if[0m
-            [36m</label>[39m
-            [36m<input[39m
-              [33mtype[39m=[32m"checkbox"[39m
-            [36m/>[39m
-            [36m<h1[39m
-              [33mclass[39m=[32m"q"[39m
-            [36m>[39m
-              [0mQuestion 3 is :[0m
-              [0mFasle[0m
-            [36m</h1>[39m
-          [36m</form>[39m
         [36m</div>[39m
       [36m</div>[39m
     [36m</body>[39m
@@ -309,20 +150,19 @@ FAIL src/App.test.tsx
 ---------------------|---------|----------|---------|---------|-------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ---------------------|---------|----------|---------|---------|-------------------
-All files            |      44 |       45 |   27.77 |      44 |                   
+All files            |   38.46 |    42.85 |   30.76 |   38.46 |                   
  src                 |    8.33 |        0 |   33.33 |    8.33 |                   
   App.tsx            |     100 |      100 |     100 |     100 |                   
   index.tsx          |       0 |      100 |     100 |       0 | 8-20              
   reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
- src/components      |   55.26 |    56.25 |   26.66 |   55.26 |                   
+ src/components      |   51.85 |       60 |      30 |   51.85 |                   
   Pages.tsx          |   43.75 |    66.66 |      25 |   43.75 | 35-49             
-  Question.tsx       |   63.63 |       50 |      20 |   63.63 | 49-102            
   Survey.tsx         |   63.63 |       50 |   33.33 |   63.63 | 14,29-32,44       
 ---------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.258 s
+Time:        2.829 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
