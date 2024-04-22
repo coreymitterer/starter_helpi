@@ -63,7 +63,7 @@
 
 
 /*Pages and App Styling*/
-.home, .basic, .detailed {
+.home, .basic {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -81,24 +81,29 @@ html, body {
   padding: 0;
 }
 
-/*Popover Styling*/
-.nav-popover {
-  max-width: 300px;
+/* Detailed Page CSS */
+.detailed {
   background-color: #f8f9fa;
-  border: 1px solid black;
-  border-radius: 10px;
-}
-.nav-popover .popover-header {
-  background-color: blue;
-  color: white;
-}
-.nav-popover .popover-body {
-  background-color: blanchedalmond;
-}
-.nav-popover .popover-arrow::after {
-  border-bottom-color: blue;  /* this example changes the arrow to orange color... You can always replace with any color you choose. */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
 }
 
+.carousel {
+  display: 'block';
+  width: 700;
+  padding: 30;
+}
+
+.quiz {
+  text-align: center;
+
+}
+
+/* Testing Popovers */
 
 /*
 .popover-custom {
