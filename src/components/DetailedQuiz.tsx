@@ -23,7 +23,7 @@ export function DetailedQuiz(): JSX.Element {
         <div>
             <ProgressBar 
                 now={(questionIndex + 1) / QUESTIONS.length * 100}
-                label={QUESTIONS.length - questionIndex + ' Questions left'}/>
+                label={(QUESTIONS.length - questionIndex === 1) ? (QUESTIONS.length - questionIndex) + ' Question Left' : (QUESTIONS.length - questionIndex) + ' Questions Left'}/>
             <h3>Topic: {TOPICS[questionIndex]}</h3>
             <div>
                 <Form.Group controlId="formDetailedQuestion">
