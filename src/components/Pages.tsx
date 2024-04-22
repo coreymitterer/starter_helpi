@@ -3,6 +3,7 @@ import { Button, Form, OverlayTrigger, Tooltip } from "react-bootstrap";
 import "../index.css";
 import Survey from "./Survey";
 import { DetailedPage } from "./DetailedPage";
+import { HomePage } from "./HomePage";
 
 export function Pages(): JSX.Element {
     const [isHome, setHome] = useState<boolean>(true);
@@ -107,15 +108,7 @@ export function Pages(): JSX.Element {
                 </div>
             </div>
 
-            {isHome && (
-                <div className = "home">
-                    <h1>Home</h1>
-                    <p>Welcome to the home page!</p>
-                    <p>Corey Mitterer</p>
-                    <p>Ian Duffy</p>
-                    <p>Logan Ponik</p>
-                    <p>Junpuyin Wei</p>
-                </div>
+            {isHome && ( <HomePage></HomePage>
             )}
             {isBasic && (
                 <div className = "basic">
