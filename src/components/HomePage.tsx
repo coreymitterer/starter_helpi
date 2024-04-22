@@ -1,5 +1,7 @@
+import { useState } from "react";
+import {Button } from "react-bootstrap";
 import "../index.css";
-
+import logo from "./ProfessionPilotLogo.png";
 
 /*
 What Makes a Good Website:
@@ -24,15 +26,54 @@ What Makes a Good Website:
 
 
 export function HomePage(): JSX.Element {
-    
+    const [isHome, setHome] = useState<boolean>(true);
+    const [isBasic, setBasic] = useState<boolean>(false);
+    const [isDetailed, setDetailed] = useState<boolean>(false);
+
+    function updateSetBasic(): void {
+        setHome(false);
+        setBasic(true);
+        setDetailed(false);
+    }
+
+    function updateSetDetailed(): void {
+        setHome(false);
+        setBasic(false);
+        setDetailed(true);
+    }
+
     return (
         <div className = "home">
+            <div className = "main">
+                <img 
+                    src = {logo}
+                    alt = "Profession Pilot Logo">
+                </img>
+                <Button
+                    type="button"
+                    className="nextButton"
+                    onClick={updateSetBasic}
+                 >
+                    <span className="button-span">Basic</span>
+                </Button>
+                <Button
+                    type="button"
+                    className="prevButton"
+                    onClick={updateSetDetailed}
+                    >
+                    <span className="button-span">Detailed</span>
+                </Button>
+            </div>
+            {/* Assuring a smooth landing into your new career */}
+            <div className = "features"> </div>
+            <div className = "services"> </div>
+            <div className = "about"> </div>
             <h1>Home</h1>
                 <p>Welcome to the home page!</p>
                 <p>Corey Mitterer</p>
                 <p>Ian Duffy</p>
                 <p>Logan Ponik</p>
                 <p>Junpuyin Wei</p>
-            </div>
+        </div>
     );
 }

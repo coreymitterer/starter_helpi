@@ -63,7 +63,7 @@
 
 
 /*Pages and App Styling*/
-.home, .basic {
+.basic {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,6 +80,41 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+/* Home Page CSS */
+.home {
+  background-color: #ffffff;
+}
+
+.main {
+  background-color: #009DE0;
+}
+.main img {
+  position: center;
+}
+
+.main .prevButton {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.main .nextButton {
+  
+}
+
+.basicHomePage {
+  position: right;
+
+}
+
 
 /* Detailed Page CSS */
 .detailed {
@@ -104,8 +139,6 @@ html, body {
   width: 75%;
 
 }
-
-
 
 /* Previous Button and Next Button Designs */
 .prevButton .nextButton {

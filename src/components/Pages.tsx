@@ -108,8 +108,7 @@ export function Pages(): JSX.Element {
                 </div>
             </div>
 
-            {isHome && ( <HomePage></HomePage>
-            )}
+            {isHome && ( <HomePage></HomePage>)}
             {isBasic && (
                 <div className = "basic">
                     <h1>Basic</h1>
@@ -117,10 +116,7 @@ export function Pages(): JSX.Element {
                     <p>Discover your career preferences and strengths with our Basic Career Quiz! Answer simple questions about your interests, skills, and goals to gain insights into potential career paths that align with your personality and aspirations. This quiz provides a starting point for your career journey.</p>
                 </div>
             )}
-            {isDetailed && (
-                // Put the content of the 'Detailed' page here
-                  <DetailedPage></DetailedPage>
-            )}
+            {isDetailed && (<DetailedPage></DetailedPage>)}
             <center>
         <Form>
             <Form.Label>API Key:</Form.Label>
