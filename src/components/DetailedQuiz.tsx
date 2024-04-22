@@ -26,8 +26,10 @@ export function DetailedQuiz(): JSX.Element {
                 <Form.Group className="mb-3" controlId="formDetailedQuestion">
                     <Form.Label>{QUESTIONS[questionIndex]}</Form.Label>
                     <Form.Control 
-                        type="detailedAnswer" 
-                        placeholder="Enter Response"
+                        type="detailedAnswer"
+                        as = "textarea"
+                        rows = {3}
+                        placeholder="Enter Response..."
                         value={userResponses[questionIndex]} 
                         onChange={changeUserResponse} />
                 </Form.Group>
