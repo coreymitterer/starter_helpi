@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, ProgressBar } from 'react-bootstrap';
 import detailedQuestionBank from './DetailedQuestionBank';
 import "../index.css";
 const QUESTIONS: string[] = detailedQuestionBank.map(question => question.question);
@@ -21,6 +21,7 @@ export function DetailedQuiz(): JSX.Element {
     }
     return (
         <div>
+            <ProgressBar now={(questionIndex + 1) / QUESTIONS.length * 100} />
             <h3>Topic: {TOPICS[questionIndex]}</h3>
             <div>
                 <Form.Group className="mb-3" controlId="formDetailedQuestion">
@@ -40,7 +41,7 @@ export function DetailedQuiz(): JSX.Element {
                 </Button>
                 <Button 
                     onClick={nextQuestion}
-                    disabled = {questionIndex === QUESTIONS.length-1}>
+                    disabled={questionIndex === QUESTIONS.length - 1 || userResponses[questionIndex] === ""}>
                         Next Question
                 </Button>
             </div>
