@@ -1,8 +1,9 @@
 import OpenAIAPI from "openai";
-import Pages from "../components/Pages";
 
+
+const localKey = localStorage.getItem("MYKEY") || '';
 const openAI = new OpenAIAPI(
-    {apiKey: API_KEY, dangerouslyAllowBrowser: true}
+    {apiKey: localKey, dangerouslyAllowBrowser: true}
 );
 
 async function callOpenAI(){
@@ -10,6 +11,7 @@ async function callOpenAI(){
         messages: [{ role: "system", content: "You are a helpful assistant." }],
         model: "gpt-4",
       });
+      console.log(localKey)
     
       console.log(completion.choices[0]);
     }
