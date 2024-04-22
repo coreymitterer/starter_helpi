@@ -126,9 +126,7 @@ export function Pages(): JSX.Element {
             )}
             {isDetailed && (
                 // Put the content of the 'Detailed' page here
-                <div className = "detailed">
                   <DetailedPage></DetailedPage>
-                </div>
             )}
             <center>
         <Form>

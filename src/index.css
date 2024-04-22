@@ -83,7 +83,7 @@ html, body {
 
 /* Detailed Page CSS */
 .detailed {
-  background-color: #f8f9fa;
+  /* background-color: #f8f9fa; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -99,9 +99,74 @@ html, body {
 }
 
 .quiz {
+  display: block;
   text-align: center;
+  width: 75%;
 
 }
+
+
+
+/* Previous Button and Next Button Designs */
+.prevButton .nextButton {
+  color: #fff;
+}
+
+/* Previous Button Hover Effect*/
+.prevButton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.3s;
+}
+
+.prevButton span:after {
+  content: '\00ab';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -20px;
+  transition: 0.3s;
+}
+
+.prevButton:hover span {
+  padding-left: 25px;
+}
+
+.prevButton:hover span:after {
+  opacity: 1;
+  left: 0;
+}
+
+/* Next Button Hover Effect*/
+.nextButton {
+  color: #fff;
+}
+.nextButton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nextButton span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.3s;
+}
+
+.nextButton:hover span {
+  padding-right: 25px;
+}
+
+.nextButton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
 
 /* Testing Popovers */
 

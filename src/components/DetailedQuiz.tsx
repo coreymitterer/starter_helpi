@@ -21,10 +21,12 @@ export function DetailedQuiz(): JSX.Element {
     }
     return (
         <div>
-            <ProgressBar now={(questionIndex + 1) / QUESTIONS.length * 100} />
+            <ProgressBar 
+                now={(questionIndex + 1) / QUESTIONS.length * 100}
+                label={QUESTIONS.length - questionIndex + ' Questions left'}/>
             <h3>Topic: {TOPICS[questionIndex]}</h3>
             <div>
-                <Form.Group className="mb-3" controlId="formDetailedQuestion">
+                <Form.Group controlId="formDetailedQuestion">
                     <Form.Label>{QUESTIONS[questionIndex]}</Form.Label>
                     <Form.Control 
                         type="detailedAnswer"
@@ -35,14 +37,18 @@ export function DetailedQuiz(): JSX.Element {
                         onChange={changeUserResponse} />
                 </Form.Group>
                 <Button 
+                    type = "button"
+                    className = "prevButton"
                     onClick={prevQuestion}
                     disabled={questionIndex === 0}>
-                        Previous Question
+                        <span className="prevButton-span">Previous Question</span>
                 </Button>
                 <Button 
+                    type = "button"
+                    className = "nextButton"
                     onClick={nextQuestion}
                     disabled={questionIndex === QUESTIONS.length - 1 || userResponses[questionIndex] === ""}>
-                        Next Question
+                        <span className="prevButton-span">Next Question</span>
                 </Button>
             </div>
         </div>
