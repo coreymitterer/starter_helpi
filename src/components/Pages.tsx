@@ -13,22 +13,16 @@ export function Pages(): JSX.Element {
   const saveKeyData = "MYKEY";
   const prevKey = localStorage.getItem(saveKeyData); //so it'll look like: MYKEY: <api_key_value here> in the local storage when you inspect
   if (prevKey !== null) {
-      keyData = JSON.parse(prevKey);
+    keyData = JSON.parse(prevKey);
   }
   const basicTooltip = (
-    <Tooltip id="tooltip">
-      Shorter Quiz For Your Dream Career
-    </Tooltip>
+    <Tooltip id="tooltip">Shorter Quiz For Your Dream Career</Tooltip>
   );
   const detailedTooltip = (
-    <Tooltip id="tooltip">
-      Longer Quiz To Find Your Perfect Fit 
-    </Tooltip>
+    <Tooltip id="tooltip">Longer Quiz To Find Your Perfect Fit</Tooltip>
   );
   const homeTooltip = (
-    <Tooltip id="tooltip">
-      Home Is Where The Career Quizzes Are
-    </Tooltip>
+    <Tooltip id="tooltip">Home Is Where The Career Quizzes Are</Tooltip>
   );
 
   function updateSetHome(): void {
@@ -50,14 +44,14 @@ export function Pages(): JSX.Element {
   }
 
   const [key, setKey] = useState<string>(keyData); //for api key input
-  
+
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
     localStorage.setItem(saveKeyData, JSON.stringify(key));
     window.location.reload(); //when making a mistake and changing the key again, I found that I have to reload the whole site before openai refreshes what it has stores for the local storage variable
   }
-  
-    //whenever there's a change it'll store the api key in a local state called key but it won't be set in the local storage until the user clicks the submit button
+
+  //whenever there's a change it'll store the api key in a local state called key but it won't be set in the local storage until the user clicks the submit button
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
   }
@@ -100,14 +94,14 @@ export function Pages(): JSX.Element {
             placement="bottom"
             delay={{ show: 100, hide: 100 }}
             overlay={detailedTooltip}
+          >
+            <Button
+              className="button"
+              onClick={updateSetDetailed}
+              disabled={isDetailed}
             >
-              <Button
-                className = "button"
-                onClick={updateSetDetailed}
-                disabled={isDetailed}
-              >
-                <span className="button-span">Detailed</span>
-              </Button>
+              <span className="button-span">Detailed</span>
+            </Button>
           </OverlayTrigger>
         </div>
         <div>
@@ -115,21 +109,35 @@ export function Pages(): JSX.Element {
         </div>
       </div>
 
-      {isHome && ( <HomePage></HomePage>)}
+      {isHome && <HomePage></HomePage>}
       {isBasic && (
-        <div className = "basic">
+        <div className="basic">
           <h1>Basic</h1>
           <p>Welcome to the basic page!</p>
-          <p>Discover your career preferences and strengths with our Basic Career Quiz! Answer simple questions about your interests, skills, and goals to gain insights into potential career paths that align with your personality and aspirations. This quiz provides a starting point for your career journey.</p>
+          <p>
+            Discover your career preferences and strengths with our Basic Career
+            Quiz! Answer simple questions about your interests, skills, and
+            goals to gain insights into potential career paths that align with
+            your personality and aspirations. This quiz provides a starting
+            point for your career journey.
+          </p>
         </div>
       )}
-      {isDetailed && (<DetailedPage></DetailedPage>)}
+      {isDetailed && <DetailedPage></DetailedPage>}
       <center>
         <Form>
           <Form.Label>API Key:</Form.Label>
-          <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey} size="sm" style={{ width: "200px" }} />
+          <Form.Control
+            type="password"
+            placeholder="Insert API Key Here"
+            onChange={changeKey}
+            size="sm"
+            style={{ width: "200px" }}
+          />
           <br></br>
-          <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+          <Button className="Submit-Button" onClick={handleSubmit}>
+            Submit
+          </Button>
         </Form>
       </center>
     </div>
