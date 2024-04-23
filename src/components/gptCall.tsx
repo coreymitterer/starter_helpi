@@ -17,7 +17,7 @@ async function callOpenAIDetailed(QUESTIONS: string[], userResponses: string[], 
             ],
             model: "gpt-4",
         });
-        console.log(completion.choices[0].message.content);
+        return completion;
     }
     // async function callOpenAIBasic(QUESTIONS: string[], userResponses: string[] ){
     //     const questionsString = QUESTIONS.join('\n'); // Join questions with newline separator

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button, Form, ProgressBar } from 'react-bootstrap';
 import detailedQuestionBank from './DetailedQuestionBank';
-import callOpenAIDetailed from './gptCall'
+//import callOpenAIDetailed from './gptCall'
 import "../index.css";
 const QUESTIONS: string[] = detailedQuestionBank.map(question => question.question);
 const TOPICS: string[] = detailedQuestionBank.map(question => question.topic);
