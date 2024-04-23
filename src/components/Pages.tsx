@@ -3,7 +3,7 @@ import { Button, Form, OverlayTrigger, Tooltip } from "react-bootstrap";
 import "../index.css";
 import Survey from "./Survey";
 import '../index.css';
-
+import {GPT} from "./GPTFunctions/gptCall";
 export function Pages(): JSX.Element {
     const [isHome, setHome] = useState<boolean>(true);
     const [isBasic, setBasic] = useState<boolean>(false);
@@ -107,6 +107,8 @@ export function Pages(): JSX.Element {
                     <Survey></Survey>
                 </div>
             </div>
+             
+            <div><GPT></GPT></div>
 
             {isHome && (
                 <div className = "home">
