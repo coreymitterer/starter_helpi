@@ -36,7 +36,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (68 ms)
+  ✕ renders learn react link (69 ms)
 
   ● renders learn react link
 
@@ -167,22 +167,25 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
----------------------|---------|----------|---------|---------|-------------------
-File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
----------------------|---------|----------|---------|---------|-------------------
-All files            |   41.66 |    43.75 |   26.66 |   41.66 |                   
- src                 |    8.33 |        0 |   33.33 |    8.33 |                   
-  App.tsx            |     100 |      100 |     100 |     100 |                   
-  index.tsx          |       0 |      100 |     100 |       0 | 8-20              
-  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
- src/components      |   52.77 |    58.33 |      25 |   52.77 |                   
-  Pages.tsx          |      48 |     62.5 |   16.66 |      48 | 15,33-47,54-60    
-  Survey.tsx         |   63.63 |       50 |   33.33 |   63.63 | 14,29-32,44       
----------------------|---------|----------|---------|---------|-------------------
+---------------------------|---------|----------|---------|---------|-------------------
+File                       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------------|---------|----------|---------|---------|-------------------
+All files                  |   41.26 |       35 |   27.27 |   39.34 |                   
+ src                       |    8.33 |        0 |   33.33 |    8.33 |                   
+  App.tsx                  |     100 |      100 |     100 |     100 |                   
+  index.tsx                |       0 |      100 |     100 |       0 | 8-20              
+  reportWebVitals.ts       |       0 |        0 |       0 |       0 | 3-10              
+ src/components            |   49.01 |    43.75 |   26.31 |   46.93 |                   
+  DetailedPage.tsx         |       0 |      100 |       0 |       0 | 8                 
+  DetailedQuestionBank.tsx |     100 |      100 |     100 |     100 |                   
+  DetailedQuiz.tsx         |   38.46 |        0 |   33.33 |   27.27 | 9-22              
+  Pages.tsx                |      48 |     62.5 |   16.66 |      48 | 15,33-47,54-60    
+  Survey.tsx               |   63.63 |       50 |   33.33 |   63.63 | 14,29-32,44       
+---------------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.717 s
+Time:        2.997 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
