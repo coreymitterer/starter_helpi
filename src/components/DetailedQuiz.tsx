@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button, Form, ProgressBar } from 'react-bootstrap';
 import detailedQuestionBank from './DetailedQuestionBank';
+import callOpenAIDetailed from './gptCall'
 import "../index.css";
 const QUESTIONS: string[] = detailedQuestionBank.map(question => question.question);
 const TOPICS: string[] = detailedQuestionBank.map(question => question.topic);
@@ -51,6 +52,11 @@ export function DetailedQuiz(): JSX.Element {
                         <span className="prevButton-span">Next Question</span>
                 </Button>
             </div>
+            {/* <Button type = 'button'
+            className = 'submission'
+            onClick={callOpenAIDetailed(QUESTIONS,userResponses )}>
+
+            </Button> */}
         </div>
     );
 }
