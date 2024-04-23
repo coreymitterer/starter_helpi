@@ -6,6 +6,7 @@ import '../index.css';
 import {GPT} from "./GPTFunctions/gptCall";
 
 export function Pages(): JSX.Element {
+    // localStorage.removeItem("MYKEY");
     const [isHome, setHome] = useState<boolean>(true);
     const [isBasic, setBasic] = useState<boolean>(false);
     const [isDetailed, setDetailed] = useState<boolean>(false);
