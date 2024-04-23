@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import "../index.css";
 import logo from "./ProfessionPilotLogo.png";
 
@@ -52,16 +52,16 @@ export function HomePage(): JSX.Element {
                 <Button
                     type="button"
                     className="nextButton"
-                    onClick={updateSetBasic}
+                    onClick={updateSetDetailed}
                  >
-                    <span className="button-span">Basic</span>
+                    <span className="button-span">Detailed</span>
                 </Button>
                 <Button
                     type="button"
                     className="prevButton"
-                    onClick={updateSetDetailed}
+                    onClick={updateSetBasic}
                     >
-                    <span className="button-span">Detailed</span>
+                    <span className="button-span">Basic</span>
                 </Button>
             </div>
             {/* Assuring a smooth landing into your new career */}
