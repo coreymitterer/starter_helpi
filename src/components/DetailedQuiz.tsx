@@ -52,11 +52,6 @@ export function DetailedQuiz(): JSX.Element {
                         <span className="prevButton-span">Next Question</span>
                 </Button>
             </div>
-            {/* <Button type = 'button'
-            className = 'submission'
-            onClick={callOpenAIDetailed(QUESTIONS,userResponses )}>
-
-            </Button> */}
         </div>
     );
 }
