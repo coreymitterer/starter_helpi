@@ -3,7 +3,6 @@ import { Button, Form, OverlayTrigger, Tooltip } from "react-bootstrap";
 import "../index.css";
 import Survey from "./Survey";
 import '../index.css';
-import {GPT} from './GPTFunctions/gptCall';
 import { DetailedPage } from "./DetailedPage";
 
 export function Pages(): JSX.Element {
@@ -109,8 +108,6 @@ export function Pages(): JSX.Element {
                     <Survey></Survey>
                 </div>
             </div>
-             
-            <div><GPT></GPT></div>
 
             {isHome && (
                 <div className = "home">
