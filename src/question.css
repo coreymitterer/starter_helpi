@@ -1,0 +1,45 @@
+.question1 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(25px + 2vmin);
+}
+
+.answer1 {
+  font-size: 20px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(25px + 2vmin);
+}
+.pa1-n {
+  position: bottom;
+  align-items: bottom;
+  top: 0;
+}
+.btn {
+  background-color: #e67e22;
+  color: #fff;
+}
+.body {
+  position: relative;
+  background-image: url("/Users/junpuyinwei/starter_helpi/src/Qpage/picture.png");
+  background-color: rgba(243, 243, 234, 0.5);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.5); /* 设置半透明的白色背景 */
+  z-index: -1;
+
+  /*线性渐变(linear-gradient)特点就是向一个方向进行颜色渐变，上/下/左/右/对角线等*/
+  /*background-image:linear-gradient(rgba(255, 255, 255, 0.5),rgba(255, 255, 255, 0))*/
+  /*background:linear-gradient(rgba(255, 255, 255, 0.5),rgba(255, 255, 255, 0.5),url("your-image.jpg"))*/
+}

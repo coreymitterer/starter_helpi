@@ -32,7 +32,7 @@
 
 .nav .button:hover {
   background-color: #b4d8fd;
-  color: #0a0a23; 
+  color: #0a0a23;
 }
 
 /*Adding an Arrow to the Button on Hover*/
@@ -44,7 +44,7 @@
 }
 
 .button span:after {
-  content: '\00bb';
+  content: "\00bb";
   position: absolute;
   opacity: 0;
   top: 0;
@@ -61,9 +61,10 @@
   right: 0;
 }
 
-
 /*Pages and App Styling*/
-.home, .basic, .detailed {
+.home,
+.basic,
+.detailed {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,11 +73,11 @@
   text-align: center;
 }
 
-.App{
+.App {
   background-color: #99cff8;
-  
 }
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -96,9 +97,8 @@ html, body {
   background-color: blanchedalmond;
 }
 .nav-popover .popover-arrow::after {
-  border-bottom-color: blue;  /* this example changes the arrow to orange color... You can always replace with any color you choose. */
+  border-bottom-color: blue; /* this example changes the arrow to orange color... You can always replace with any color you choose. */
 }
-
 
 /*
 .popover-custom {
