@@ -4,6 +4,7 @@ import "../index.css";
 import Survey from "./Survey";
 import '../index.css';
 import {GPT} from "./GPTFunctions/gptCall";
+
 export function Pages(): JSX.Element {
     const [isHome, setHome] = useState<boolean>(true);
     const [isBasic, setBasic] = useState<boolean>(false);
@@ -52,14 +53,17 @@ export function Pages(): JSX.Element {
     //sets the local storage item to the api key the user inputed
     function handleSubmit() {
       localStorage.setItem(saveKeyData, JSON.stringify(key));
-      console.log(saveKeyData)
-      window.location.reload(); //when making a mistake and changing the key again, I found that I have to reload the whole site before openai refreshes what it has stores for the local storage variable
+      console.log("API Key Submitted:", key); // Debug to see if the value is updating correctly
     }
+    
   
     //whenever there's a change it'll store the api key in a local state called key but it won't be set in the local storage until the user clicks the submit button
     function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
-      setKey(event.target.value);
+      const newKey = event.target.value;
+      console.log("New API Key:", newKey); // Debug to see if the value is updating correctly
+      setKey(newKey);
     }
+    
   return (
     <div>
       <div className="nav">
