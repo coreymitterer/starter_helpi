@@ -3,6 +3,8 @@ import { Button, Form, OverlayTrigger, Tooltip } from "react-bootstrap";
 import "../index.css";
 import Survey from "./Survey";
 import '../index.css';
+import {GPT} from './GPTFunctions/gptCall';
+import { DetailedPage } from "./DetailedPage";
 
 export function Pages(): JSX.Element {
     const [isHome, setHome] = useState<boolean>(true);

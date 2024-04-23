@@ -17,13 +17,9 @@ export function GPT(): JSX.Element {
             { role: "user", content: "Who won the world series in 2020?" },
             ],
             model: "gpt-4",
-            response_format: { type: "json_object" },
         });
         console.log(completion.choices[0].message.content);
     }
-    
-    callOpenAI();
-    
     return(
         <Button
             type="button"
