@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Button, Form, ProgressBar } from 'react-bootstrap';
 import detailedQuestionBank from './DetailedQuestionBank';
 import "../index.css";
+import {GPT} from './GPTFunctions/gptCall';
 const QUESTIONS: string[] = detailedQuestionBank.map(question => question.question);
 const TOPICS: string[] = detailedQuestionBank.map(question => question.topic);
 const DEFAULT_QUESTION_INDEX: number = 0;
@@ -51,6 +52,15 @@ export function DetailedQuiz(): JSX.Element {
                         <span className="prevButton-span">Next Question</span>
                 </Button>
             </div>
+            <center>
+            <Button 
+                    type = "button"
+                    className = "submitButton"
+                    onClick={GPT}
+                    disabled={questionIndex === QUESTIONS.length || userResponses[questionIndex] === ""}>
+                        <span className="submitButton-span">Submit</span>
+                </Button>
+                </center>
         </div>
     );
 }
