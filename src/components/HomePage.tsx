@@ -31,7 +31,7 @@ export function HomePage(): JSX.Element {
     const [isDetailed, setDetailed] = useState<boolean>(false);
     const [index, setIndex] = useState<number>(0);
     const careerList = [
-        "Software Developer",
+        "Developer",
         "Doctor",
         "Salesperson",
         "Artist",
