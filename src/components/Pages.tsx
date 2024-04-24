@@ -112,8 +112,6 @@ export function Pages(): JSX.Element {
                     <Survey></Survey>
                 </div>
             </div>
-             
-            <div><GPT></GPT></div>
 
             {isHome && (
                 <div className = "home">
@@ -141,12 +139,7 @@ export function Pages(): JSX.Element {
                 </div>
             )}
             <center>
-        <Form>
-            <Form.Label>API Key:</Form.Label>
-            <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey} size="sm" style={{ width: "200px" }} />
-            <br></br>
-            <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-      </Form>
+              <GPT></GPT>
       </center>
         </div>
     );
