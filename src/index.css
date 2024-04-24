@@ -86,18 +86,121 @@ html, body {
 }
 
 .main {
-  display: block;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
-  background-color: #009DE0;
-  background-image: url("C:\Users\ianan\starter_helpi\src\components\ProfessionPilotLogo.png");
+  text-align: center;
+  /* background-color: #009DE0; */
+  background-color: #ffffff;
+  /* background-image: url("C:\Users\ianan\starter_helpi\src\components\ProfessionPilotLogo.png");
   background-size: cover;
-  background-position: center;
+  background-position: center; */
 }
-.main img {
-  float: center;
+.websiteTitle {
+  max-height: 5vh;
+  height: auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+/* Testing Text animations */
+.slogan {
   display: block;
-  height: 100vh;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  height: 160px;
+  overflow:hidden;
+  
+  font-family: 'Lato', sans-serif;
+  font-size: 35px;
+  line-height: 40px;
+  color: #383737;
+  
+  .sloganContainer {
+    font-weight: 600;
+    overflow: hidden;
+    height: 50px;
+    padding: 0 40px;
+    position: relative;
+
+    &:before {
+      content: '[';
+      left: 0;
+    }
+
+    &:after {
+      content: ']';
+      position: absolute;
+      right: 0;
+    }
+
+    &:after, &:before {
+      position: absolute;
+      top: 0;
+      
+      color: #16a085;
+      font-size: 42px;
+      line-height: 40px;
+      
+      animation-name: opacity;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-name: opacity;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }
+
+    .sloganText {
+      display: inline;
+      float: left;
+      margin: 0;
+    }
+  }
+}
+
+.listTerm {
+  font-style: normal;
+  font-weight: 700;
+  left: 0;
+  margin-bottom: 0;
+  margin-top: 50px;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  text-transform: uppercase;
+  top: 0;
+  animation: rotate;
+  animation-duration: 3000ms;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+  }
+  
+  20%, 80% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -25px, 0);
+  }
+}
+
+/* End testing */
+.main img {
+  max-height: 100vh;
+  max-width: 100vh;
+  height: auto;
+  width: auto;
+  clip-path: ellipse(20% 70% at top);
 }
 
 .main .prevButton {
