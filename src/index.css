@@ -106,7 +106,7 @@ html, body {
 .sloganContainer {
   display: flex;
   justify-content: center;
-  background-color: #b4d8fd;
+  background-color: white;
 }
 
 .sloganText {
@@ -125,9 +125,10 @@ html, body {
 }
 
 .main {
+  position: relative;
   grid-row: 2;
-  display: flex; /* come back to this */
-  justify-content: center;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   height: 100vh;
   text-align: center;
@@ -136,6 +137,24 @@ html, body {
   /* background-image: url("C:\Users\ianan\starter_helpi\src\components\ProfessionPilotLogo.png");
   background-size: cover;
   background-position: center; */
+}
+
+.main img {
+  position: relative;
+  max-height: 100vh;
+  max-width: 100vh;
+  height: auto;
+  width: auto;
+  clip-path: ellipse(20% 70% at top);
+  transform: translate(-12%,-30%);
+}
+
+.trail {
+  width: 0;
+  height: 0; 
+  border-left: 50vw solid transparent;
+  border-right: 50vw solid transparent;
+  border-top: 100vh solid white;
 }
 
 
@@ -240,13 +259,6 @@ html, body {
 }
 
 /* End testing */
-.main img {
-  max-height: 100vh;
-  max-width: 100vh;
-  height: auto;
-  width: auto;
-  clip-path: ellipse(20% 70% at top);
-}
 
 .main .prevButton {
   position: relative;
@@ -278,9 +290,10 @@ html, body {
 .features {
   /* display: grid;
   grid-template-columns: repeat(3, 1fr); */
+  grid-row: 3;
   display: flex; /* come back to this */
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
   height: 50vh;
   background-color: #009DE0;
 }
@@ -299,6 +312,7 @@ html, body {
   background:#ECEFF1;
   box-shadow: 10px 10px rgba(0,0,0,0.2);
   border-radius:100px;
+  transform: translateX(-50px);
 }
 .featureCloud::after, .featureCloud::before{
    content: '';
@@ -340,12 +354,13 @@ html, body {
   color: black;
 }
 
-.about{
+.about {
+  grid-row: 4;
+  display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  height: 50vh;
   background-color: #009DE0;
-
 }
 
 /* Detailed Page CSS */

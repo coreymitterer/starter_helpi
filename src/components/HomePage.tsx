@@ -79,7 +79,6 @@ export function HomePage(): JSX.Element {
                 </div>
             </div>
             <div className = "main">
-                {/* <div></div> */}
                 <Button
                     type="button"
                     className="cloud"
@@ -87,6 +86,7 @@ export function HomePage(): JSX.Element {
                     <span className="cloudText">Go To Basic Quiz</span>
                 </Button>
                 <div className="sun"></div>
+                {/* <div className="trail"></div> */}
                 <img 
                     src = {logo}
                     alt = "Profession Pilot Logo">
@@ -115,12 +115,10 @@ export function HomePage(): JSX.Element {
                 </div>
             </div>
             <div className = "about">
-            <h1>Home</h1>
-                <p>Welcome to the home page!</p>
-                <p>Corey Mitterer</p>
-                <p>Ian Duffy</p>
-                <p>Logan Ponik</p>
-                <p>Junpuyin Wei</p>
+            <div className="featureCloud">
+                    <div className = "featureCloudTitle">Authors</div>
+                    <div className = "featureCloudText">Corey Mitterer, Ian Duffy, Logan Ponik, Junpuyin Wei</div>
+                </div>
             </div>
         </div>
     );
