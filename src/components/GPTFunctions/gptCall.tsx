@@ -1,18 +1,19 @@
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import OpenAIAPI from "openai";
- 
+
 export function GPT(): JSX.Element {
     const [input, setInput] = useState(''); // State to store user input
     const [output, setOutput] = useState(''); // State to store the response from OpenAI
     const [key, setKey] = useState<string>("");
+
     async function callOpenAI() {
         const openai = new OpenAIAPI({apiKey: key, dangerouslyAllowBrowser: true})
         const completion = await openai.chat.completions.create({
             model: "gpt-4",
             messages: [
-                { role: "system",content: "You will be provided with a list of questions of answers supplied seperatly. your job is to turn these questions and answers into a list of 5 different carrerr paths this user could go into based off there answers. Format this into a JSON file" },
-                { role: "user", content: 'Here are the Questions deliminated by the two curly braces: {{  + questionsString +  }} and here are the answers deliminated by two square braces [[ + responsesString + ]]'  }
+                { role: "system", content: "You are a helpful assistant." },
+                { role: "user", content: input }
             ],
         });
         console.log(completion.choices[0].message.content);
