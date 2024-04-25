@@ -3,7 +3,8 @@ import { Button, Form, OverlayTrigger, Tooltip } from "react-bootstrap";
 import "../index.css";
 import Survey from "./Survey";
 import '../index.css';
-
+import { DetailedPage } from "./DetailedPage";
+import GPT from './GPTFunctions/gptCall'
 export function Pages(): JSX.Element {
     // localStorage.removeItem("MYKEY");
     const [isHome, setHome] = useState<boolean>(true);
