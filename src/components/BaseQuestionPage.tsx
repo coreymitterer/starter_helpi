@@ -9,23 +9,33 @@ export function BaseQuestionPage(): JSX.Element {
   const [page1, setpage1] = useState(false);
   const [pages1, setpages1] = useState(false);
   const [page2, setpage2] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [pages2, setpages2] = useState(false);
   const [page3, setpage3] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [pages3, setpages3] = useState(false);
   const [page4, setpage4] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [pages4, setpages4] = useState(false);
   const [page5, setpage5] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [pages5, setpages5] = useState(false);
   const [page6, setpage6] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [pages6, setpages6] = useState(false);
   const [page7, setpage7] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [pages7, setpages7] = useState(false);
   const [page8, setpage8] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [pages8, setpages8] = useState(false);
   const [page9, setpage9] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [pages9, setpages9] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [fina, setfina] = useState(false);
   let Number = 0;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [questionIndex, setQuestionIndex] = useState<number>(Number);
 
   return (
