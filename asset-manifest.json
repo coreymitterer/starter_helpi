@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/starter_helpi/static/css/main.abbf9529.css",
-    "main.js": "/starter_helpi/static/js/main.601f4f22.js",
+    "main.css": "/starter_helpi/static/css/main.56ab8f8c.css",
+    "main.js": "/starter_helpi/static/js/main.86846320.js",
     "static/js/453.bad6c33a.chunk.js": "/starter_helpi/static/js/453.bad6c33a.chunk.js",
+    "static/media/ProfessionPilotLogo.png": "/starter_helpi/static/media/ProfessionPilotLogo.0f5a4f3f778c27a2ecec.png",
     "index.html": "/starter_helpi/index.html",
-    "main.abbf9529.css.map": "/starter_helpi/static/css/main.abbf9529.css.map",
-    "main.601f4f22.js.map": "/starter_helpi/static/js/main.601f4f22.js.map",
+    "main.56ab8f8c.css.map": "/starter_helpi/static/css/main.56ab8f8c.css.map",
+    "main.86846320.js.map": "/starter_helpi/static/js/main.86846320.js.map",
     "453.bad6c33a.chunk.js.map": "/starter_helpi/static/js/453.bad6c33a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.abbf9529.css",
-    "static/js/main.601f4f22.js"
+    "static/css/main.56ab8f8c.css",
+    "static/js/main.86846320.js"
   ]
 }
