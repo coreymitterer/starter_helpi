@@ -117,6 +117,7 @@ export function Pages(): JSX.Element {
       {isHome && <HomePage></HomePage>}
       {isBasic && <BaseQuestionPage></BaseQuestionPage>}
       {isDetailed && <DetailedPage></DetailedPage>}
+
       <center>
         <Form>
           <Form.Label>API Key:</Form.Label>
