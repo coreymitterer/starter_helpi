@@ -36,7 +36,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (98 ms)
+  ✕ renders learn react link (93 ms)
 
   ● renders learn react link
 
@@ -121,44 +121,28 @@ FAIL src/App.test.tsx
               [36m</p>[39m
             [36m</div>[39m
             [36m<center>[39m
-              [36m<div>[39m
-                [36m<form[39m
-                  [33mclass[39m=[32m""[39m
+              [36m<form[39m
+                [33mclass[39m=[32m""[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label"[39m
                 [36m>[39m
-                  [36m<label[39m
-                    [33mclass[39m=[32m"form-label"[39m
-                  [36m>[39m
-                    [0mAPI Key:[0m
-                  [36m</label>[39m
-                  [36m<input[39m
-                    [33mclass[39m=[32m"form-control form-control-sm"[39m
-                    [33mplaceholder[39m=[32m"Insert API Key Here"[39m
-                    [33mstyle[39m=[32m"width: 200px;"[39m
-                    [33mtype[39m=[32m"password"[39m
-                  [36m/>[39m
-                  [36m<br />[39m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"Submit-Button btn btn-primary"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mSubmit[0m
-                  [36m</button>[39m
-                [36m</form>[39m
+                  [0mAPI Key:[0m
+                [36m</label>[39m
                 [36m<input[39m
-                  [33mclass[39m=[32m"form-control"[39m
-                  [33mplaceholder[39m=[32m"Ask a question..."[39m
-                  [33mstyle[39m=[32m"margin: 10px 0px;"[39m
-                  [33mtype[39m=[32m"text"[39m
-                  [33mvalue[39m=[32m""[39m
+                  [33mclass[39m=[32m"form-control form-control-sm"[39m
+                  [33mplaceholder[39m=[32m"Insert API Key Here"[39m
+                  [33mstyle[39m=[32m"width: 200px;"[39m
+                  [33mtype[39m=[32m"password"[39m
                 [36m/>[39m
+                [36m<br />[39m
                 [36m<button[39m
-                  [33mclass[39m=[32m"button btn btn-primary"[39m
+                  [33mclass[39m=[32m"Submit-Button btn btn-primary"[39m
                   [33mtype[39m=[32m"button"[39m
                 [36m>[39m
-                  [0mAsk GPT[0m
+                  [0mSubmit[0m
                 [36m</button>[39m
-                [0m [0m
-              [36m</div>[39m
+              [36m</form>[39m
             [36m</center>[39m
           [36m</div>[39m
         [36m</div>[39m
@@ -186,24 +170,24 @@ FAIL src/App.test.tsx
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
-All files                    |   36.76 |    31.81 |      28 |   34.84 |                   
+All files                    |   34.21 |       25 |      24 |   32.87 |                   
  src                         |    8.33 |        0 |   33.33 |    8.33 |                   
   App.tsx                    |     100 |      100 |     100 |     100 |                   
   index.tsx                  |       0 |      100 |     100 |       0 | 8-20              
   reportWebVitals.ts         |       0 |        0 |       0 |       0 | 3-10              
- src/components              |   47.61 |    42.85 |   29.41 |      45 |                   
+ src/components              |   39.06 |    29.16 |   22.72 |    37.7 |                   
   DetailedPage.tsx           |       0 |      100 |       0 |       0 | 8                 
   DetailedQuestionBank.tsx   |     100 |      100 |     100 |     100 |                   
-  DetailedQuiz.tsx           |   38.46 |        0 |   33.33 |   27.27 | 11-28             
-  Pages.tsx                  |   43.75 |    66.66 |      25 |   43.75 | 29-43             
+  DetailedQuiz.tsx           |      20 |        0 |   22.22 |   13.63 | 16-58             
+  Pages.tsx                  |   46.15 |     62.5 |   16.66 |   46.15 | 28,48-62,72-79    
   Survey.tsx                 |   63.63 |       50 |   33.33 |   63.63 | 14,29-32,44       
- src/components/GPTFunctions |   28.57 |       25 |      20 |   28.57 |                   
-  gptCall.tsx                |   28.57 |       25 |      20 |   28.57 | 11-35             
+ src/components/GPTFunctions |       0 |        0 |       0 |       0 |                   
+  gptCall.tsx                |       0 |        0 |       0 |       0 |                   
 -----------------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.085 s
+Time:        3.063 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
