@@ -4,6 +4,7 @@ import "../index.css";
 import Survey from "./Survey";
 import '../index.css';
 import { DetailedPage } from "./DetailedPage";
+import {BaseQuestionPage} from "./BasicQuestionsPage"
 import GPT from './GPTFunctions/gptCall'
 export function Pages(): JSX.Element {
     // localStorage.removeItem("MYKEY");
@@ -102,11 +103,12 @@ export function Pages(): JSX.Element {
                 </div>
             )}
             {isBasic && (
-                <div className = "basic">
-                    <h1>Basic</h1>
-                    <p>Welcome to the basic page!</p>
-                    <p>Discover your career preferences and strengths with our Basic Career Quiz! Answer simple questions about your interests, skills, and goals to gain insights into potential career paths that align with your personality and aspirations. This quiz provides a starting point for your career journey.</p>
-                </div>
+                // <div className = "basic">
+                //     <h1>Basic</h1>
+                //     <p>Welcome to the basic page!</p>
+                //     <p>Discover your career preferences and strengths with our Basic Career Quiz! Answer simple questions about your interests, skills, and goals to gain insights into potential career paths that align with your personality and aspirations. This quiz provides a starting point for your career journey.</p>
+                // </div>
+                <BaseQuestionPage></BaseQuestionPage>
             )}
             {isDetailed && (
                 // Put the content of the 'Detailed' page here
