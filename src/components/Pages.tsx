@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Form, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Button, OverlayTrigger, Tooltip } from "react-bootstrap";
 import "../index.css";
 import Survey from "./Survey";
 import '../index.css';
@@ -47,22 +47,6 @@ export function Pages(): JSX.Element {
         setHome(false);
         setBasic(false);
         setDetailed(true);
-    }
-
-    const [key, setKey] = useState<string>(keyData); //for api key input
-
-    //sets the local storage item to the api key the user inputed
-    function handleSubmit() {
-      localStorage.setItem(saveKeyData, JSON.stringify(key));
-      console.log("API Key Submitted:", key); // Debug to see if the value is updating correctly
-    }
-    
-  
-    //whenever there's a change it'll store the api key in a local state called key but it won't be set in the local storage until the user clicks the submit button
-    function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
-      const newKey = event.target.value;
-      console.log("New API Key:", newKey); // Debug to see if the value is updating correctly
-      setKey(newKey);
     }
     
   return (
