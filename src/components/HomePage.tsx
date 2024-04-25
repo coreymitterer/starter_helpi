@@ -102,25 +102,26 @@ export function HomePage(): JSX.Element {
             {/* Assuring a smooth landing into your new career */}
             <div className = "features">
                 <div className="featureCloud">
-                    <span className = "featureCloudTitle">GPT Integration</span>
-                    <span className="featureCloudText">Seamless integration of ChatGPT to analyzie your responses and give you the perfect career</span>
+                    <div className = "featureCloudTitle">GPT Integration</div>
+                    <div className="featureCloudText">Seamless integration of ChatGPT to analyze your responses and give you the perfect career</div>
                 </div>
                 <div className="featureCloud">
                     <div className = "featureCloudTitle">Detailed Analysis</div>
-                    <span className = "featureCloudText">Detailed analysis of your responses to give you the best career options</span>
+                    <div className = "featureCloudText">Detailed analysis of your responses to give you the best career options</div>
                 </div>
                 <div className="featureCloud">
                     <div className = "featureCloudTitle">User Friendly</div>
-                    <span className = "featureCloudText">Easy to use interface that is user friendly and easy to navigate</span>
+                    <div className = "featureCloudText">Easy to use interface that is user friendly and easy to navigate</div>
                 </div>
             </div>
-            <div className = "about"> ABOUT sky</div>
+            <div className = "about">
             <h1>Home</h1>
                 <p>Welcome to the home page!</p>
                 <p>Corey Mitterer</p>
                 <p>Ian Duffy</p>
                 <p>Logan Ponik</p>
                 <p>Junpuyin Wei</p>
+            </div>
         </div>
     );
 }
