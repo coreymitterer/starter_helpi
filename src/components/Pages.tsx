@@ -1,14 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Form, OverlayTrigger, Tooltip } from "react-bootstrap";
 import "../index.css";
 import Survey from "./Survey";
 import { DetailedPage } from "./DetailedPage";
-import { HomePage } from "./HomePage";
+import logo from "./ProfessionPilotLogo.png";
 
 export function Pages(): JSX.Element {
   const [isHome, setHome] = useState<boolean>(true);
   const [isBasic, setBasic] = useState<boolean>(false);
   const [isDetailed, setDetailed] = useState<boolean>(false);
+  const [index, setIndex] = useState<number>(0);
+  const careerList = [
+    "Developers",
+    "Doctors",
+    "Salespeople",
+    "Artists",
+    "Accountants",
+    "Truck Drivers",
+    "Managers",
+    "Engineers",
+    "Teachers",
+    "Musicians"
+];
   let keyData = "";
   const saveKeyData = "MYKEY";
   const prevKey = localStorage.getItem(saveKeyData); //so it'll look like: MYKEY: <api_key_value here> in the local storage when you inspect
@@ -24,6 +37,17 @@ export function Pages(): JSX.Element {
   const homeTooltip = (
     <Tooltip id="tooltip">Home Is Where The Career Quizzes Are</Tooltip>
   );
+
+  useEffect(() => {
+    function cycleCareer(): void {
+        setIndex((index+1)%careerList.length);
+    }
+
+    const intervalId = setInterval(cycleCareer, 3000); // Calls cycleCareer every 3 seconds
+
+    // Cleanup function to clear the interval when the component unmounts
+    return () => clearInterval(intervalId);
+}, [index, careerList.length]);
 
   function updateSetHome(): void {
     setHome(true);
@@ -109,7 +133,58 @@ export function Pages(): JSX.Element {
         </div>
       </div>
 
-      {isHome && <HomePage></HomePage>}
+      {isHome && (<div className = "home">
+            <div className = "websiteTitle">
+                <span className="title">Profession Pilot</span>
+                <div className="slogan">
+                    <div className = "sloganContainer">
+                        <div className = "sloganText">Now Boarding: </div><div className="listTerm">{careerList[index]}</div>
+                    </div>
+                </div>
+            </div>
+            <div className = "main">
+                <Button
+                    type="button"
+                    className="cloud"
+                >
+                    <span className="cloudText">Go To Basic Quiz</span>
+                </Button>
+                <div className="sun"></div>
+                {/* <div className="trail"></div> */}
+                <img 
+                    src = {logo}
+                    alt = "Profession Pilot Logo">
+                </img>
+                <Button
+                    type="button"
+                    className="cloud"
+                >
+                    <span className="cloudText">Go To Detailed Quiz</span>
+                </Button>
+                <div className="sun"></div>
+            </div>
+            {/* Assuring a smooth landing into your new career */}
+            <div className = "features">
+                <div className="featureCloud">
+                    <div className = "featureCloudTitle">GPT Integration</div>
+                    <div className="featureCloudText">Seamless integration of ChatGPT to analyze your responses and give you the perfect career</div>
+                </div>
+                <div className="featureCloud">
+                    <div className = "featureCloudTitle">Detailed Analysis</div>
+                    <div className = "featureCloudText">Detailed analysis of your responses to give you the best career options</div>
+                </div>
+                <div className="featureCloud">
+                    <div className = "featureCloudTitle">User Friendly</div>
+                    <div className = "featureCloudText">Easy to use interface that is user friendly and easy to navigate</div>
+                </div>
+            </div>
+            <div className = "about">
+            <div className="featureCloud">
+                    <div className = "featureCloudTitle">Authors</div>
+                    <div className = "featureCloudText">Corey Mitterer, Ian Duffy, Logan Ponik, Junpuyin Wei</div>
+                </div>
+            </div>
+        </div>)}
       {isBasic && (
         <div className="basic">
           <h1>Basic</h1>
