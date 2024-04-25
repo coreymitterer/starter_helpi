@@ -31,7 +31,7 @@
 
 .nav .button:hover {
   background-color: #b4d8fd;
-  color: #0a0a23; 
+  color: #0a0a23;
 }
 
 /*Adding an Arrow to the Button on Hover*/
@@ -43,7 +43,7 @@
 }
 
 .button span:after {
-  content: '\00bb';
+  content: "\00bb";
   position: absolute;
   opacity: 0;
   top: 0;
@@ -60,7 +60,6 @@
   right: 0;
 }
 
-
 /*Pages and App Styling*/
 .basic {
   display: flex;
@@ -71,11 +70,11 @@
   text-align: center;
 }
 
-.App{
+.App {
   background-color: #99cff8;
-  
 }
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -132,7 +131,7 @@ html, body {
   align-items: center;
   height: 100vh;
   text-align: center;
-  background-color: #009DE0;
+  background-color: #009de0;
   /* background-color: #984444; */
   /* background-image: url("C:\Users\ianan\starter_helpi\src\components\ProfessionPilotLogo.png");
   background-size: cover;
@@ -146,46 +145,46 @@ html, body {
   height: auto;
   width: auto;
   clip-path: ellipse(20% 70% at top);
-  transform: translate(-12%,-30%);
+  transform: translate(-12%, -30%);
 }
 
 .trail {
   width: 0;
-  height: 0; 
+  height: 0;
   border-left: 50vw solid transparent;
   border-right: 50vw solid transparent;
   border-top: 100vh solid white;
 }
 
-
-.cloud{ 
-  margin-top:70px;
-  width:350px;
-  height:120px;
-  background:#ECEFF1;
-  box-shadow: 10px 10px rgba(0,0,0,0.2);
-  border-radius:100px;
+.cloud {
+  margin-top: 70px;
+  width: 350px;
+  height: 120px;
+  background: #eceff1;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
   border-color: transparent;
   z-index: 2;
 }
-.cloud::after, .cloud::before{
-   content: '';
-   position:relative;
-   display:inline-block;
-   background:inherit;
-   border-radius:inherit;
+.cloud::after,
+.cloud::before {
+  content: "";
+  position: relative;
+  display: inline-block;
+  background: inherit;
+  border-radius: inherit;
 }
-.cloud::after{
-   width:100px;
-   height:100px;
-   top:-220px;
-   left:-80px;
+.cloud::after {
+  width: 100px;
+  height: 100px;
+  top: -220px;
+  left: -80px;
 }
-.cloud::before{
-   width:180px;
-   height:180px;
-   top: -70px;
-   left:110px;
+.cloud::before {
+  width: 180px;
+  height: 180px;
+  top: -70px;
+  left: 110px;
 }
 
 .cloudText {
@@ -202,7 +201,7 @@ html, body {
   background-color: rgb(245, 226, 152);
 }
 
-.cloud:hover ~ .sun{
+.cloud:hover ~ .sun {
   border-color: transparent;
   animation: sunRise 5s linear infinite;
 }
@@ -219,9 +218,7 @@ html, body {
   height: 150px;
   background: yellow;
   border-radius: 50%;
-  box-shadow: 0 0 15px rgba(255,255,8,0.2);
-  
-  
+  box-shadow: 0 0 15px rgba(255, 255, 8, 0.2);
 }
 
 @keyframes sunRise {
@@ -229,29 +226,29 @@ html, body {
     transform: translateY(0);
     opacity: 1;
   }
-  
+
   50% {
     transform: translateY(-50px);
   }
-  
+
   100% {
     transform: translateY(-50px);
   }
 }
 /* Testing Text animations */
 
-
 @keyframes rotate {
   0% {
     opacity: 0;
     transform: translateY(50px);
   }
-  
-  20%, 80% {
+
+  20%,
+  80% {
     opacity: 1;
     transform: translateY(0);
   }
-  
+
   100% {
     opacity: 0;
     transform: translateY(-25px);
@@ -284,7 +281,6 @@ html, body {
 
 .basicHomePage {
   position: right;
-
 }
 
 .features {
@@ -295,44 +291,44 @@ html, body {
   /* justify-content: center;
   align-items: center; */
   height: 50vh;
-  background-color: #009DE0;
+  background-color: #009de0;
 }
 
-.featureCloud{
-  width:100%;
-  height:800px;
+.featureCloud {
+  width: 100%;
+  height: 800px;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   border-radius: 50%;
   margin-top: -30px;
   margin-left: 30px;
-  width:500px;
-  height:200px;
-  background:#ECEFF1;
-  box-shadow: 10px 10px rgba(0,0,0,0.2);
-  border-radius:100px;
+  width: 500px;
+  height: 200px;
+  background: #eceff1;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
   transform: translateX(-50px);
 }
-.featureCloud::after, .featureCloud::before{
-   content: '';
-   position:relative;
-   display:inline-block;
-   background:inherit;
-   border-radius:inherit;
-
+.featureCloud::after,
+.featureCloud::before {
+  content: "";
+  position: relative;
+  display: inline-block;
+  background: inherit;
+  border-radius: inherit;
 }
-.featureCloud::after{
-  width:200px;
-  height:200px;
-  top:-320px;
-  left:250px;
+.featureCloud::after {
+  width: 200px;
+  height: 200px;
+  top: -320px;
+  left: 250px;
 }
-.featureCloud::before{
-   width:180px;
-   height:180px;
-   top: -70px;
-   left:110px;
+.featureCloud::before {
+  width: 180px;
+  height: 180px;
+  top: -70px;
+  left: 110px;
 }
 .featureCloudTitle {
   position: relative;
@@ -360,7 +356,7 @@ html, body {
   justify-content: center;
   align-items: center;
   height: 50vh;
-  background-color: #009DE0;
+  background-color: #009de0;
 }
 
 /* Detailed Page CSS */
@@ -375,7 +371,7 @@ html, body {
 }
 
 .carousel {
-  display: 'block';
+  display: "block";
   width: 700;
   padding: 30;
 }
@@ -384,7 +380,6 @@ html, body {
   display: block;
   text-align: center;
   width: 75%;
-
 }
 
 /* Previous Button and Next Button Designs */
@@ -401,7 +396,7 @@ html, body {
 }
 
 .prevButton span:after {
-  content: '\00ab';
+  content: "\00ab";
   position: absolute;
   opacity: 0;
   top: 0;
@@ -430,7 +425,7 @@ html, body {
 }
 
 .nextButton span:after {
-  content: '\00bb';
+  content: "\00bb";
   position: absolute;
   opacity: 0;
   top: 0;
@@ -446,7 +441,6 @@ html, body {
   opacity: 1;
   right: 0;
 }
-
 
 /* Testing Popovers */
 
