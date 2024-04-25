@@ -15,7 +15,7 @@ export function Pages(): JSX.Element {
     const [isHome, setHome] = useState<boolean>(true);
     const [isBasic, setBasic] = useState<boolean>(false);
     const [isDetailed, setDetailed] = useState<boolean>(false);
-    const [output, setOutput] = useState<string>(""); // To store and display the output from OpenAI
+    
 
 
 

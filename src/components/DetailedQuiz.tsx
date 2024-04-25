@@ -16,7 +16,6 @@ export function DetailedQuiz(): JSX.Element {
     const [questionIndex, setQuestionIndex] = useState<number>(DEFAULT_QUESTION_INDEX);
     const [userResponses, setUserResponses] = useState<string[]>(new Array(QUESTIONS.length).fill(''));
     const [output, setOutput] = useState<string>("");
-
     const [apiKey, setApiKey] = useState('');
 
     useEffect(() => {
