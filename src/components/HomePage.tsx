@@ -28,9 +28,6 @@ What Makes a Good Website:
 
 
 export function HomePage(): JSX.Element {
-    const [isHome, setHome] = useState<boolean>(true);
-    const [isBasic, setBasic] = useState<boolean>(false);
-    const [isDetailed, setDetailed] = useState<boolean>(false);
     const [index, setIndex] = useState<number>(0);
     const careerList = [
         "Developers",
@@ -56,18 +53,6 @@ export function HomePage(): JSX.Element {
         return () => clearInterval(intervalId);
     }, [index, careerList.length]);
     
-    function updateSetBasic(): void {
-        setHome(false);
-        setBasic(true);
-        setDetailed(false);
-    }
-
-    function updateSetDetailed(): void {
-        setHome(false);
-        setBasic(false);
-        setDetailed(true);
-    }
-
     return (
         <div className = "home">
             <div className = "websiteTitle">
