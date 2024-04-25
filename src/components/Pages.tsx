@@ -1,15 +1,34 @@
 import React, { useState } from "react";
-import { Button, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Button, Form, OverlayTrigger, Tooltip } from "react-bootstrap";
 import "../index.css";
 import Survey from "./Survey";
 import '../index.css';
 import { DetailedPage } from "./DetailedPage";
-import GPT from './GPTFunctions/gptCall'
+
+
+
+
 export function Pages(): JSX.Element {
-    // localStorage.removeItem("MYKEY");
+    
+
+
     const [isHome, setHome] = useState<boolean>(true);
     const [isBasic, setBasic] = useState<boolean>(false);
     const [isDetailed, setDetailed] = useState<boolean>(false);
+    const [output, setOutput] = useState<string>(""); // To store and display the output from OpenAI
+
+
+
+
+    //Key information
+    let keyData = "";
+    const saveKeyData = "MYKEY";
+    const prevKey = localStorage.getItem(saveKeyData); //so it'll look like: MYKEY: <api_key_value here> in the local storage when you inspect
+    if (prevKey !== null) {
+        keyData = JSON.parse(prevKey);
+    }
+
+
     const basicTooltip = (
         <Tooltip id="tooltip">
           Shorter Quiz For Your Dream Career
@@ -42,7 +61,23 @@ export function Pages(): JSX.Element {
         setBasic(false);
         setDetailed(true);
     }
-    
+
+
+
+
+    const [key, setKey] = useState<string>(keyData); //for api key input
+
+    //sets the local storage item to the api key the user inputed
+    function handleSubmit() {
+      localStorage.setItem(saveKeyData, JSON.stringify(key));
+      console.log(saveKeyData)
+      window.location.reload(); //when making a mistake and changing the key again, I found that I have to reload the whole site before openai refreshes what it has stores for the local storage variable
+    }
+  
+    //whenever there's a change it'll store the api key in a local state called key but it won't be set in the local storage until the user clicks the submit button
+    function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
+      setKey(event.target.value);
+    }
   return (
     <div>
       <div className="nav">
@@ -113,7 +148,12 @@ export function Pages(): JSX.Element {
                   <DetailedPage></DetailedPage>
             )}
             <center>
-              <GPT></GPT>
+        <Form>
+            <Form.Label>API Key:</Form.Label>
+            <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey} size="sm" style={{ width: "200px" }} />
+            <br></br>
+            <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+      </Form>
       </center>
         </div>
     );

@@ -1,13 +1,15 @@
+/*
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import OpenAIAPI from "openai";
 
+// This is the master GPT function, which calls openAI.  It will store the user input, 
 export function GPT(): JSX.Element {
     const [input, setInput] = useState(''); // State to store user input
     const [output, setOutput] = useState(''); // State to store the response from OpenAI
     const [key, setKey] = useState<string>("");
 
-    async function callOpenAI() {
+     async function callOpenAI() {
         const openai = new OpenAIAPI({apiKey: key, dangerouslyAllowBrowser: true})
         const completion = await openai.chat.completions.create({
             model: "gpt-4",
@@ -51,9 +53,27 @@ export function GPT(): JSX.Element {
                 style={{ margin: "10px 0" }} 
             />
             <Button type="button" className="button" onClick={callOpenAI}>Ask GPT</Button>
-            {output && <p>Response: {output}</p>} {/* Display the response below the button */}
+            {output && <p>Response: {output}</p>} { Display the response below the butto }
         </div>
     );
 }
 
-export default GPT;
+
+
+
+async function callOpenAI() {
+    const [key, setKey] = useState<string>("");
+    const openai = new OpenAIAPI({apiKey: key, dangerouslyAllowBrowser: true})
+    const completion = await openai.chat.completions.create({
+        model: "gpt-4",
+        messages: [
+            { role: "system", content: "You are a helpful assistant." },
+            { role: "user", content: input }
+        ],
+    });
+
+
+*/
+
+
+export {};
