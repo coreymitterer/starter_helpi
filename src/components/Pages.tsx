@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { Button, Form, OverlayTrigger, Tooltip } from "react-bootstrap";
 import "../index.css";
 import Survey from "./Survey";
+import '../index.css';
 import { DetailedPage } from "./DetailedPage";
-
+import GPT from './GPTFunctions/gptCall'
 export function Pages(): JSX.Element {
+    // localStorage.removeItem("MYKEY");
     const [isHome, setHome] = useState<boolean>(true);
     const [isBasic, setBasic] = useState<boolean>(false);
     const [isDetailed, setDetailed] = useState<boolean>(false);
@@ -52,13 +54,17 @@ export function Pages(): JSX.Element {
     //sets the local storage item to the api key the user inputed
     function handleSubmit() {
       localStorage.setItem(saveKeyData, JSON.stringify(key));
-      window.location.reload(); //when making a mistake and changing the key again, I found that I have to reload the whole site before openai refreshes what it has stores for the local storage variable
+      console.log("API Key Submitted:", key); // Debug to see if the value is updating correctly
     }
+    
   
     //whenever there's a change it'll store the api key in a local state called key but it won't be set in the local storage until the user clicks the submit button
     function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
-      setKey(event.target.value);
+      const newKey = event.target.value;
+      console.log("New API Key:", newKey); // Debug to see if the value is updating correctly
+      setKey(newKey);
     }
+    
   return (
     <div>
       <div className="nav">
@@ -129,12 +135,7 @@ export function Pages(): JSX.Element {
                   <DetailedPage></DetailedPage>
             )}
             <center>
-        <Form>
-            <Form.Label>API Key:</Form.Label>
-            <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey} size="sm" style={{ width: "200px" }} />
-            <br></br>
-            <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-      </Form>
+              <GPT></GPT>
       </center>
         </div>
     );
