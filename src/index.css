@@ -63,7 +63,7 @@
 
 
 /*Pages and App Styling*/
-.home, .basic, .detailed {
+.home, .basic {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -81,24 +81,94 @@ html, body {
   padding: 0;
 }
 
-/*Popover Styling*/
-.nav-popover {
-  max-width: 300px;
-  background-color: #f8f9fa;
-  border: 1px solid black;
-  border-radius: 10px;
-}
-.nav-popover .popover-header {
-  background-color: blue;
-  color: white;
-}
-.nav-popover .popover-body {
-  background-color: blanchedalmond;
-}
-.nav-popover .popover-arrow::after {
-  border-bottom-color: blue;  /* this example changes the arrow to orange color... You can always replace with any color you choose. */
+/* Detailed Page CSS */
+.detailed {
+  /* background-color: #f8f9fa; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
 }
 
+.carousel {
+  display: 'block';
+  width: 700;
+  padding: 30;
+}
+
+.quiz {
+  display: block;
+  text-align: center;
+  width: 75%;
+
+}
+
+
+
+/* Previous Button and Next Button Designs */
+.prevButton .nextButton {
+  color: #fff;
+}
+
+/* Previous Button Hover Effect*/
+.prevButton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.3s;
+}
+
+.prevButton span:after {
+  content: '\00ab';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -20px;
+  transition: 0.3s;
+}
+
+.prevButton:hover span {
+  padding-left: 25px;
+}
+
+.prevButton:hover span:after {
+  opacity: 1;
+  left: 0;
+}
+
+/* Next Button Hover Effect*/
+.nextButton {
+  color: #fff;
+}
+.nextButton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nextButton span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.3s;
+}
+
+.nextButton:hover span {
+  padding-right: 25px;
+}
+
+.nextButton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+/* Testing Popovers */
 
 /*
 .popover-custom {
