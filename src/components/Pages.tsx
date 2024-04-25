@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import { Button, Form, OverlayTrigger, Tooltip } from "react-bootstrap";
 import "../index.css";
 import Survey from "./Survey";
+import '../index.css';
 import { DetailedPage } from "./DetailedPage";
 import { HomePage } from "./HomePage";
+
+
+
 
 export function Pages(): JSX.Element {
   const [isHome, setHome] = useState<boolean>(true);
@@ -30,7 +34,6 @@ export function Pages(): JSX.Element {
     setBasic(false);
     setDetailed(false);
   }
-
   function updateSetBasic(): void {
     setHome(false);
     setBasic(true);
@@ -42,7 +45,6 @@ export function Pages(): JSX.Element {
     setBasic(false);
     setDetailed(true);
   }
-
   const [key, setKey] = useState<string>(keyData); //for api key input
 
   //sets the local storage item to the api key the user inputed
@@ -54,7 +56,6 @@ export function Pages(): JSX.Element {
   //whenever there's a change it'll store the api key in a local state called key but it won't be set in the local storage until the user clicks the submit button
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
-  }
   return (
     <div>
       <div className="nav">
