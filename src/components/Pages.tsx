@@ -10,12 +10,6 @@ export function Pages(): JSX.Element {
     const [isHome, setHome] = useState<boolean>(true);
     const [isBasic, setBasic] = useState<boolean>(false);
     const [isDetailed, setDetailed] = useState<boolean>(false);
-    let keyData = "";
-    const saveKeyData = "MYKEY";
-    const prevKey = localStorage.getItem(saveKeyData); //so it'll look like: MYKEY: <api_key_value here> in the local storage when you inspect
-    if (prevKey !== null) {
-        keyData = JSON.parse(prevKey);
-    }
     const basicTooltip = (
         <Tooltip id="tooltip">
           Shorter Quiz For Your Dream Career
