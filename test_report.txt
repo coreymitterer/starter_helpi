@@ -167,27 +167,25 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
------------------------------|---------|----------|---------|---------|-------------------
-File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
------------------------------|---------|----------|---------|---------|-------------------
-All files                    |   34.21 |       25 |      24 |   32.87 |                   
- src                         |    8.33 |        0 |   33.33 |    8.33 |                   
-  App.tsx                    |     100 |      100 |     100 |     100 |                   
-  index.tsx                  |       0 |      100 |     100 |       0 | 8-20              
-  reportWebVitals.ts         |       0 |        0 |       0 |       0 | 3-10              
- src/components              |   39.06 |    29.16 |   22.72 |    37.7 |                   
-  DetailedPage.tsx           |       0 |      100 |       0 |       0 | 8                 
-  DetailedQuestionBank.tsx   |     100 |      100 |     100 |     100 |                   
-  DetailedQuiz.tsx           |      20 |        0 |   22.22 |   13.63 | 16-58             
-  Pages.tsx                  |   46.15 |     62.5 |   16.66 |   46.15 | 28,48-62,72-79    
-  Survey.tsx                 |   63.63 |       50 |   33.33 |   63.63 | 14,29-32,44       
- src/components/GPTFunctions |       0 |        0 |       0 |       0 |                   
-  gptCall.tsx                |       0 |        0 |       0 |       0 |                   
------------------------------|---------|----------|---------|---------|-------------------
+---------------------------|---------|----------|---------|---------|-------------------
+File                       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------------|---------|----------|---------|---------|-------------------
+All files                  |   34.21 |       25 |      24 |   32.87 |                   
+ src                       |    8.33 |        0 |   33.33 |    8.33 |                   
+  App.tsx                  |     100 |      100 |     100 |     100 |                   
+  index.tsx                |       0 |      100 |     100 |       0 | 8-20              
+  reportWebVitals.ts       |       0 |        0 |       0 |       0 | 3-10              
+ src/components            |   39.06 |    29.16 |   22.72 |    37.7 |                   
+  DetailedPage.tsx         |       0 |      100 |       0 |       0 | 8                 
+  DetailedQuestionBank.tsx |     100 |      100 |     100 |     100 |                   
+  DetailedQuiz.tsx         |      20 |        0 |   22.22 |   13.63 | 16-58             
+  Pages.tsx                |   46.15 |     62.5 |   16.66 |   46.15 | 28,48-62,72-79    
+  Survey.tsx               |   63.63 |       50 |   33.33 |   63.63 | 14,29-32,44       
+---------------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.033 s
+Time:        2.965 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
