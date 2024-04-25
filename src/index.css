@@ -7,7 +7,6 @@
   width: 200px;
   transition: background-color 0.3s ease;
   cursor: pointer;
-  margin: 5px;
   background-color: #357ed7;
   color: #fff;
 }
@@ -63,7 +62,7 @@
 
 
 /*Pages and App Styling*/
-.home, .basic {
+.basic {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,6 +78,289 @@
 html, body {
   margin: 0;
   padding: 0;
+}
+
+/* Home Page CSS */
+.home {
+  background-color: #ffffff;
+  display: grid;
+  grid-template-rows: auto;
+}
+
+.websiteTitle {
+  grid-row: 1;
+  height: auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.title {
+  text-align: center;
+}
+
+.slogan {
+  text-align: center;
+}
+
+.sloganContainer {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+.sloganText {
+  transform: translateX(50px);
+}
+
+.listTerm {
+  font-style: normal;
+  font-weight: 700;
+  opacity: 0;
+  text-transform: uppercase;
+  width: 600px;
+  animation: rotate;
+  animation-duration: 3000ms;
+  animation-iteration-count: infinite;
+}
+
+.main {
+  position: relative;
+  grid-row: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #009DE0;
+  /* background-color: #984444; */
+  /* background-image: url("C:\Users\ianan\starter_helpi\src\components\ProfessionPilotLogo.png");
+  background-size: cover;
+  background-position: center; */
+}
+
+.main img {
+  position: relative;
+  max-height: 100vh;
+  max-width: 100vh;
+  height: auto;
+  width: auto;
+  clip-path: ellipse(20% 70% at top);
+  transform: translate(-12%,-30%);
+}
+
+.trail {
+  width: 0;
+  height: 0; 
+  border-left: 50vw solid transparent;
+  border-right: 50vw solid transparent;
+  border-top: 100vh solid white;
+}
+
+
+.cloud{ 
+  margin-top:70px;
+  width:350px;
+  height:120px;
+  background:#ECEFF1;
+  box-shadow: 10px 10px rgba(0,0,0,0.2);
+  border-radius:100px;
+  border-color: transparent;
+  z-index: 2;
+}
+.cloud::after, .cloud::before{
+   content: '';
+   position:relative;
+   display:inline-block;
+   background:inherit;
+   border-radius:inherit;
+}
+.cloud::after{
+   width:100px;
+   height:100px;
+   top:-220px;
+   left:-80px;
+}
+.cloud::before{
+   width:180px;
+   height:180px;
+   top: -70px;
+   left:110px;
+}
+
+.cloudText {
+  position: relative;
+  z-index: 1;
+  top: -120%;
+  left: -30%;
+  text-align: center;
+  color: black;
+}
+
+.cloud:hover {
+  border-color: transparent;
+  background-color: rgb(245, 226, 152);
+}
+
+.cloud:hover ~ .sun{
+  border-color: transparent;
+  animation: sunRise 5s linear infinite;
+}
+
+.sun {
+  position: relative;
+  left: -280px;
+  top: 20px;
+  z-index: 1;
+  /* opacity: 0; */
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  height: 150px;
+  background: yellow;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255,255,8,0.2);
+  
+  
+}
+
+@keyframes sunRise {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  50% {
+    transform: translateY(-50px);
+  }
+  
+  100% {
+    transform: translateY(-50px);
+  }
+}
+/* Testing Text animations */
+
+
+@keyframes rotate {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  
+  20%, 80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  100% {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+}
+
+/* End testing */
+
+.main .prevButton {
+  position: relative;
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.main .nextButton {
+  float: right;
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.basicHomePage {
+  position: right;
+
+}
+
+.features {
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr); */
+  grid-row: 3;
+  display: flex; /* come back to this */
+  /* justify-content: center;
+  align-items: center; */
+  height: 50vh;
+  background-color: #009DE0;
+}
+
+.featureCloud{
+  width:100%;
+  height:800px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 50%;
+  margin-top: -30px;
+  margin-left: 30px;
+  width:500px;
+  height:200px;
+  background:#ECEFF1;
+  box-shadow: 10px 10px rgba(0,0,0,0.2);
+  border-radius:100px;
+  transform: translateX(-50px);
+}
+.featureCloud::after, .featureCloud::before{
+   content: '';
+   position:relative;
+   display:inline-block;
+   background:inherit;
+   border-radius:inherit;
+
+}
+.featureCloud::after{
+  width:200px;
+  height:200px;
+  top:-320px;
+  left:250px;
+}
+.featureCloud::before{
+   width:180px;
+   height:180px;
+   top: -70px;
+   left:110px;
+}
+.featureCloudTitle {
+  position: relative;
+  z-index: 1;
+  top: -80%;
+  text-align: center;
+  color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.featureCloudText {
+  position: relative;
+  width: 50%;
+  height: 5%;
+  z-index: 1;
+  top: -60%;
+  left: 25%;
+  text-align: center;
+  color: black;
+}
+
+.about {
+  grid-row: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  background-color: #009DE0;
 }
 
 /* Detailed Page CSS */
@@ -104,8 +386,6 @@ html, body {
   width: 75%;
 
 }
-
-
 
 /* Previous Button and Next Button Designs */
 .prevButton .nextButton {

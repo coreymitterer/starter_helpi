@@ -1,21 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Form, OverlayTrigger, Tooltip } from "react-bootstrap";
 import "../index.css";
 import Survey from "./Survey";
 import '../index.css';
 import { DetailedPage } from "./DetailedPage";
+import logo from "./ProfessionPilotLogo.png";
 
 
 
 
 export function Pages(): JSX.Element {
-    
-
-
     const [isHome, setHome] = useState<boolean>(true);
     const [isBasic, setBasic] = useState<boolean>(false);
     const [isDetailed, setDetailed] = useState<boolean>(false);
-    
+    const careerList = [
+    "Developers",
+    "Doctors",
+    "Salespeople",
+    "Artists",
+    "Accountants",
+    "Truck Drivers",
+    "Managers",
+    "Engineers",
+    "Teachers",
+    "Musicians"
+];
 
 
 
@@ -49,6 +58,23 @@ export function Pages(): JSX.Element {
         setBasic(false);
         setDetailed(false);
     }
+    
+    useEffect(() => {
+    function cycleCareer(): void {
+        setIndex((index+1)%careerList.length);
+    }
+
+    const intervalId = setInterval(cycleCareer, 3000); // Calls cycleCareer every 3 seconds
+
+    // Cleanup function to clear the interval when the component unmounts
+    return () => clearInterval(intervalId);
+}, [index, careerList.length]);
+
+  function updateSetHome(): void {
+    setHome(true);
+    setBasic(false);
+    setDetailed(false);
+  }
 
   function updateSetBasic(): void {
     setHome(false);
@@ -56,11 +82,12 @@ export function Pages(): JSX.Element {
     setDetailed(false);
   }
 
-    function updateSetDetailed(): void {
-        setHome(false);
-        setBasic(false);
-        setDetailed(true);
-    }
+  function updateSetDetailed(): void {
+    setHome(false);
+    setBasic(false);
+    setDetailed(true);
+  }
+
 
 
 
@@ -82,18 +109,18 @@ export function Pages(): JSX.Element {
     <div>
       <div className="nav">
         <div>
-        <OverlayTrigger
+          <OverlayTrigger
             trigger="hover"
             placement="bottom"
             overlay={basicTooltip}
-        >
+          >
             <Button
-                type="button"
-                className="button"
-                onClick={updateSetBasic}
-                disabled={isBasic}
+              type="button"
+              className="button"
+              onClick={updateSetBasic}
+              disabled={isBasic}
             >
-                <span className="button-span">Basic</span>
+              <span className="button-span">Basic</span>
             </Button>
           </OverlayTrigger>
         </div>
@@ -117,44 +144,103 @@ export function Pages(): JSX.Element {
             placement="bottom"
             delay={{ show: 100, hide: 100 }}
             overlay={detailedTooltip}
+          >
+            <Button
+              className="button"
+              onClick={updateSetDetailed}
+              disabled={isDetailed}
             >
-                <Button className = "button" onClick={updateSetDetailed} disabled={isDetailed}>Detailed</Button>
-            </OverlayTrigger>
-                </div>
-                <div>
-                    <Survey></Survey>
+              <span className="button-span">Detailed</span>
+            </Button>
+          </OverlayTrigger>
+        </div>
+        <div>
+          <Survey></Survey>
+        </div>
+      </div>
+
+      {isHome && (<div className = "home">
+            <div className = "websiteTitle">
+                <span className="title">Profession Pilot</span>
+                <div className="slogan">
+                    <div className = "sloganContainer">
+                        <div className = "sloganText">Now Boarding: </div><div className="listTerm">{careerList[index]}</div>
+                    </div>
                 </div>
             </div>
-
-            {isHome && (
-                <div className = "home">
-                    <h1>Home</h1>
-                    <p>Welcome to the home page!</p>
-                    <p>Corey Mitterer</p>
-                    <p>Ian Duffy</p>
-                    <p>Logan Ponik</p>
-                    <p>Junpuyin Wei</p>
+            <div className = "main">
+                <Button
+                    type="button"
+                    className="cloud"
+                >
+                    <span className="cloudText">Go To Basic Quiz</span>
+                </Button>
+                <div className="sun"></div>
+                {/* <div className="trail"></div> */}
+                <img 
+                    src = {logo}
+                    alt = "Profession Pilot Logo">
+                </img>
+                <Button
+                    type="button"
+                    className="cloud"
+                >
+                    <span className="cloudText">Go To Detailed Quiz</span>
+                </Button>
+                <div className="sun"></div>
+            </div>
+            {/* Assuring a smooth landing into your new career */}
+            <div className = "features">
+                <div className="featureCloud">
+                    <div className = "featureCloudTitle">GPT Integration</div>
+                    <div className="featureCloudText">Seamless integration of ChatGPT to analyze your responses and give you the perfect career</div>
                 </div>
-            )}
-            {isBasic && (
-                <div className = "basic">
-                    <h1>Basic</h1>
-                    <p>Welcome to the basic page!</p>
-                    <p>Discover your career preferences and strengths with our Basic Career Quiz! Answer simple questions about your interests, skills, and goals to gain insights into potential career paths that align with your personality and aspirations. This quiz provides a starting point for your career journey.</p>
+                <div className="featureCloud">
+                    <div className = "featureCloudTitle">Detailed Analysis</div>
+                    <div className = "featureCloudText">Detailed analysis of your responses to give you the best career options</div>
                 </div>
-            )}
-            {isDetailed && (
-                // Put the content of the 'Detailed' page here
-                  <DetailedPage></DetailedPage>
-            )}
-            <center>
-        <Form>
-            <Form.Label>API Key:</Form.Label>
-            <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey} size="sm" style={{ width: "200px" }} />
-            <br></br>
-            <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-      </Form>
-      </center>
+                <div className="featureCloud">
+                    <div className = "featureCloudTitle">User Friendly</div>
+                    <div className = "featureCloudText">Easy to use interface that is user friendly and easy to navigate</div>
+                </div>
+            </div>
+            <div className = "about">
+            <div className="featureCloud">
+                    <div className = "featureCloudTitle">Authors</div>
+                    <div className = "featureCloudText">Corey Mitterer, Ian Duffy, Logan Ponik, Junpuyin Wei</div>
+                </div>
+            </div>
+        </div>)}
+      {isBasic && (
+        <div className="basic">
+          <h1>Basic</h1>
+          <p>Welcome to the basic page!</p>
+          <p>
+            Discover your career preferences and strengths with our Basic Career
+            Quiz! Answer simple questions about your interests, skills, and
+            goals to gain insights into potential career paths that align with
+            your personality and aspirations. This quiz provides a starting
+            point for your career journey.
+          </p>
         </div>
-    );
+      )}
+      {isDetailed && <DetailedPage></DetailedPage>}
+      <center>
+        <Form>
+          <Form.Label>API Key:</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Insert API Key Here"
+            onChange={changeKey}
+            size="sm"
+            style={{ width: "200px" }}
+          />
+          <br></br>
+          <Button className="Submit-Button" onClick={handleSubmit}>
+            Submit
+          </Button>
+        </Form>
+      </center>
+    </div>
+  );
 }
