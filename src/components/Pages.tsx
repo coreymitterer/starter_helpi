@@ -3,14 +3,18 @@ import { Button, Form, OverlayTrigger, Tooltip } from "react-bootstrap";
 import "../index.css";
 import Survey from "./Survey";
 import { DetailedPage } from "./DetailedPage";
-import OpenAIAPI from "openai";
+import { HomePage } from "./HomePage";
 export function Pages(): JSX.Element {
     const [isHome, setHome] = useState<boolean>(true);
     const [isBasic, setBasic] = useState<boolean>(false);
     const [isDetailed, setDetailed] = useState<boolean>(false);
-    const [input, setInput] = useState(''); // State to store user input
-    const [output, setOutput] = useState(''); // State to store the response from OpenAI
-    const [key, setKey] = useState<string>("");
+
+    let keyData = "";
+    const saveKeyData = "MYKEY";
+    const prevKey = localStorage.getItem(saveKeyData); //so it'll look like: MYKEY: <api_key_value here> in the local storage when you inspect
+    if (prevKey !== null) {
+        keyData = JSON.parse(prevKey);
+    }
 
     const basicTooltip = (
         <Tooltip id="tooltip">
@@ -30,34 +34,6 @@ export function Pages(): JSX.Element {
         </Tooltip>
     );
 
-    async function callOpenAI() {
-        const openai = new OpenAIAPI({apiKey: key, dangerouslyAllowBrowser: true})
-        const completion = await openai.chat.completions.create({
-            model: "gpt-4",
-            messages: [
-                { role: "system", content: "You are a helpful assistant." },
-                { role: "user", content: input }
-            ],
-        });
-        console.log(completion.choices[0].message.content);
-        setOutput(completion.choices[0].message.content || '');
-    }
-
-    function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
-        setInput(event.target.value); // Update the input state when user types in the input box
-    }
-
-    function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
-        const newKey = event.target.value;
-        console.log("New API Key:", newKey); // Debug to see if the value is updating correctly
-        setKey(newKey);
-    }
-
-    function handleSubmit() {
-        localStorage.setItem("MYKEY", JSON.stringify(key));
-        console.log("API Key Submitted:", key); // Debug to see if the value is updating correctly
-    }
-
     function updateSetHome(): void {
         setHome(true);
         setBasic(false);
@@ -76,6 +52,20 @@ export function Pages(): JSX.Element {
         setDetailed(true);
     }
 
+
+    const [key, setKey] = useState<string>(keyData); //for api key input
+
+    //sets the local storage item to the api key the user inputed
+    function handleSubmit() {
+      localStorage.setItem(saveKeyData, JSON.stringify(key));
+      console.log(saveKeyData)
+      window.location.reload(); //when making a mistake and changing the key again, I found that I have to reload the whole site before openai refreshes what it has stores for the local storage variable
+    }
+  
+    //whenever there's a change it'll store the api key in a local state called key but it won't be set in the local storage until the user clicks the submit button
+    function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
+      setKey(event.target.value);
+    }
     return (
         <div>
             <div className="nav">
@@ -124,16 +114,7 @@ export function Pages(): JSX.Element {
                 </div>
             </div>
 
-            {isHome && (
-                <div className="home">
-                    <h1>Home</h1>
-                    <p>Welcome to the home page!</p>
-                    <p>Corey Mitterer</p>
-                    <p>Ian Duffy</p>
-                    <p>Logan Ponik</p>
-                    <p>Junpuyin Wei</p>
-                </div>
-            )}
+            {isHome && (<HomePage></HomePage>)}
             {isBasic && (
                 <div className="basic">
                     <h1>Basic</h1>
@@ -142,31 +123,16 @@ export function Pages(): JSX.Element {
                 </div>
             )}
             {isDetailed && (
-              <div>
-              <DetailedPage/>
               <DetailedPage></DetailedPage>
-              </div>
             )}
-
             <center>
-                <div>
-                    <Form>
-                        <Form.Label>API Key:</Form.Label>
-                        <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey} size="sm" style={{ width: "200px" }} />
-                        <br></br>
-                        <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-                    </Form>
-                    <Form.Control
-                        type="text"
-                        placeholder="Ask a question..."
-                        value={input}
-                        onChange={handleInputChange}
-                        style={{ margin: "10px 0" }}
-                    />
-                    <Button type="button" className="button" onClick={callOpenAI}>Ask GPT</Button>
-                    {output && <p>Response: {output}</p>}
-                </div>
-            </center>
-        </div>
+        <Form>
+            <Form.Label>API Key:</Form.Label>
+            <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey} size="sm" style={{ width: "200px" }} />
+            <br></br>
+            <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+      </Form>
+      </center>
+          </div>
     );
 }
