@@ -3,6 +3,8 @@ import { Button } from "react-bootstrap";
 import "../index.css";
 import logo from "./ProfessionPilotLogo.png";
 
+// TODO: Style Logo, style header text, style slogan text, add clouds for buttons, cloud themed divs for homepage. Sky, cloud, sky, cloud, etc.
+
 /*
 What Makes a Good Website:
     Customized logo representing your business.
@@ -31,16 +33,16 @@ export function HomePage(): JSX.Element {
     const [isDetailed, setDetailed] = useState<boolean>(false);
     const [index, setIndex] = useState<number>(0);
     const careerList = [
-        "Developer",
-        "Doctor",
-        "Salesperson",
-        "Artist",
-        "Accountant",
-        "Truck Driver",
-        "Manager",
-        "Engineer",
-        "Teacher",
-        "Musician"
+        "Developers",
+        "Doctors",
+        "Salespeople",
+        "Artists",
+        "Accountants",
+        "Truck Drivers",
+        "Managers",
+        "Engineers",
+        "Teachers",
+        "Musicians"
     ];
 
     useEffect(() => {
@@ -77,29 +79,42 @@ export function HomePage(): JSX.Element {
                 </div>
             </div>
             <div className = "main">
+                {/* <div></div> */}
+                <Button
+                    type="button"
+                    className="cloud"
+                >
+                    <span className="cloudText">Go To Basic Quiz</span>
+                </Button>
+                <div className="sun"></div>
                 <img 
                     src = {logo}
                     alt = "Profession Pilot Logo">
                 </img>
+                <Button
+                    type="button"
+                    className="cloud"
+                >
+                    <span className="cloudText">Go To Detailed Quiz</span>
+                </Button>
+                <div className="sun"></div>
             </div>
-            <Button
-                type="button"
-                className="nextButton"
-                onClick={updateSetDetailed}
-                >
-                <span className="button-span">Detailed</span>
-            </Button>
-            <Button
-                type="button"
-                className="prevButton"
-                onClick={updateSetBasic}
-                >
-                <span className="button-span">Basic</span>
-            </Button>
             {/* Assuring a smooth landing into your new career */}
-            <div className = "features"> </div>
-            <div className = "services"> </div>
-            <div className = "about"> </div>
+            <div className = "features">
+                <div className="featureCloud">
+                    <span className = "featureCloudTitle">GPT Integration</span>
+                    <span className="featureCloudText">Seamless integration of ChatGPT to analyzie your responses and give you the perfect career</span>
+                </div>
+                <div className="featureCloud">
+                    <div className = "featureCloudTitle">Detailed Analysis</div>
+                    <span className = "featureCloudText">Detailed analysis of your responses to give you the best career options</span>
+                </div>
+                <div className="featureCloud">
+                    <div className = "featureCloudTitle">User Friendly</div>
+                    <span className = "featureCloudText">Easy to use interface that is user friendly and easy to navigate</span>
+                </div>
+            </div>
+            <div className = "about"> ABOUT sky</div>
             <h1>Home</h1>
                 <p>Welcome to the home page!</p>
                 <p>Corey Mitterer</p>

@@ -126,18 +126,99 @@ html, body {
 
 .main {
   grid-row: 2;
-  display: flex;
+  display: flex; /* come back to this */
   justify-content: center;
   align-items: center;
   height: 100vh;
   text-align: center;
-  /* background-color: #009DE0; */
-  background-color: #984444;
+  background-color: #009DE0;
+  /* background-color: #984444; */
   /* background-image: url("C:\Users\ianan\starter_helpi\src\components\ProfessionPilotLogo.png");
   background-size: cover;
   background-position: center; */
 }
 
+
+.cloud{ 
+  margin-top:70px;
+  width:350px;
+  height:120px;
+  background:#ECEFF1;
+  box-shadow: 10px 10px rgba(0,0,0,0.2);
+  border-radius:100px;
+  border-color: transparent;
+  z-index: 2;
+}
+.cloud::after, .cloud::before{
+   content: '';
+   position:relative;
+   display:inline-block;
+   background:inherit;
+   border-radius:inherit;
+}
+.cloud::after{
+   width:100px;
+   height:100px;
+   top:-220px;
+   left:-80px;
+}
+.cloud::before{
+   width:180px;
+   height:180px;
+   top: -70px;
+   left:110px;
+}
+
+.cloudText {
+  position: relative;
+  z-index: 1;
+  top: -120%;
+  left: -30%;
+  text-align: center;
+  color: black;
+}
+
+.cloud:hover {
+  border-color: transparent;
+  background-color: rgb(245, 226, 152);
+}
+
+.cloud:hover ~ .sun{
+  border-color: transparent;
+  animation: sunRise 5s linear infinite;
+}
+
+.sun {
+  position: relative;
+  left: -280px;
+  top: 20px;
+  z-index: 1;
+  /* opacity: 0; */
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  height: 150px;
+  background: yellow;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255,255,8,0.2);
+  
+  
+}
+
+@keyframes sunRise {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  50% {
+    transform: translateY(-50px);
+  }
+  
+  100% {
+    transform: translateY(-50px);
+  }
+}
 /* Testing Text animations */
 
 
@@ -168,7 +249,7 @@ html, body {
 }
 
 .main .prevButton {
-  float: left;
+  position: relative;
   background-color: #555;
   color: white;
   font-size: 16px;
@@ -194,6 +275,76 @@ html, body {
 
 }
 
+.features {
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr); */
+  display: flex; /* come back to this */
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  background-color: #009DE0;
+}
+
+.featureCloud{
+  width:100%;
+  height:800px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 50%;
+  margin-top: -30px;
+  margin-left: 30px;
+  width:500px;
+  height:200px;
+  background:#ECEFF1;
+  box-shadow: 10px 10px rgba(0,0,0,0.2);
+  border-radius:100px;
+}
+.featureCloud::after, .featureCloud::before{
+   content: '';
+   position:relative;
+   display:inline-block;
+   background:inherit;
+   border-radius:inherit;
+
+}
+.featureCloud::after{
+   width:200px;
+   height:200px;
+   top:-300px;
+   left:80px;
+}
+.featureCloud::before{
+   width:180px;
+   height:180px;
+   top: -70px;
+   left:110px;
+}
+.featureCloudTitle {
+  position: relative;
+  z-index: 1;
+  top: -80%;
+  text-align: center;
+  color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.featureCloudText {
+  position: relative;
+  z-index: 1;
+  top: -60%;
+  /* left: -60%; */
+  text-align: center;
+  color: black;
+}
+
+.about{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #009DE0;
+
+}
 
 /* Detailed Page CSS */
 .detailed {
