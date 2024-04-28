@@ -132,10 +132,6 @@ body {
   height: 100vh;
   text-align: center;
   background-color: #009de0;
-  /* background-color: #984444; */
-  /* background-image: url("C:\Users\ianan\starter_helpi\src\components\ProfessionPilotLogo.png");
-  background-size: cover;
-  background-position: center; */
 }
 
 .main img {
@@ -211,7 +207,6 @@ body {
   left: -280px;
   top: 20px;
   z-index: 1;
-  /* opacity: 0; */
   margin: 0;
   padding: 0;
   width: 150px;

@@ -25,9 +25,11 @@ export function Survey(): JSX.Element {
   const [education, setEducation] = useState<string>(DEFAULT_EDUCATION);
   const [visible, setVisible] = useState<boolean>(false);
   const [income, setIncome] = useState<number>(0);
+  //gets thew answer for education level 
   function updateEducation(event: ChangeEvent<HTMLSelectElement>): void {
     setEducation(event.target.value);
   }
+  //Gets input from user for prefered income
   function updateIncome(event: ChangeEvent<HTMLInputElement>): void {
     setIncome(parseInt(event.target.value));
   }
