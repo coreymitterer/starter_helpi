@@ -58,9 +58,7 @@ export function HomePage(): JSX.Element {
             <div className = "websiteTitle">
                 <div className="title">Profession Pilot</div>
                 <div className="slogan">
-                    <div className = "sloganContainer">
-                        <div className = "sloganText">Now Boarding: </div><div className="listTerm">{careerList[index]}</div>
-                    </div>
+                    <div className = "sloganText">Now Boarding: </div><div className="listTerm">{careerList[index]}</div>
                 </div>
             </div>
             <div className = "main">
