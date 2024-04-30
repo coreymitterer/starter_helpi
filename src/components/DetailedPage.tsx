@@ -1,9 +1,9 @@
-//import React, { useState } from "react";
-//import { Button, Form, OverlayTrigger, Tooltip } from "react-bootstrap";
+
 import "../index.css";
 import { DetailedQuiz } from "./DetailedQuiz";
-//import Survey from "./Survey";
 
+//Creates the detailed page with the title and description as well as the 
+//Actual questions progress bar and submit
 export function DetailedPage(): JSX.Element {
   return (
     <div>

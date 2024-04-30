@@ -1,11 +1,11 @@
 import "../index.css";
 import { useState } from "react";
-import { ProgressBar } from "react-bootstrap";
+import { Button, ProgressBar } from "react-bootstrap";
 import BaseQuestion from "./BaseQuestion";
 
 // DFI: number = 0;
 export function BaseQuestionPage(): JSX.Element {
-  const [showbegin, setbegain] = useState(true);
+  const [showbegin, setbegin] = useState(true);
   const [page1, setpage1] = useState(false);
   const [pages1, setpages1] = useState(false);
   const [page2, setpage2] = useState(false);
@@ -32,8 +32,6 @@ export function BaseQuestionPage(): JSX.Element {
   const [page9, setpage9] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [pages9, setpages9] = useState(false);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [fina, setfina] = useState(false);
   let Number = 0;
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [questionIndex, setQuestionIndex] = useState<number>(Number);
@@ -53,16 +51,16 @@ export function BaseQuestionPage(): JSX.Element {
           </p>
         )}
         {showbegin && (
-          <button
+          <Button
             className="btn"
             onClick={() => {
-              setbegain(false);
+              setbegin(false);
               setpage1(true);
               setpages1(true);
             }}
           >
-            Begain
-          </button>
+            Begin
+          </Button>
         )}
         {!showbegin && page1 && (
           <ProgressBar
@@ -104,7 +102,7 @@ export function BaseQuestionPage(): JSX.Element {
           </div>
           {!showbegin && pages1 && (
             <div>
-              <button
+              <Button
                 className="btn"
                 onClick={() => {
                   setpage2(true);
@@ -113,7 +111,7 @@ export function BaseQuestionPage(): JSX.Element {
                 }}
               >
                 Next
-              </button>
+              </Button>
             </div>
           )}
         </div>
