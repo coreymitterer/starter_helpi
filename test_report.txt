@@ -36,7 +36,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (76 ms)
+  ✕ renders learn react link (78 ms)
 
   ● renders learn react link
 
@@ -102,130 +102,152 @@ FAIL src/App.test.tsx
               [33mclass[39m=[32m"home"[39m
             [36m>[39m
               [36m<div[39m
-                [33mclass[39m=[32m"websiteTitle"[39m
+                [33mclass[39m=[32m"home"[39m
               [36m>[39m
-                [36m<span[39m
-                  [33mclass[39m=[32m"title"[39m
-                [36m>[39m
-                  [0mProfession Pilot[0m
-                [36m</span>[39m
                 [36m<div[39m
-                  [33mclass[39m=[32m"slogan"[39m
-                [36m>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"sloganContainer"[39m
-                  [36m>[39m
-                    [36m<div[39m
-                      [33mclass[39m=[32m"sloganText"[39m
-                    [36m>[39m
-                      [0mNow Boarding: [0m
-                    [36m</div>[39m
-                    [36m<div[39m
-                      [33mclass[39m=[32m"listTerm"[39m
-                    [36m>[39m
-                      [0mDevelopers[0m
-                    [36m</div>[39m
-                  [36m</div>[39m
-                [36m</div>[39m
-              [36m</div>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"main"[39m
-              [36m>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"cloud btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
+                  [33mclass[39m=[32m"websiteTitle"[39m
                 [36m>[39m
                   [36m<span[39m
-                    [33mclass[39m=[32m"cloudText"[39m
+                    [33mclass[39m=[32m"title"[39m
                   [36m>[39m
-                    [0mGo To Basic Quiz[0m
+                    [0mProfession Pilot[0m
                   [36m</span>[39m
-                [36m</button>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"sun"[39m
-                [36m/>[39m
-                [36m<img[39m
-                  [33malt[39m=[32m"Profession Pilot Logo"[39m
-                  [33msrc[39m=[32m"ProfessionPilotLogo.png"[39m
-                [36m/>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"cloud btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
-                [36m>[39m
-                  [36m<span[39m
-                    [33mclass[39m=[32m"cloudText"[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"slogan"[39m
                   [36m>[39m
-                    [0mGo To Detailed Quiz[0m
-                  [36m</span>[39m
-                [36m</button>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"sloganContainer"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"sloganText"[39m
+                      [36m>[39m
+                        [0mNow Boarding: [0m
+                      [36m</div>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"listTerm"[39m
+                      [36m>[39m
+                        [0mDevelopers[0m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
                 [36m<div[39m
-                  [33mclass[39m=[32m"sun"[39m
-                [36m/>[39m
+                  [33mclass[39m=[32m"main"[39m
+                [36m>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"cloud btn btn-primary"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"cloudText"[39m
+                    [36m>[39m
+                      [0mGo To Basic Quiz[0m
+                    [36m</span>[39m
+                  [36m</button>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"sun"[39m
+                  [36m/>[39m
+                  [36m<img[39m
+                    [33malt[39m=[32m"Profession Pilot Logo"[39m
+                    [33msrc[39m=[32m"ProfessionPilotLogo.png"[39m
+                  [36m/>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"cloud btn btn-primary"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"cloudText"[39m
+                    [36m>[39m
+                      [0mGo To Detailed Quiz[0m
+                    [36m</span>[39m
+                  [36m</button>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"sun"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"features"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"featureCloud"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"featureCloudTitle"[39m
+                    [36m>[39m
+                      [0mGPT Integration[0m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"featureCloudText"[39m
+                    [36m>[39m
+                      [0mSeamless integration of ChatGPT to analyze your responses and give you the perfect career[0m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"featureCloud"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"featureCloudTitle"[39m
+                    [36m>[39m
+                      [0mDetailed Analysis[0m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"featureCloudText"[39m
+                    [36m>[39m
+                      [0mDetailed analysis of your responses to give you the best career options[0m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"featureCloud"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"featureCloudTitle"[39m
+                    [36m>[39m
+                      [0mUser Friendly[0m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"featureCloudText"[39m
+                    [36m>[39m
+                      [0mEasy to use interface that is user friendly and easy to navigate[0m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"about"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"featureCloud"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"featureCloudTitle"[39m
+                    [36m>[39m
+                      [0mAuthors[0m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"featureCloudText"[39m
+                    [36m>[39m
+                      [0mCorey Mitterer, Ian Duffy, Logan Ponik, Junpuyin Wei[0m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
               [36m</div>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"features"[39m
-              [36m>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"featureCloud"[39m
-                [36m>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"featureCloudTitle"[39m
-                  [36m>[39m
-                    [0mGPT Integration[0m
-                  [36m</div>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"featureCloudText"[39m
-                  [36m>[39m
-                    [0mSeamless integration of ChatGPT to analyze your responses and give you the perfect career[0m
-                  [36m</div>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"featureCloud"[39m
-                [36m>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"featureCloudTitle"[39m
-                  [36m>[39m
-                    [0mDetailed Analysis[0m
-                  [36m</div>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"featureCloudText"[39m
-                  [36m>[39m
-                    [0mDetailed analysis of your responses to give you the best career options[0m
-                  [36m</div>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"featureCloud"[39m
-                [36m>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"featureCloudTitle"[39m
-                  [36m>[39m
-                    [0mUser Friendly[0m
-                  [36m</div>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"featureCloudText"[39m
-                  [36m>[39m
-                    [0mEasy to use interface that is user friendly and easy to navigate[0m
-                  [36m</div>[39m
-                [36m</div>[39m
-              [36m</div>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"about"[39m
-              [36m>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"featureCloud"[39m
-                [36m>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"featureCloudTitle"[39m
-                  [36m>[39m
-                    [0mAuthors[0m
-                  [36m</div>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"featureCloudText"[39m
-                  [36m>[39m
-                    [0mCorey Mitterer, Ian Duffy, Logan Ponik, Junpuyin Wei[0m
-                  [36m</div>[39m
-                [36m</div>[39m
-              [36m</div>[39m
+              [36m<h1>[39m
+                [0mHome[0m
+              [36m</h1>[39m
+              [36m<p>[39m
+                [0mWelcome to the home page![0m
+              [36m</p>[39m
+              [36m<p>[39m
+                [0mCorey Mitterer[0m
+              [36m</p>[39m
+              [36m<p>[39m
+                [0mIan Duffy[0m
+              [36m</p>[39m
+              [36m<p>[39m
+                [0mLogan Ponik[0m
+              [36m</p>[39m
+              [36m<p>[39m
+                [0mJunpuyin Wei[0m
+              [36m</p>[39m
             [36m</div>[39m
             [36m<center>[39m
               [36m<form[39m
@@ -289,23 +311,23 @@ go away.[0m
 ---------------------------|---------|----------|---------|---------|-------------------
 File                       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ---------------------------|---------|----------|---------|---------|-------------------
-All files                  |   21.79 |     1.63 |   19.56 |   20.39 |                   
+All files                  |   21.93 |     1.63 |   19.56 |   20.52 |                   
  src                       |    8.33 |        0 |   33.33 |    8.33 |                   
   App.tsx                  |     100 |      100 |     100 |     100 |                   
   index.tsx                |       0 |      100 |     100 |       0 | 8-20              
   reportWebVitals.ts       |       0 |        0 |       0 |       0 | 3-10              
- src/components            |   22.91 |     1.64 |    18.6 |   21.42 |                   
+ src/components            |   23.07 |     1.64 |    18.6 |   21.58 |                   
   BaseQuestion.tsx         |     100 |      100 |     100 |     100 |                   
-  BaseQuestionPage.tsx     |       0 |        0 |       0 |       0 | 8-558             
+  BaseQuestionPage.tsx     |       0 |        0 |       0 |       0 | 8-556             
   DetailedPage.tsx         |       0 |      100 |       0 |       0 | 8                 
   DetailedQuestionBank.tsx |     100 |      100 |     100 |     100 |                   
-  DetailedQuiz.tsx         |      20 |        0 |   22.22 |   13.63 | 16-58             
+  DetailedQuiz.tsx         |      20 |        0 |   22.22 |   13.63 | 16-59             
   HomePage.tsx             |    87.5 |      100 |      75 |   85.71 | 47                
-  Pages.tsx                |   46.15 |     62.5 |   16.66 |   46.15 | 17,33-47,54-61    
-  Survey.tsx               |   63.63 |       50 |   33.33 |   63.63 | 14,29-32,44       
+  Pages.tsx                |   46.15 |     62.5 |   16.66 |   46.15 | 28,48-62,72-79    
+  Survey.tsx               |   63.63 |       50 |   33.33 |   63.63 | 14,30-34,46       
 ---------------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.429 s
+Time:        3.473 s
 Ran all test suites.
