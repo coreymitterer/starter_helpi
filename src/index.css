@@ -285,10 +285,9 @@ body {
   display: flex; /* come back to this */
   /* justify-content: center;
   align-items: center; */
-  height: 50vh;
+  height: 0vh;
   background-color: #009de0;
 }
-
 .featureCloud {
   width: 100%;
   height: 800px;
@@ -364,7 +363,16 @@ body {
   height: 100vh;
   text-align: center;
 }
-
+/* Detailed Page CSS */
+.report {
+  /* background-color: #f8f9fa; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
 .carousel {
   display: "block";
   width: 700;
