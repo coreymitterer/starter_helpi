@@ -56,7 +56,7 @@ export function HomePage(): JSX.Element {
     return (
         <div className = "home">
             <div className = "websiteTitle">
-                <span className="title">Profession Pilot</span>
+                <div className="title">Profession Pilot</div>
                 <div className="slogan">
                     <div className = "sloganContainer">
                         <div className = "sloganText">Now Boarding: </div><div className="listTerm">{careerList[index]}</div>
