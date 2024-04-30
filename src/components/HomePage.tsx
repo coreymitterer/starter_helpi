@@ -63,24 +63,23 @@ export function HomePage(): JSX.Element {
             </div>
             <div className = "main">
                 <Button
-                    type="button"
                     className="cloud"
                 >
-                    <span className="cloudText">Go To Basic Quiz</span>
+                    <div className="cloudText">Go To Basic Quiz</div>
                 </Button>
-                <div className="sun"></div>
+                {/* <div className="sun"></div> */}
                 {/* <div className="trail"></div> */}
-                <img 
+                {/* <img 
                     src = {logo}
                     alt = "Profession Pilot Logo">
-                </img>
+                </img> */}
                 <Button
                     type="button"
                     className="cloud"
                 >
-                    <span className="cloudText">Go To Detailed Quiz</span>
+                    <div className="cloudText">Go To Detailed Quiz</div>
                 </Button>
-                <div className="sun"></div>
+                {/* <div className="sun"></div> */}
             </div>
             {/* Assuring a smooth landing into your new career */}
             <div className = "features">
@@ -98,7 +97,7 @@ export function HomePage(): JSX.Element {
                 </div>
             </div>
             <div className = "about">
-            <div className="featureCloud">
+                <div className="featureCloud">
                     <div className = "featureCloudTitle">Authors</div>
                     <div className = "featureCloudText">Corey Mitterer, Ian Duffy, Logan Ponik, Junpuyin Wei</div>
                 </div>
