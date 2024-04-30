@@ -83,15 +83,15 @@ html, body {
 /* Home Page CSS */
 .home {
   background-color: #ffffff;
-  display: grid;
-  grid-template-rows: auto;
+  display: block;
+  
 }
 
 .websiteTitle {
-  grid-row: 1;
-  height: auto;
+  justify-content: space-around;
+  display: content-box;
   text-align: center;
-  font-weight: bold;
+  font-weight: bolder;
   font-size: 50px;
 }
 
@@ -100,25 +100,25 @@ html, body {
 }
 
 .slogan {
-  text-align: center;
-}
-
-.sloganContainer {
   display: flex;
-  justify-content: center;
-  background-color: white;
+  flex-wrap: wrap;
+  font-size: 40px;
+  /* display: content-box; */
+  /* background-color: #009DE0; */
 }
 
 .sloganText {
-  transform: translateX(50px);
+  flex: 50%;
+  text-align: right;
+  padding-right: 3%;
 }
 
 .listTerm {
-  font-style: normal;
-  font-weight: 700;
+  text-align: left;
+  padding-left: 3%;
+  flex: 50%;
   opacity: 0;
   text-transform: uppercase;
-  width: 600px;
   animation: rotate;
   animation-duration: 3000ms;
   animation-iteration-count: infinite;
@@ -133,6 +133,11 @@ html, body {
   height: 100vh;
   text-align: center;
   background-color: #009DE0;
+  /* ADD THIS */
+  /* justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #009DE0; */
   /* background-color: #984444; */
   /* background-image: url("C:\Users\ianan\starter_helpi\src\components\ProfessionPilotLogo.png");
   background-size: cover;
@@ -224,6 +229,7 @@ html, body {
   
 }
 
+/* ANIMATIONS */
 @keyframes sunRise {
   0% {
     transform: translateY(0);
@@ -238,8 +244,6 @@ html, body {
     transform: translateY(-50px);
   }
 }
-/* Testing Text animations */
-
 
 @keyframes rotate {
   0% {
@@ -258,7 +262,6 @@ html, body {
   }
 }
 
-/* End testing */
 
 .main .prevButton {
   position: relative;
@@ -288,31 +291,28 @@ html, body {
 }
 
 .features {
-  /* display: grid;
-  grid-template-columns: repeat(3, 1fr); */
-  grid-row: 3;
-  display: flex; /* come back to this */
-  /* justify-content: center;
-  align-items: center; */
-  height: 50vh;
+  /* display: block; come back to this */
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
   background-color: #009DE0;
 }
 
 .featureCloud{
-  width:100%;
-  height:800px;
-  margin: 0;
-  padding: 0;
+  /* width:100%;
+  height:800px; */
+  /* margin: 0;
+  padding: 20; */
   box-sizing: border-box;
   border-radius: 50%;
-  margin-top: -30px;
-  margin-left: 30px;
-  width:500px;
+  /* margin-top: -30px;
+  margin-left: 30px; */
+  margin-bottom: 20%;
+  width:500px; /* CHANGE WIDTH AND HEIGHT LATER TO MAKE BOX SIZING DIFFERENT*/
   height:200px;
   background:#ECEFF1;
   box-shadow: 10px 10px rgba(0,0,0,0.2);
   border-radius:100px;
-  transform: translateX(-50px);
 }
 .featureCloud::after, .featureCloud::before{
    content: '';
@@ -355,11 +355,9 @@ html, body {
 }
 
 .about {
-  grid-row: 4;
+  justify-content: space-around;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50vh;
+  flex-wrap: wrap;
   background-color: #009DE0;
 }
 
