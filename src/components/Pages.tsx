@@ -6,7 +6,7 @@ import '../index.css';
 import { DetailedPage } from "./DetailedPage";
 import { BaseQuestionPage }  from './BaseQuestionPage';
 import { HomePage } from './HomePage'
-
+//import { ReportsPage } from "./ReportsPage";
 
 export function Pages(): JSX.Element {
     
@@ -15,8 +15,7 @@ export function Pages(): JSX.Element {
     const [isHome, setHome] = useState<boolean>(true);
     const [isBasic, setBasic] = useState<boolean>(false);
     const [isDetailed, setDetailed] = useState<boolean>(false);
-    
-
+    const [isReport, setReport] = useState<boolean>(false);
 
 
 
@@ -44,25 +43,34 @@ export function Pages(): JSX.Element {
           Home Is Where The Career Quizzes Are
         </Tooltip>
       );
-    function updateSetHome(): void {
+  function updateSetHome(): void {
         setHome(true);
         setBasic(false);
         setDetailed(false);
+        setReport(false);
     }
 
   function updateSetBasic(): void {
     setHome(false);
     setBasic(true);
     setDetailed(false);
+    setReport(false);
   }
 
     function updateSetDetailed(): void {
         setHome(false);
         setBasic(false);
         setDetailed(true);
+        setReport(false);
     }
+    
+    function updateSetReport(): void {
+      setHome(false);
+      setBasic(false);
+      setDetailed(false);
+      setReport(true);
 
-
+  }
 
 
     const [key, setKey] = useState<string>(keyData); //for api key input
@@ -81,6 +89,21 @@ export function Pages(): JSX.Element {
   return (
     <div>
       <div className="nav">
+      <div>
+          <OverlayTrigger
+            placement="bottom"
+            delay={{ show: 250, hide: 400 }}
+            overlay={homeTooltip}
+          >
+            <Button
+              className="button"
+              onClick={updateSetHome}
+              disabled={isHome}
+            >
+              <span className="button-span">Home</span>
+            </Button>
+          </OverlayTrigger>
+        </div>
         <div>
         <OverlayTrigger
             trigger="hover"
@@ -100,27 +123,13 @@ export function Pages(): JSX.Element {
         <div>
           <OverlayTrigger
             placement="bottom"
-            delay={{ show: 250, hide: 400 }}
-            overlay={homeTooltip}
-          >
-            <Button
-              className="button"
-              onClick={updateSetHome}
-              disabled={isHome}
-            >
-              <span className="button-span">Home</span>
-            </Button>
-          </OverlayTrigger>
-        </div>
-        <div>
-          <OverlayTrigger
-            placement="bottom"
             delay={{ show: 100, hide: 100 }}
             overlay={detailedTooltip}
             >
                 <Button className = "button" onClick={updateSetDetailed} disabled={isDetailed}>Detailed</Button>
             </OverlayTrigger>
                 </div>
+                        <Button className = "button" onClick={updateSetReport} disabled={isReport}>Reports</Button>
                 <div>
                     <Survey></Survey>
                 </div>
@@ -130,26 +139,24 @@ export function Pages(): JSX.Element {
               //Does a shift between pages by hiding each feature 
                 <div className = "home">
                   <HomePage></HomePage>
-                    <h1>Home</h1>
-                    <p>Welcome to the home page!</p>
-                    <p>Corey Mitterer</p>
-                    <p>Ian Duffy</p>
-                    <p>Logan Ponik</p>
-                    <p>Junpuyin Wei</p>
                 </div>
                 
             )}
             {isBasic && (
                 <div className = "basic">
                   <BaseQuestionPage></BaseQuestionPage>
-                    <h1>Basic</h1>
-                    <p>Welcome to the basic page!</p>
-                    <p>Discover your career preferences and strengths with our Basic Career Quiz! Answer simple questions about your interests, skills, and goals to gain insights into potential career paths that align with your personality and aspirations. This quiz provides a starting point for your career journey.</p>
                 </div>
                 
             )}
             {isDetailed && (
                   <DetailedPage></DetailedPage>
+            )}
+              {isReport&& (
+                <div className = "report">
+                  <h1>Welcome to the Reports page!</h1>
+                <p>This is where the careers will show up after taking the quizes</p>
+                </div>
+                
             )}
             <center>
         <Form>
