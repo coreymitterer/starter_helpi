@@ -147,6 +147,110 @@ html, body {
   clip-path: ellipse(20% 70% at top);
 }
 
+.paperPlane {
+  display: flex;
+  justify-content: center;
+}
+
+.paperPlane::before {
+  border-bottom: 40px solid transparent;
+  border-top: 80px solid transparent;
+  border-left: 40px solid white;
+  display: inline-block;
+  content: '';
+  transform: rotate(82deg);
+}
+
+.paperPlane::after {
+  border-bottom: 40px solid transparent;
+  border-top: 80px solid transparent;
+  border-right: 40px solid white;
+  content: '';
+  margin: 17px 0 0 24px;
+  position: absolute;
+  transform: rotate(-154deg) scale(-1);
+}
+
+.paperPlaneInner::before {
+  border-bottom: 20px solid transparent;
+  border-left: 2px solid white;
+  border-top: 10px solid transparent;
+  content: "";
+  margin: 78px 0 0 -42px;
+  position: absolute;
+  transform: rotate(17deg);
+}
+
+.paperPlaneInner::after {
+  border-bottom: 14px solid transparent;
+  border-right: 2px solid white;
+  border-top: 12px solid transparent;
+  content: '';
+  margin: 82px 0 0 -40px;
+  position: absolute;
+  transform: rotate(213deg);
+}
+
+.planeContainer {
+  text-align: center;
+  height: 120px;
+  width: 120px;
+  background-color: black;
+  border-radius: 10%;
+}
+
+.paper-plane {
+  display: flex;
+  justify-content: center;
+  animation: flyIn 2s linear forwards;
+}
+
+.paper-plane::before {
+  border-bottom: 40px solid transparent;
+  border-top: 80px solid transparent;
+  border-left: 40px solid white;
+  padding-left: 16px;
+  display: inline-block;
+  content: '';
+  transform: rotate(205deg);
+}
+
+.paper-plane::after {
+  border-bottom: 40px solid transparent;
+  border-top: 80px solid transparent;
+  border-right: 40px solid white;
+  padding-right: 16px;
+  content: '';
+  position: absolute;
+  transform: rotate(-25deg) scale(-1);
+}
+
+.paper-plane-inner {
+  display: flex;
+  justify-content: center;
+  animation: flyIn 2s linear forwards;
+}
+
+.paper-plane-inner::before {
+  border-bottom: 40px solid transparent;
+  border-top: 80px solid transparent;
+  border-left: 40px solid gray;
+  padding-left: 16px;
+  display: inline-block;
+  content: '';
+  transform: rotate(205deg);
+}
+
+.paper-plane-inner::after {
+  border-bottom: 40px solid transparent;
+  border-top: 80px solid transparent;
+  border-right: 40px solid gray;
+  padding-right: 16px;
+  content: '';
+  position: absolute;
+  transform: rotate(-25deg) scale(-1);
+}
+
 .trail {
   width: 0;
   height: 0; 
@@ -155,6 +259,23 @@ html, body {
   border-top: 100vh solid white;
 }
 
+@keyframes flyIn {
+  0% {
+    transform: rotate(0deg) translateX(-50vw) rotate(-50deg);
+  }
+  40% {
+    transform: rotate(0deg) translate(0vw, 25vh) rotate(-90deg);
+  }
+  90% {
+    transform: rotate(-180deg) translateY(25vh) rotate(-180deg);
+  }
+  95% {
+    transform: translateY(2vh) rotate(-360deg);
+  }
+  100% {
+    transform: translateY(-10px) rotate(-360deg);
+  }
+}
 
 .cloud{
   box-sizing: border-box;

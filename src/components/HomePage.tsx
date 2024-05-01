@@ -69,10 +69,12 @@ export function HomePage(): JSX.Element {
                 </Button>
                 {/* <div className="sun"></div> */}
                 {/* <div className="trail"></div> */}
-                <img 
-                    src = {logo}
-                    alt = "Profession Pilot Logo">
-                </img>
+                {/* ADD BLACK SQUARE AND EVERYTHING UNTIL PLANE CLICKS */}
+                <div className="planeContainer">
+                    <div className="paper-plane">
+                        {/* <div className="paper-plane-inner"></div> */}
+                    </div>
+                </div>
                 <Button
                     type="button"
                     className="cloud"
