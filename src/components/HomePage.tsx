@@ -104,6 +104,7 @@ export function HomePage(): JSX.Element {
                     <div className = "featureCloudText">Corey Mitterer, Ian Duffy, Logan Ponik, Junpuyin Wei</div>
                 </div>
             </div>
+            
         </div>
     );
 }
