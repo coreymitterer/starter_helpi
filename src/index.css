@@ -129,6 +129,9 @@ html, body {
   display: flex;
   flex-wrap: wrap;
   background-color: #009DE0;
+  height: 100vh;
+  align-items: center;
+  /* background: linear-gradient(to bottom, #007ced 1%,#cce7ff 100%); USE THIS*/
   /* background-color: #984444; */
   /* background-image: url("C:\Users\ianan\starter_helpi\src\components\ProfessionPilotLogo.png");
   background-size: cover;
