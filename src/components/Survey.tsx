@@ -8,11 +8,11 @@ interface SurveyProps {
 const EDUCATIONS = ["None", "Associates", "Bachelors", "Masters", "Doctorate"];
 const DEFAULT_EDUCATION = EDUCATIONS[0];
 
-function RevealButton({ setVisible, visible }: { setVisible: (visible: boolean) => void; visible: boolean }): JSX.Element {
+function RevealButton({ setVisible }: { setVisible: (visible: boolean) => void }): JSX.Element {
   return (
     <div>
-      <Button className="button" onClick={() => setVisible(!visible)}>
-        {visible ? 'Close' : 'Survey'}
+      <Button className="button-take-survey" onClick={() => setVisible(true)}>
+        Take Survey!
       </Button>
     </div>
   );
@@ -23,25 +23,24 @@ const Survey: React.FC<SurveyProps> = ({ onCompletion }) => {
   const [visible, setVisible] = useState<boolean>(false);
   const [income, setIncome] = useState<number>(0);
 
-  // Handle education level selection
   function updateEducation(event: ChangeEvent<HTMLSelectElement>): void {
     setEducation(event.target.value);
   }
 
-  // Handle income preference input
   function updateIncome(event: ChangeEvent<HTMLInputElement>): void {
     setIncome(parseInt(event.target.value));
   }
 
-  // Handle survey submission
   function handleSubmission(): void {
-    onCompletion(); // Call the completion callback
-    setVisible(false); // Optionally close the survey form
+    onCompletion(); // Call the completion callback after survey is done
   }
 
   return (
-    <div>
-      <RevealButton setVisible={setVisible} visible={visible} />
+    <div className="survey-container">
+      <div>
+        <h1>Take a quick survey before taking the Detailed Quiz!</h1>
+      </div>
+      {!visible && <RevealButton setVisible={setVisible} />}
       {visible && (
         <Form onSubmit={(e) => e.preventDefault()}>
           <Form.Group controlId="PreferredLevelOfEducation">
@@ -59,7 +58,7 @@ const Survey: React.FC<SurveyProps> = ({ onCompletion }) => {
             <Form.Control type="range" min={0} max={100000} value={income} onChange={updateIncome} />
             <Form.Label>{income.toLocaleString()}</Form.Label>
           </Form.Group>
-          <Button type="button" onClick={handleSubmission}>Submit</Button>
+          <Button type="button" className="button-submit" onClick={handleSubmission}>Submit</Button>
         </Form>
       )}
     </div>

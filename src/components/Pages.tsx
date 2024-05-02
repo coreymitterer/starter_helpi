@@ -61,6 +61,7 @@ export function Pages(): JSX.Element {
         setBasic(false);
         setDetailed(false);
         setReport(true);
+        setAttemptedDetailed(false);
     }
 
  
@@ -117,7 +118,6 @@ export function Pages(): JSX.Element {
                     <p>This is where the careers will show up after taking the quizzes</p>
                 </div>
             )}
-
         </div>
     );
 }
