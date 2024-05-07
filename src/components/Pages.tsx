@@ -128,9 +128,6 @@ export function Pages(): JSX.Element {
             </OverlayTrigger>
                 </div>
                         <Button className = "button" onClick={updateSetReport} disabled={isReport}>Reports</Button>
-                <div>
-                    <Survey></Survey>
-                </div>
             </div>
 
             {isHome && (
