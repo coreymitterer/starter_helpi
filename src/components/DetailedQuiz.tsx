@@ -9,13 +9,10 @@ const QUESTIONS: string[] = detailedQuestionBank.map(question => question.questi
 const TOPICS: string[] = detailedQuestionBank.map(question => question.topic);
 const DEFAULT_QUESTION_INDEX: number = 0;
 
-
-
-
 export function DetailedQuiz(): JSX.Element {
+    const [output, setOutput] = useState<string>("");
     const [questionIndex, setQuestionIndex] = useState<number>(DEFAULT_QUESTION_INDEX);
     const [userResponses, setUserResponses] = useState<string[]>(new Array(QUESTIONS.length).fill(''));
-    const [output, setOutput] = useState<string>("");
     const [apiKey, setApiKey] = useState('');
 
     useEffect(() => {
@@ -41,12 +38,11 @@ export function DetailedQuiz(): JSX.Element {
     //Makes an Async call to GPT fall containing the questions and answers supplied from the user after they take the detailed quiz and sputs out a specific output
     async function callOpenAI() {
         const openai = new OpenAi({apiKey: apiKey, dangerouslyAllowBrowser: true});
-        const combinedInput = QUESTIONS.map((question, index) => `${question}: ${userResponses[index]}`).join(' ');
         const completion = await openai.chat.completions.create({
             model: "gpt-4",
             messages: [
                 { role: "system", content: "You are a helpful assistant." },
-                { role: "user", content: "I am going to provide you with answers to those questions.  After taking these questions and their respective answers, I need you to give me 5 career choices based on these responses.  Here is a list of questions: " + QUESTIONS.join(", ") + " And here is the combined output of answers: " + combinedInput}
+                { role: "user", content: "I am going to provide you with answers to those questions.  After taking these questions and their respective answers, I need you to give me 5 career choices based on these responses.  Here is a list of questions: " + QUESTIONS.join(", ") + " And here is the combined output of answers: " + userResponses.join(', ') + " put this response in a Json format"}
             ],
         });
         //Puts the output right under the submit button
