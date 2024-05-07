@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Button, Form, OverlayTrigger, Tooltip } from "react-bootstrap";
-import "../index.css";
-import Survey from "./Survey";
 import '../index.css';
 import { DetailedPage } from "./DetailedPage";
 import { HomePage } from './HomePage'
@@ -147,7 +145,6 @@ export function Pages(): JSX.Element {
             )}
               {isReport&& (
                 <div className = "report">
-                  
                 </div>
                 
             )}
