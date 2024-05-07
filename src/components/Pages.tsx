@@ -1,16 +1,31 @@
 import React, { useState } from "react";
-import { Button, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Button, Form, OverlayTrigger, Tooltip } from "react-bootstrap";
 import "../index.css";
 import Survey from "./Survey";
 import '../index.css';
 import { DetailedPage } from "./DetailedPage";
-import {BaseQuestionPage} from "./BasicQuestionsPage"
-import GPT from './GPTFunctions/gptCall'
+import { HomePage } from './HomePage'
+import { BasicPage } from "./BasicPage";
+
 export function Pages(): JSX.Element {
-    // localStorage.removeItem("MYKEY");
+    
+
     const [isHome, setHome] = useState<boolean>(true);
     const [isBasic, setBasic] = useState<boolean>(false);
     const [isDetailed, setDetailed] = useState<boolean>(false);
+    const [isReport, setReport] = useState<boolean>(false);
+
+
+
+    //Key information
+    let keyData = "";
+    const saveKeyData = "MYKEY";
+    const prevKey = localStorage.getItem(saveKeyData); //so it'll look like: MYKEY: <api_key_value here> in the local storage when you inspect
+    if (prevKey !== null) {
+        keyData = JSON.parse(prevKey);
+    }
+
+
     const basicTooltip = (
         <Tooltip id="tooltip">
           Shorter Quiz For Your Dream Career
@@ -26,27 +41,67 @@ export function Pages(): JSX.Element {
           Home Is Where The Career Quizzes Are
         </Tooltip>
       );
-    function updateSetHome(): void {
+  function updateSetHome(): void {
         setHome(true);
         setBasic(false);
         setDetailed(false);
+        setReport(false);
     }
 
   function updateSetBasic(): void {
     setHome(false);
     setBasic(true);
     setDetailed(false);
+    setReport(false);
   }
 
     function updateSetDetailed(): void {
         setHome(false);
         setBasic(false);
         setDetailed(true);
+        setReport(false);
     }
     
+    function updateSetReport(): void {
+      setHome(false);
+      setBasic(false);
+      setDetailed(false);
+      setReport(true);
+
+  }
+
+
+    const [key, setKey] = useState<string>(keyData); //for api key input
+
+    //sets the local storage item to the api key the user inputed
+    function handleSubmit() {
+      localStorage.setItem(saveKeyData, JSON.stringify(key));
+      console.log(saveKeyData)
+      window.location.reload(); //when making a mistake and changing the key again, I found that I have to reload the whole site before openai refreshes what it has stores for the local storage variable
+    }
+  
+    //whenever there's a change it'll store the api key in a local state called key but it won't be set in the local storage until the user clicks the submit button
+    function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
+      setKey(event.target.value);
+    }
   return (
     <div>
       <div className="nav">
+      <div>
+          <OverlayTrigger
+            placement="bottom"
+            delay={{ show: 250, hide: 400 }}
+            overlay={homeTooltip}
+          >
+            <Button
+              className="button"
+              onClick={updateSetHome}
+              disabled={isHome}
+            >
+              <span className="button-span">Home</span>
+            </Button>
+          </OverlayTrigger>
+        </div>
         <div>
         <OverlayTrigger
             trigger="hover"
@@ -66,56 +121,43 @@ export function Pages(): JSX.Element {
         <div>
           <OverlayTrigger
             placement="bottom"
-            delay={{ show: 250, hide: 400 }}
-            overlay={homeTooltip}
-          >
-            <Button
-              className="button"
-              onClick={updateSetHome}
-              disabled={isHome}
-            >
-              <span className="button-span">Home</span>
-            </Button>
-          </OverlayTrigger>
-        </div>
-        <div>
-          <OverlayTrigger
-            placement="bottom"
             delay={{ show: 100, hide: 100 }}
             overlay={detailedTooltip}
             >
                 <Button className = "button" onClick={updateSetDetailed} disabled={isDetailed}>Detailed</Button>
             </OverlayTrigger>
                 </div>
-                <div>
-                    <Survey></Survey>
-                </div>
+                        <Button className = "button" onClick={updateSetReport} disabled={isReport}>Reports</Button>
             </div>
 
             {isHome && (
+              //Does a shift between pages by hiding each feature 
                 <div className = "home">
-                    <h1>Home</h1>
-                    <p>Welcome to the home page!</p>
-                    <p>Corey Mitterer</p>
-                    <p>Ian Duffy</p>
-                    <p>Logan Ponik</p>
-                    <p>Junpuyin Wei</p>
+                  <HomePage></HomePage>
                 </div>
+                
             )}
             {isBasic && (
-                // <div className = "basic">
-                //     <h1>Basic</h1>
-                //     <p>Welcome to the basic page!</p>
-                //     <p>Discover your career preferences and strengths with our Basic Career Quiz! Answer simple questions about your interests, skills, and goals to gain insights into potential career paths that align with your personality and aspirations. This quiz provides a starting point for your career journey.</p>
-                // </div>
-                <BaseQuestionPage></BaseQuestionPage>
+                <div className = "basic">
+                  <BasicPage></BasicPage>
+                </div>
             )}
             {isDetailed && (
-                // Put the content of the 'Detailed' page here
-                  <DetailedPage></DetailedPage>
+                  <DetailedPage/>
+            )}
+              {isReport&& (
+                <div className = "report">
+                  
+                </div>
+                
             )}
             <center>
-              <GPT></GPT>
+        <Form>
+            <Form.Label>API Key:</Form.Label>
+            <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey} size="sm" style={{ width: "200px" }} />
+            <br></br>
+            <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+      </Form>
       </center>
         </div>
     );
