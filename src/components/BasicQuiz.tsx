@@ -7,8 +7,12 @@ import OpenAi from "openai";
 const QUESTIONS: string[] = BaseQuestion.map(question => question.question);
 const DEFAULT_QUESTION_INDEX: number = 0;
 
+interface BasicString {
+    setBasicReport: (newString: string) => void;
+}
+
 // DFI: number = 0;
-export function BasicQuiz(): JSX.Element {
+export function BasicQuiz({setBasicReport}: BasicString): JSX.Element {
     const [output, setOutput] = useState<string>("");
     const [questionIndex, setQuestionIndex] = useState<number>(DEFAULT_QUESTION_INDEX);
     const [userResponses, setUserResponses] = useState<string[]>(new Array(QUESTIONS.length).fill(''));
@@ -47,6 +51,7 @@ export function BasicQuiz(): JSX.Element {
         //Puts the output right under the submit button
         setOutput(completion.choices[0]?.message.content || ""); // Handle null value by providing a default value of an empty string
         console.log(output)
+        setBasicReport(completion.choices[0]?.message.content || "");
     }
 
   return (

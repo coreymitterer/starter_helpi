@@ -4,7 +4,11 @@ import { DetailedQuiz } from "./DetailedQuiz";
 
 //Creates the detailed page with the title and description as well as the 
 //Actual questions progress bar and submit
-export function DetailedPage(): JSX.Element {
+interface DetailedString {
+  setDetailedReport: (DetailedString: string) => void;
+}
+
+export function DetailedPage({setDetailedReport}: DetailedString): JSX.Element {
   return (
     <div>
       <div className="detailed">
@@ -19,7 +23,7 @@ export function DetailedPage(): JSX.Element {
           into potential careers so you can make informed choices.
         </p>
         <div className="quiz">
-          <DetailedQuiz></DetailedQuiz>
+          <DetailedQuiz setDetailedReport={setDetailedReport}></DetailedQuiz>
         </div>
       </div>
     </div>
