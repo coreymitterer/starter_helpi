@@ -146,7 +146,6 @@ export function Pages(): JSX.Element {
             )}
               {isReport&& (
                 <div className = "report">
-                  
                 </div>
                 
             )}
