@@ -4,7 +4,7 @@ import '../index.css';
 import { DetailedPage } from "./DetailedPage";
 import { HomePage } from './HomePage'
 import { BasicPage } from "./BasicPage";
-
+import {ReportsPage} from './ReportsPage'
 export function Pages(): JSX.Element {
     
 
@@ -12,7 +12,8 @@ export function Pages(): JSX.Element {
     const [isBasic, setBasic] = useState<boolean>(false);
     const [isDetailed, setDetailed] = useState<boolean>(false);
     const [isReport, setReport] = useState<boolean>(false);
-
+    const [basicReport,setBasicReport] = useState<string>('');
+    const [DetailedReport,setDetailedReport] = useState<string>('');
 
 
     //Key information
@@ -137,15 +138,17 @@ export function Pages(): JSX.Element {
             )}
             {isBasic && (
                 <div className = "basic">
-                  <BasicPage></BasicPage>
+                  <BasicPage setBasicReport={setBasicReport}></BasicPage>
                 </div>
                 
             )}
             {isDetailed && (
-                  <DetailedPage/>
+                  <DetailedPage setDetailedReport={setDetailedReport}></DetailedPage>
             )}
               {isReport&& (
                 <div className = "report">
+                  <ReportsPage></ReportsPage>
+                  {<span>{basicReport}</span>}
                 </div>
                 
             )}
