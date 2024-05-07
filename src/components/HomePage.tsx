@@ -71,7 +71,6 @@ export function HomePage(): JSX.Element {
                     <span className="cloudText">Go To Basic Quiz</span>
                 </Button>
                 <div className="sun"></div>
-                {/* <div className="trail"></div> */}
                 <img 
                     src = {logo}
                     alt = "Profession Pilot Logo">
@@ -105,6 +104,7 @@ export function HomePage(): JSX.Element {
                     <div className = "featureCloudText">Corey Mitterer, Ian Duffy, Logan Ponik, Junpuyin Wei</div>
                 </div>
             </div>
+            
         </div>
     );
 }
