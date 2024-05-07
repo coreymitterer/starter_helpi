@@ -70,10 +70,22 @@ export function HomePage(): JSX.Element {
                 {/* <div className="sun"></div> */}
                 {/* <div className="trail"></div> */}
                 {/* ADD BLACK SQUARE AND EVERYTHING UNTIL PLANE CLICKS */}
-                <div className="planeContainer">
-                    <div className="paper-plane">
-                        {/* <div className="paper-plane-inner"></div> */}
+                <div className="suit">
+                    <div className = "suit-jacket">
+                        <div className = "suit-collar">
+                            <div className = "suit-collar-lapel"></div>
+                        </div>
                     </div>
+                    <div className="paper-plane">
+                        <div className="paper-plane-inner"></div>
+                    </div>
+                    <div className = "suit-button-row">
+                        <div className = "suit-button"></div>
+                        <div className = "suit-button"></div>
+                    </div>
+                    <div className="center-line"></div>
+                    {/* <div className = "bowtie-shading"></div> */}
+                    {/* <div className = "newbowtie"></div> */}
                 </div>
                 <Button
                     type="button"
