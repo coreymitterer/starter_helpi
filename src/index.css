@@ -205,7 +205,7 @@ html, body {
   background-color: white;
   width: 100px;
   height: 100px;
-  clip-path: polygon(50% 5%, 100% 0%, 50% 100%, 0% 0%);
+  clip-path: polygon(50% 5%, 90% 0%, 50% 100%, 10% 0%);
   
   /* clip-path: polygon(0 0, 50% 20%, 100% 0, 50% 100%); */
   /* clip-path: polygon(0 0, 50% 10%, 100% 0, 50% 100%); */
@@ -341,44 +341,57 @@ html, body {
   height: 100px;
   flex-flow: column wrap;
   gap: 10px;
+  /* FIND A WAY TO CHANGE Z INDEX */
+  z-index: 5;
+  /*  */
   transform: translateY(-1rem);
 }
 
 .suit-collar {
-  position: relative;
-  /* border-top: 40px solid green;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  height: 0;
-  width: 100px; */
-  height: 20px;
-  width: 80px;
-  background-color: green;
-}
-
-.suit-collar-lapel {
-  position: absolute;
   box-sizing: border-box;
-  background-color: yellow;
-  width:40px;
-  height:20px;
-  border-radius:100px;
-  z-index: 2;
+  /* border-top: 12px solid gray;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	height: 0; */
+  background-color: rgb(50, 50, 50);
+  height: 12px;
+	width: 50px;
+  border-radius: 30% 30% 0 0;
+}
+.suit-collar::after, .suit-collar::before{
+  content: '';
+  position:relative;
+  display:inline-block;
+  background:inherit;
+  border-radius:inherit;
 }
 
-.suit-collar-lapel::before {
-  content: '';
-  position: absolute;
-  height: 20px;
-  width: 40px;
-  background-color: orange;
-  border-radius: 10% 0% 0% 10%;
-  transform: translate(2%, 2%) rotate(45deg);
+.suit-collar::after{
+  background-color:black;
+  width:40px;
+  height:15px;
+  top:-16px;
+  left:21px;
+  border-radius: 0 15px / 0 50px;
+  /* border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 15px 50px;
+  border-bottom-left-radius: 15px 50px; */
+  transform: rotate(-60deg);
+}
+.suit-collar::before{
+  background-color: black;
+  width:40px;
+  height:15px;
+  top: 8px;
+  left: -11px;
+  border-radius: 15px 0 / 50px 0;
+  transform: rotate(60deg);
 }
 
 .center-line {
   position: absolute;
-  width: 0.1px;
+  width: 1px;
   height: 100px;
   background-color: yellow;
   z-index: 10;
