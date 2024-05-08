@@ -216,6 +216,56 @@ html, body {
   transform: translate(1px, 4px);
 }
 
+.trail {
+  width: 50%;
+  margin:5px 0;
+  height:2px;
+  background: repeating-linear-gradient(90deg, silver 0 6px, transparent 0 12px); /*10px red then 2px transparent -> repeat this!*/
+}
+
+.golden-trail {
+  width: 50%;
+  margin:5px 0;
+  height:3px;
+  background: repeating-linear-gradient(90deg, gold 0 10px,#0000 0 15px); /*10px red then 2px transparent -> repeat this!*/
+}
+
+.circle-trail {
+  margin:0 auto;
+  position:relative;
+  width:300px;
+  height:300px;
+  /* animation: AnimationName 3s ease infinite; */
+}
+.circle-trail::after {
+  content:"";
+  position:absolute;
+  width:50%;
+  height:100px;
+  border-radius:50%;
+  left:50%;
+  top:10%;
+  border-top: lightblue 2px dashed;
+}
+.circle-trail::before {
+  content:"";
+  position:absolute;
+  width:50%;
+  height:100px;
+  border-bottom: lightblue 2px dashed;
+  border-radius:50%;
+  left:.2%;
+  margin-top:-1%;
+}
+
+
+@keyframes AnimationName { 
+  0%{background-position:43% 0%}
+  50%{background-position:58% 100%}
+  100%{background-position:43% 0%}
+}
+
+
 /* SUIT PIECES */
 .suit {
   position: relative;
@@ -351,14 +401,6 @@ html, body {
   background-color: black;
   border-radius: 50%;
   display: inline-block;
-}
-
-.trail {
-  width: 0;
-  height: 0; 
-  border-left: 50vw solid transparent;
-  border-right: 50vw solid transparent;
-  border-top: 100vh solid white;
 }
 
 @keyframes flyIn {

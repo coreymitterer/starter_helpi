@@ -80,7 +80,9 @@ export function HomePage(): JSX.Element {
                     </div>
                 </div>
                 {/* <div className="sun"></div> */}
-                {/* <div className="trail"></div> */}
+                <div className="trail"></div>
+                <div className="golden-trail"></div>
+                <div className="circle-trail"></div>
                 {/* ADD BLACK SQUARE AND EVERYTHING UNTIL PLANE CLICKS */}
                 <div className="suit">
                     <div className = "suit-jacket">
