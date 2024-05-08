@@ -138,50 +138,6 @@ html, body {
   background-position: center; */
 }
 
-.paperPlane {
-  display: flex;
-  justify-content: center;
-}
-
-.paperPlane::before {
-  border-bottom: 40px solid transparent;
-  border-top: 80px solid transparent;
-  border-left: 40px solid white;
-  display: inline-block;
-  content: '';
-  transform: rotate(82deg);
-}
-
-.paperPlane::after {
-  border-bottom: 40px solid transparent;
-  border-top: 80px solid transparent;
-  border-right: 40px solid white;
-  content: '';
-  margin: 17px 0 0 24px;
-  position: absolute;
-  transform: rotate(-154deg) scale(-1);
-}
-
-.paperPlaneInner::before {
-  border-bottom: 20px solid transparent;
-  border-left: 2px solid white;
-  border-top: 10px solid transparent;
-  content: "";
-  margin: 78px 0 0 -42px;
-  position: absolute;
-  transform: rotate(17deg);
-}
-
-.paperPlaneInner::after {
-  border-bottom: 14px solid transparent;
-  border-right: 2px solid white;
-  border-top: 12px solid transparent;
-  content: '';
-  margin: 82px 0 0 -40px;
-  position: absolute;
-  transform: rotate(213deg);
-}
-
 .suit {
   position: relative;
   display: flex;
@@ -646,60 +602,6 @@ html, body {
 /* Testing Popovers */
 
 /*
-.popover-custom {
-  max-width: 300px !important;
-  background-color: #f8f9fa !important;
-  border: 1px solid #ced4da !important;
-  border-radius: 10px !important;
-}
-
-
-.popover-header-custom {
-  background-color: #007bff !important;
-  color: #fff !important; 
-  border-bottom: none !important;
-  border-radius: 10px 10px 0 0 !important;
-}
-.popover-body-custom {
-  color: #343a40 !important;
-  padding: 15px !important;
-}
-.popover-custom .arrow::before {
-  border-top-color: #ced4da !important;
-}
-
-
-
-/*
-.popover {
-  font-size: 1.2rem;
-  background-color: #faeece;
-}
-
-.popover[x-placement^=top] > .popover-arrow::after,
-.popover[x-placement^=bottom] > .popover-arrow::after,
-.popover[x-placement^=right] > .popover-arrow::after,
-.popover[x-placement^=left] > .popover-arrow::after {
-  border-color: transparent;
-}
-
-.popover[x-placement^=top]>.popover-arrow:after {
-  border-top-color: teal;
-}
-
-.popover[x-placement^=bottom]>.popover-arrow:after {
-  border-bottom-color: teal;
-  border-top-color: teal;
-}
-
-.popover[x-placement^=right]>.popover-arrow:after {
-  border-right-color: teal;
-}
-
-.popover[x-placement^=left]>.popover-arrow:after {
-  border-left-color: teal;
-}
-
 .popover {
   animation-name: rainbow-gradient;
   animation-duration: 2s;
@@ -708,13 +610,6 @@ html, body {
   animation-timing-function: linear;
   background-color: #faeece;
   border-color: #000000;
-}
-
-.popover .arrow {
-  color: #faeece;
-}
-.popover .arrow:after {
-  border-bottom-color: tomato;
 }
 
 @keyframes rainbow-gradient {
