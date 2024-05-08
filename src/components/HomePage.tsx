@@ -68,8 +68,15 @@ export function HomePage(): JSX.Element {
                     <div className="cloudText">Go To Basic Quiz</div>
                 </Button>
                 <div className="planes">
-                    <div className="design-paper-plane">
-                        <div className="design-paper-plane-inner"></div>
+                    <div className="paper-plane-side-border">
+                        <div className="paper-plane-side">
+                            <div className="paper-plane-side-inner-border">
+                                <div className="paper-plane-side-inner"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="paper-plane-side">
+                        <div className="paper-plane-side-inner"></div>
                     </div>
                 </div>
                 {/* <div className="sun"></div> */}
