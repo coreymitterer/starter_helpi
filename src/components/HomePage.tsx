@@ -73,17 +73,19 @@ export function HomePage(): JSX.Element {
                 <div className="suit">
                     <div className = "suit-jacket">
                         <div className = "suit-collar"></div>
+                        <div className = "suit-button-row">
+                            <div className = "suit-button"></div>
+                            <div className = "suit-button"></div>
+                        </div>
+                        <div className = "suit-bowtie-container">
+                            <div className = "suit-bowtie-wings"></div>
+                            <div className = "suit-bowtie-shading"></div>
+                            <div className = "suit-bowtie-knot"></div>
+                        </div>
                     </div>
                     <div className="paper-plane">
                         <div className="paper-plane-inner"></div>
                     </div>
-                    <div className = "suit-button-row">
-                        <div className = "suit-button"></div>
-                        <div className = "suit-button"></div>
-                    </div> {/* Maybe move to the inside of suit jacket? */} 
-                    <div className="center-line"></div>
-                    {/* <div className = "bowtie-shading"></div> */}
-                    {/* <div className = "newbowtie"></div> */}
                 </div>
                 <Button
                     type="button"

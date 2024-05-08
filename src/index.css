@@ -187,7 +187,6 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* gap: 4px; */
   height: 120px;
   width: 120px;
   background-color: black;
@@ -199,138 +198,20 @@ html, body {
   align-items: center;
   justify-content: center;
   position: relative;
-  /* position: absolute; */
   /* animation: flyIn 2s linear forwards; */
   z-index: 1;
   background-color: white;
   width: 100px;
   height: 100px;
   clip-path: polygon(50% 5%, 90% 0%, 50% 100%, 10% 0%);
-  
-  /* clip-path: polygon(0 0, 50% 20%, 100% 0, 50% 100%); */
-  /* clip-path: polygon(0 0, 50% 10%, 100% 0, 50% 100%); */
 }
 .paper-plane-inner {
   position: relative;
-  /* left: 50%;
-  transform: translateX(-50%); */
   z-index: 2;
   background-color: lightgray;
-  /* background-color: blue; */
   width: 100px;
   height:100px;
   clip-path: polygon(50% 100%, 40% 0%, 60% 0%);
-  
-  /* clip-path: polygon(0 0, 50% 0%, 100% 0, 50% 100%); */
-}
-
-.tie {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  z-index: 3;
-  background-color: red;
-  width: 20px;
-  height:90px;
-  clip-path: polygon(0 0, 50% 20%, 100% 0, 50% 100%);
-}
-
-.bowtie {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  height: 16px;
-  width: 16px;
-  background-color: red;
-  border-radius: 16px;
-  transform: translate(3.28rem,-4.5rem);
-}
-
-
-.bowtie::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -8px;
-  width: 0px;
-  height: 0px;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 18px solid red;
-  border-radius: 3px;
-}
-.bowtie::after {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: 6px;
-  width: 0px;
-  height: 0px;
-  border-top: 10px solid transparent;
-  border-right: 18px solid red;
-  border-bottom: 10px solid transparent;
-  border-radius: 3px;
-}
-
-.newbowtie {
-  box-sizing: content-box;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  height: 120px;
-  width: 120px;
-  background-color: blue;
-  border-radius: 10%;
-  /* transform: translate(3.28rem,-4.5rem); */
-}
-
-/* 
-.newbowtie::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -8px;
-  width: 0px;
-  height: 0px;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 18px solid red;
-  border-radius: 3px;
-}
-.newbowtie::after {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: 6px;
-  width: 0px;
-  height: 0px;
-  border-top: 10px solid transparent;
-  border-right: 18px solid red;
-  border-bottom: 10px solid transparent;
-  border-radius: 3px;
-} */
-
-.bowtie-shading {
-  position: absolute;
-  width: 20px;
-  height: 10px;
-  background-color: transparent;
-  border-radius: 50%;
-  box-shadow: 0px 1px 0px 0px white;
-  z-index: 1;
-  transform: translate(3.20rem, -4.5rem);
-}
-
-.bowtie-shading::before {
-  content: '';
-  position: absolute;
-  width: 18px;
-  height: 10px;
-  background-color: transparent;
-  border-radius: 50%;
-  box-shadow: 0px 1px 0px 0px green;
-  z-index: 1;
-  transform: translate(-0.6rem, 0.4rem) rotate(180deg);
 }
 
 .suit-jacket{
@@ -340,19 +221,12 @@ html, body {
   width: 100px;
   height: 100px;
   flex-flow: column wrap;
-  gap: 10px;
-  /* FIND A WAY TO CHANGE Z INDEX */
-  z-index: 5;
-  /*  */
+  z-index: 2;
   transform: translateY(-1rem);
 }
 
 .suit-collar {
   box-sizing: border-box;
-  /* border-top: 12px solid gray;
-	border-left: 5px solid transparent;
-	border-right: 5px solid transparent;
-	height: 0; */
   background-color: rgb(50, 50, 50);
   height: 12px;
 	width: 50px;
@@ -373,10 +247,6 @@ html, body {
   top:-16px;
   left:21px;
   border-radius: 0 15px / 0 50px;
-  /* border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 15px 50px;
-  border-bottom-left-radius: 15px 50px; */
   transform: rotate(-60deg);
 }
 .suit-collar::before{
@@ -387,6 +257,51 @@ html, body {
   left: -11px;
   border-radius: 15px 0 / 50px 0;
   transform: rotate(60deg);
+}
+
+.suit-bowtie-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(1.75rem);
+}
+
+.suit-bowtie-wings {
+  position: absolute;
+  width: 35px;
+  height: 25px;
+  background-color: red;
+  border-radius: 25%;
+  clip-path: polygon(0% 0%, 0% 100%, 50%  50%, 100% 100%, 100% 0%, 50% 50%);
+}
+
+.suit-bowtie-knot {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  background-color: red;
+  border-radius: 25%;
+}
+
+.suit-bowtie-shading {
+  position: absolute;
+  width: 15px;
+  height: 10px;
+  background-color: transparent;
+  border-radius: 30%;
+  box-shadow: 0px 1px 0px 0px white;
+  transform: translateY(-0.4rem);
+}
+
+.suit-bowtie-shading::before {
+  content: '';
+  position: absolute;
+  width: 19px;
+  height: 12px;
+  background-color: transparent;
+  border-radius: 30%;
+  box-shadow: 0px 1px 0px 0px white;
+  transform: translate(-0.1rem,0.8rem) rotate(180deg);
 }
 
 .center-line {
@@ -411,7 +326,7 @@ html, body {
   flex-flow: column wrap;
   z-index: 4;
   gap: 10px;
-  transform: translateY(2rem);
+  transform: translateY(3.5rem);
 }
 
 .suit-button {
@@ -581,7 +496,6 @@ html, body {
 }
 
 .features {
-  /* display: block; come back to this */
   justify-content: space-around;
   display: flex;
   flex-wrap: wrap;
