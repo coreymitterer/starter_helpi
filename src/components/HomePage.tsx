@@ -62,11 +62,11 @@ export function HomePage(): JSX.Element {
                 </div>
             </div>
             <div className = "main">
-                <Button
+                {/* <Button
                     className="cloud"
                 >
                     <div className="cloudText">Go To Basic Quiz</div>
-                </Button>
+                </Button> */}
                 <div className="planes">
                     <div className="paper-plane-side-border">
                         <div className="paper-plane-side">
@@ -78,11 +78,20 @@ export function HomePage(): JSX.Element {
                     <div className="paper-plane-side">
                         <div className="paper-plane-side-inner"></div>
                     </div>
+                    <div className="paper-plane-side">
+                        <div className="paper-plane-side-inner"></div>
+                    </div>
+                    <div className="gold-paper-plane-side">
+                        <div className="gold-paper-plane-side-inner"></div>
+                    </div>
                 </div>
                 {/* <div className="sun"></div> */}
-                <div className="trail"></div>
-                <div className="golden-trail"></div>
-                <div className="circle-trail"></div>
+                <svg fill = "none">
+                    <path className = "trail" d="M 50 80 C 150 -20 250 180 350 80" />
+                    <path d="M 50 80 C 150 -20 250 180 350 80" />
+                </svg>
+                {/* <div className="golden-trail"></div> */}
+                {/* <div className="circle-trail"></div> */}
                 {/* ADD BLACK SQUARE AND EVERYTHING UNTIL PLANE CLICKS */}
                 <div className="suit">
                     <div className = "suit-jacket">
@@ -101,12 +110,12 @@ export function HomePage(): JSX.Element {
                         <div className="paper-plane-inner"></div>
                     </div>
                 </div>
-                <Button
+                {/* <Button
                     type="button"
                     className="cloud"
                 >
                     <div className="cloudText">Go To Detailed Quiz</div>
-                </Button>
+                </Button> */}
                 {/* <div className="sun"></div> */}
             </div>
             {/* Assuring a smooth landing into your new career */}

@@ -216,18 +216,52 @@ html, body {
   transform: translate(1px, 4px);
 }
 
-.trail {
+.gold-paper-plane-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* animation: flyIn 2s linear forwards; */
+  z-index: 1;
+  background-color: gold;
+  width: 100px;
+  height: 100px;
+  clip-path: polygon(100% 0%, 0% 25%, 43% 48%, 40% 70%, 50% 54%, 70% 100%);
+  transform: translate(2px, -3px);
+}
+.gold-paper-plane-side-inner {
+  position: relative;
+  z-index: 2;
+  background-color: goldenrod;
+  width: 100px;
+  height:100px;
+  clip-path: polygon(100% 0%, 43% 48%, 40% 70%, 50% 54%);
+  
+}
+
+
+
+/* TRAILS */
+/* .trail {
   width: 50%;
   margin:5px 0;
   height:2px;
-  background: repeating-linear-gradient(90deg, silver 0 6px, transparent 0 12px); /*10px red then 2px transparent -> repeat this!*/
+  background: repeating-linear-gradient(90deg, silver 0 6px, transparent 0 12px);
+} */
+
+svg .trail {
+  stroke: red;
+  stroke-width: 2;
+  stroke-dasharray: 6;
 }
 
-.golden-trail {
-  width: 50%;
-  margin:5px 0;
-  height:3px;
-  background: repeating-linear-gradient(90deg, gold 0 10px,#0000 0 15px); /*10px red then 2px transparent -> repeat this!*/
+@keyframes planeTrail {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
 }
 
 .circle-trail {
