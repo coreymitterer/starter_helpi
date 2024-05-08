@@ -67,6 +67,11 @@ export function HomePage(): JSX.Element {
                 >
                     <div className="cloudText">Go To Basic Quiz</div>
                 </Button>
+                <div className="planes">
+                    <div className="design-paper-plane">
+                        <div className="design-paper-plane-inner"></div>
+                    </div>
+                </div>
                 {/* <div className="sun"></div> */}
                 {/* <div className="trail"></div> */}
                 {/* ADD BLACK SQUARE AND EVERYTHING UNTIL PLANE CLICKS */}

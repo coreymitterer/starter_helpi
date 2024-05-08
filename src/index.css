@@ -138,16 +138,6 @@ html, body {
   background-position: center; */
 }
 
-.suit {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 120px;
-  width: 120px;
-  background-color: black;
-  border-radius: 10%;
-}
 
 .paper-plane {
   display: flex;
@@ -168,6 +158,17 @@ html, body {
   width: 100px;
   height:100px;
   clip-path: polygon(50% 100%, 40% 0%, 60% 0%);
+}
+
+.suit {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  width: 120px;
+  background-color: black;
+  border-radius: 10%;
 }
 
 .suit-jacket{
@@ -219,7 +220,7 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translateY(1.75rem);
+  transform: translateY(1.65rem);
 }
 
 .suit-bowtie-wings {
@@ -236,7 +237,7 @@ html, body {
   width: 11px;
   height: 11px;
   background-color: red;
-  border-radius: 25%;
+  border-radius: 30%;
 }
 
 .suit-bowtie-shading {
