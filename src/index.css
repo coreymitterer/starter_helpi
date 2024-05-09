@@ -82,12 +82,14 @@ html, body {
 
 /* Home Page CSS */
 .home {
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
+  /* background: linear-gradient(to bottom, #007ced 1%,#cce7ff 100%); */
+  /* Use This ^ */
   display: block;
   
 }
 
-.websiteTitle {
+.website-title {
   justify-content: space-around;
   display: content-box;
   text-align: center;
@@ -129,14 +131,54 @@ html, body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  background-color: #009DE0;
   height: 100vh;
-  /* background: linear-gradient(to bottom, #007ced 1%,#cce7ff 100%); USE THIS*/
-  /* background-color: #984444; */
+  background: linear-gradient(#25b6f4, #007ced);
   /* background-image: url("C:\Users\ianan\starter_helpi\src\components\ProfessionPilotLogo.png");
   background-size: cover;
-  background-position: center; */
+  background-position: right; */
 }
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  width: 100vw;
+}
+
+.border-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 60%;
+  margin-top: 35vh;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  justify-content: space-around;
+  /* background: linear-gradient(to right, black, transparent); */
+  /* background:#ECEFF1; */
+  /* mask-image: linear-gradient(to right, black, transparent);
+  mask-mode: alpha; */
+  
+  /* mask-image: linear-gradient(90deg, #ECEFF1, #B0BEC5);
+  mask-mode: alpha; */
+}
+.row-container {
+  position: absolute;
+  display: flex;
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; */
+}
+
+.row-container > * {
+  background: linear-gradient(to right, #ECEFF1, #B0BEC5);
+  background-attachment: fixed;
+}
+
 
 /* PAPER AIRPLANES */
 .paper-plane {
@@ -507,6 +549,36 @@ svg .trail {
   animation: sunRise 5s linear infinite;
 }
 
+.border-cloud{
+  box-sizing: border-box;
+  width:500px; /* CHANGE WIDTH AND HEIGHT LATER TO MAKE BOX SIZING DIFFERENT*/
+  height:200px;
+  box-shadow: 10px 10px rgba(0,0,0,0.2);
+  border-radius:100px;
+}
+.border-cloud::after, .border-cloud::before{
+  content:"";
+  position:relative;
+  display:inline-block;
+  background:inherit;
+  border-radius:inherit;
+}
+
+.border-cloud::before{
+  width:180px;
+  height:180px;
+  top: -80px;
+  left:70px;
+  /* background: linear-gradient(90deg, #ECEFF1, #B0BEC5) */
+}
+
+.border-cloud::after{
+  width:200px;
+  height:200px;
+  top:-80px;
+  left:40px;
+}
+
 .sun {
   position: relative;
   left: -280px;
@@ -586,41 +658,45 @@ svg .trail {
 }
 
 .features {
-  justify-content: space-around;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  background-color: #009DE0;
+  height: 150vh;
+  flex-wrap: wrap;
+  background: linear-gradient(to top, #009DE0, #FEFEFE);
+
+  /* background: linear-gradient(#00A4E4, #009DE0); */
 }
 
-.featureCloud{
+.feature-cloud{
   box-sizing: border-box;
-  margin-bottom: 20%;
   width:500px; /* CHANGE WIDTH AND HEIGHT LATER TO MAKE BOX SIZING DIFFERENT*/
   height:200px;
   background:#ECEFF1;
   box-shadow: 10px 10px rgba(0,0,0,0.2);
   border-radius:100px;
 }
-.featureCloud::after, .featureCloud::before{
+.feature-cloud::after, .feature-cloud::before{
   content: '';
   position:relative;
   display:inline-block;
   background:inherit;
   border-radius:inherit;
 }
-.featureCloud::after{
+.feature-cloud::after{
   width:200px;
   height:200px;
   top:-320px;
   left:250px;
 }
-.featureCloud::before{
+.feature-cloud::before{
   width:180px;
   height:180px;
   top: -70px;
   left:110px;
 }
-.featureCloudTitle {
+.feature-cloud-title {
   position: relative;
   z-index: 1;
   top: -80%;
@@ -629,7 +705,7 @@ svg .trail {
   text-transform: uppercase;
   font-weight: bold;
 }
-.featureCloudText {
+.feature-cloud-text {
   position: relative;
   width: 50%;
   height: 5%;
@@ -642,10 +718,14 @@ svg .trail {
 }
 
 .about {
-  justify-content: space-around;
   display: flex;
   flex-wrap: wrap;
-  background-color: #009DE0;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  background-color: brown;
+  /* background-color: #009DE0; */
+  background: linear-gradient(#009DE0, #FEFEFE);
 }
 
 /* Detailed Page CSS */
@@ -732,6 +812,13 @@ svg .trail {
   right: 0;
 }
 
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  background-color:forestgreen;
+  padding: 1%;
+}
 
 /* Testing Popovers */
 

@@ -125,14 +125,14 @@ export function Pages(): JSX.Element {
             {isDetailed && (
               <DetailedPage></DetailedPage>
             )}
-            <center>
+            <div className="footer">
         <Form>
             <Form.Label>API Key:</Form.Label>
             <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey} size="sm" style={{ width: "200px" }} />
             <br></br>
             <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
       </Form>
-      </center>
+      </div>
           </div>
     );
 }

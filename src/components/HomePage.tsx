@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import "../index.css";
 import logo from "./ProfessionPilotLogo.png";
+import { transform } from "typescript";
 
 // TODO: Style Logo, style header text, style slogan text, add clouds for buttons, cloud themed divs for homepage. Sky, cloud, sky, cloud, etc.
 
@@ -55,19 +56,22 @@ export function HomePage(): JSX.Element {
     
     return (
         <div className = "home">
-            <div className = "websiteTitle">
+            {/* <div className = "websiteTitle">
                 <div className="title">Profession Pilot</div>
                 <div className="slogan">
                     <div className = "sloganText">Now Boarding: </div><div className="listTerm">{careerList[index]}</div>
                 </div>
-            </div>
+            </div> */}
             <div className = "main">
                 {/* <Button
                     className="cloud"
                 >
                     <div className="cloudText">Go To Basic Quiz</div>
                 </Button> */}
-                <div className="planes">
+                <div className="title-container">
+                    <div className="website-title">Profession Pilot</div>
+                </div>
+                {/* <div className="planes">
                     <div className="paper-plane-side-border">
                         <div className="paper-plane-side">
                             <div className="paper-plane-side-inner-border">
@@ -84,7 +88,7 @@ export function HomePage(): JSX.Element {
                     <div className="gold-paper-plane-side">
                         <div className="gold-paper-plane-side-inner"></div>
                     </div>
-                </div>
+                </div> */}
                 {/* <div className="sun"></div> */}
                 <svg fill = "none">
                     <path className = "trail" d="M 50 80 C 150 -20 250 180 350 80" />
@@ -117,26 +121,45 @@ export function HomePage(): JSX.Element {
                     <div className="cloudText">Go To Detailed Quiz</div>
                 </Button> */}
                 {/* <div className="sun"></div> */}
+                <div className="border-container">
+                    <div className="row-container">
+                        <div className="border-cloud"></div>
+                        <div className="border-cloud"></div>
+                        <div className="border-cloud"></div>
+                    </div>
+                    <div className="row-container">
+                        <div className="border-cloud"></div>
+                        <div className="border-cloud"></div>
+                    </div>
+                    <div className="row-container">
+                        <div className="border-cloud"></div>
+                    </div>
+                    {/* <div className="row-container" style={{rotate: "180deg"}}>
+                        <div className="border-cloud"></div>
+                        <div className="border-cloud"></div>
+                        <div className="border-cloud"></div>
+                    </div> */}
+                </div>
             </div>
             {/* Assuring a smooth landing into your new career */}
             <div className = "features">
-                <div className="featureCloud">
-                    <div className = "featureCloudTitle">GPT Integration</div>
-                    <div className="featureCloudText">Seamless integration of ChatGPT to analyze your responses and give you the perfect career</div>
+                <div className="feature-cloud">
+                    <div className = "feature-cloud-title">GPT Integration</div>
+                    <div className="feature-cloud-text">Seamless integration of ChatGPT to analyze your responses and give you the perfect career</div>
                 </div>
-                <div className="featureCloud">
-                    <div className = "featureCloudTitle">Detailed Analysis</div>
-                    <div className = "featureCloudText">Detailed analysis of your responses to give you the best career options</div>
+                <div className="feature-cloud">
+                    <div className = "feature-cloud-title">Detailed Analysis</div>
+                    <div className = "feature-cloud-text">Detailed analysis of your responses to give you the best career options</div>
                 </div>
-                <div className="featureCloud">
-                    <div className = "featureCloudTitle">User Friendly</div>
-                    <div className = "featureCloudText">Easy to use interface that is user friendly and easy to navigate</div>
+                <div className="feature-cloud">
+                    <div className = "feature-cloud-title">User Friendly</div>
+                    <div className = "feature-cloud-text">Easy to use interface that is user friendly and easy to navigate</div>
                 </div>
             </div>
             <div className = "about">
-                <div className="featureCloud">
-                    <div className = "featureCloudTitle">Authors</div>
-                    <div className = "featureCloudText">Corey Mitterer, Ian Duffy, Logan Ponik, Junpuyin Wei</div>
+                <div className="feature-cloud">
+                    <div className = "feature-cloud-title">Authors</div>
+                    <div className = "feature-cloud-text">Corey Mitterer, Ian Duffy, Logan Ponik, Junpuyin Wei</div>
                 </div>
             </div>
         </div>
