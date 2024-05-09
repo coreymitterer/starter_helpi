@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-// import { Button } from "react-bootstrap";
+//import { Button } from "react-bootstrap";
 import "../index.css";
-// import logo from "./ProfessionPilotLogo.png";
-// import { transform } from "typescript";
+//import logo from "./ProfessionPilotLogo.png";
+//import { transform } from "typescript";
 
 // TODO: Style Logo, style header text, style slogan text, add clouds for buttons, cloud themed divs for homepage. Sky, cloud, sky, cloud, etc.
 
