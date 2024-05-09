@@ -12,8 +12,7 @@ export function Pages(): JSX.Element {
     const [isBasic, setBasic] = useState<boolean>(false);
     const [isDetailed, setDetailed] = useState<boolean>(false);
     const [isReport, setReport] = useState<boolean>(false);
-    const [basicReport,setBasicReport] = useState<string>('');
-    const [DetailedReport,setDetailedReport] = useState<string>('');
+    const [Report,setReports] = useState<string>('');
 
 
     //Key information
@@ -138,16 +137,16 @@ export function Pages(): JSX.Element {
             )}
             {isBasic && (
                 <div className = "basic">
-                  <BasicPage setBasicReport={setBasicReport}></BasicPage>
+                  <BasicPage setReports={setReports}></BasicPage>
                 </div>
                 
             )}
             {isDetailed && (
-                  <DetailedPage setDetailedReport={setDetailedReport}></DetailedPage>
+                  <DetailedPage setReports={setReports}></DetailedPage>
             )}
               {isReport&& (
                 <div className = "report">
-                  <ReportsPage Reports={basicReport, DetailedReport}></ReportsPage>
+                  <ReportsPage Report={Report}></ReportsPage>
                 </div>
             )}
             <center>
