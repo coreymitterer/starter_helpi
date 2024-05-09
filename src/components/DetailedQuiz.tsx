@@ -53,13 +53,14 @@ export function DetailedQuiz(): JSX.Element {
         //<h4>Career Suggestions: { output }</h4>
     }
 
-
-
+// label={(QUESTIONS.length - questionIndex === 1) ? `${QUESTIONS.length - questionIndex} Question Left` : `${QUESTIONS.length - questionIndex} Questions Left`}
+// variant="detailed-bar"
     return (
         <div>
             <ProgressBar 
                 now={(questionIndex + 1) / QUESTIONS.length * 100}
-                label={(QUESTIONS.length - questionIndex === 1) ? `${QUESTIONS.length - questionIndex} Question Left` : `${QUESTIONS.length - questionIndex} Questions Left`}/>
+                label={`${questionIndex + 1} / ${QUESTIONS.length}`}
+                />
             <h3>Topic: {TOPICS[questionIndex]}</h3>
             <div>
                 <Form.Group controlId="formDetailedQuestion">
@@ -82,7 +83,8 @@ export function DetailedQuiz(): JSX.Element {
                     type="button"
                     className="nextButton"
                     onClick={nextQuestion}
-                    disabled={questionIndex === QUESTIONS.length - 1 || userResponses[questionIndex] === ""}>
+                    // disabled={questionIndex === QUESTIONS.length - 1 || userResponses[questionIndex] === ""}
+                    >
                         <span className="prevButton-span">Next Question</span>
                 </Button>
             </div>
