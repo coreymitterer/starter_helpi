@@ -34,7 +34,7 @@
 
 .nav .button:hover {
   background-color: #b4d8fd;
-  color: #0a0a23; 
+  color: #0a0a23;
 }
 
 /*Adding an Arrow to the Button on Hover*/
@@ -46,7 +46,7 @@
 }
 
 .button span:after {
-  content: '\00bb';
+  content: "\00bb";
   position: absolute;
   opacity: 0;
   top: 0;
@@ -63,7 +63,6 @@
   right: 0;
 }
 
-
 /*Pages and App Styling*/
 .basic {
   display: flex;
@@ -74,11 +73,11 @@
   text-align: center;
 }
 
-.App{
+.App {
   background-color: #99cff8;
-  
 }
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -224,10 +223,6 @@ html, body {
   height: 100px;
   clip-path: polygon(100% 0%, 0% 25%, 43% 48%, 40% 70%, 50% 54%, 70% 100%);
   transform: translate(2px, -3px);
-  /* clip-path: polygon(100% 0%, 0% 25%, 50% 50%, 48% 65%, 52% 50% ,70% 100%); */
-  /* clip-path: polygon(100% 0%, 0% 25%, 50% 50%, 70% 100%); */ /* Facing top right */
-  /* clip-path: polygon(100% 100%, 0% 75%, 50% 50%, 60% 0%); */ /* Facing bottom right */
-  /* clip-path: polygon(50% 5%, 90% 0%, 50% 100%, 10% 0%); */ /* ORIGINAL PAPER AIRPLANE */
 }
 
 .paper-plane-side-inner-border {
@@ -423,10 +418,6 @@ svg {
   background-color: yellow;
   z-index: 10;
   opacity: 0.5;
-  /* border-left: 50vw solid transparent;
-  border-right: 50vw solid transparent;
-  border-top: 100vh solid white; */
-
 }
 
 .suit-button-row {
@@ -516,7 +507,7 @@ svg {
   background-color: rgb(245, 226, 152);
 }
 
-.cloud:hover ~ .sun{
+.cloud:hover ~ .sun {
   border-color: transparent;
   animation: sunRise 5s linear infinite;
 }
@@ -557,16 +548,13 @@ svg {
   left: -280px;
   top: 20px;
   z-index: 1;
-  /* opacity: 0; */
   margin: 0;
   padding: 0;
   width: 150px;
   height: 150px;
   background: yellow;
   border-radius: 50%;
-  box-shadow: 0 0 15px rgba(255,255,8,0.2);
-  
-  
+  box-shadow: 0 0 15px rgba(255, 255, 8, 0.2);
 }
 
 /* ANIMATIONS */
@@ -575,11 +563,11 @@ svg {
     transform: translateY(0);
     opacity: 1;
   }
-  
+
   50% {
     transform: translateY(-50px);
   }
-  
+
   100% {
     transform: translateY(-50px);
   }
@@ -590,12 +578,13 @@ svg {
     opacity: 0;
     transform: translateY(50px);
   }
-  
-  20%, 80% {
+
+  20%,
+  80% {
     opacity: 1;
     transform: translateY(0);
   }
-  
+
   100% {
     opacity: 0;
     transform: translateY(-25px);
@@ -627,7 +616,6 @@ svg {
 
 .basicHomePage {
   position: right;
-
 }
 
 .features {
@@ -638,8 +626,6 @@ svg {
   height: 150vh;
   flex-wrap: wrap;
   background: linear-gradient(#009DE0, skyblue);
-
-  /* background: linear-gradient(#00A4E4, #009DE0); */
 }
 
 .feature-cloud{
@@ -669,6 +655,7 @@ svg {
   top: -70px;
   left:110px;
 }
+
 .feature-cloud-title {
   position: relative;
   z-index: 1;
@@ -686,8 +673,7 @@ svg {
   top: -60%;
   left: 25%;
   text-align: center;
-  color: black;
-  
+  color: black; 
 }
 
 .about {
@@ -708,9 +694,18 @@ svg {
   height: 100vh;
   text-align: center;
 }
-
+/* Detailed Page CSS */
+.report {
+  /* background-color: #f8f9fa; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
 .carousel {
-  display: 'block';
+  display: "block";
   width: 700;
   padding: 30;
 }
@@ -719,7 +714,6 @@ svg {
   display: block;
   text-align: center;
   width: 75%;
-
 }
 
 /* Previous Button and Next Button Designs */
@@ -736,7 +730,7 @@ svg {
 }
 
 .prevButton span:after {
-  content: '\00ab';
+  content: "\00ab";
   position: absolute;
   opacity: 0;
   top: 0;
@@ -765,7 +759,7 @@ svg {
 }
 
 .nextButton span:after {
-  content: '\00bb';
+  content: "\00bb";
   position: absolute;
   opacity: 0;
   top: 0;
@@ -782,7 +776,6 @@ svg {
   right: 0;
 }
 
-
 .footer {
   display: flex;
   justify-content: space-around;
@@ -790,32 +783,15 @@ svg {
   padding: 1%;
 }
 
-/* Testing Popovers */
-
-/*
-.popover {
-  animation-name: rainbow-gradient;
-  animation-duration: 2s;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  background-color: #faeece;
-  border-color: #000000;
+.survey-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
 }
 
-@keyframes rainbow-gradient {
-  0%{
-    border-bottom: red;
-    }
-  20%{
-    border-bottom: orange;
-    }
-  40%{
-    border-bottom: yellow;
-  }
-  100%{
-    border-bottom: yellow;
-    }
+.button-submit{
+  font-size: 25px;
 }
-*/
-/* Testing Popovers */

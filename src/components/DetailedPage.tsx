@@ -1,10 +1,14 @@
-//import React, { useState } from "react";
-//import { Button, Form, OverlayTrigger, Tooltip } from "react-bootstrap";
+
 import "../index.css";
 import { DetailedQuiz } from "./DetailedQuiz";
-//import Survey from "./Survey";
 
-export function DetailedPage(): JSX.Element {
+//Creates the detailed page with the title and description as well as the 
+//Actual questions progress bar and submit
+interface DetailedString {
+  setReports: (DetailedString: string) => void;
+}
+
+export function DetailedPage({setReports}: DetailedString): JSX.Element {
   return (
     <div>
       <div className="detailed">
@@ -19,7 +23,7 @@ export function DetailedPage(): JSX.Element {
           into potential careers so you can make informed choices.
         </p>
         <div className="quiz">
-          <DetailedQuiz></DetailedQuiz>
+          <DetailedQuiz setReports={setReports}></DetailedQuiz>
         </div>
       </div>
     </div>
