@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import "../index.css";
 import logo from "./ProfessionPilotLogo.png";
+import { transform } from "typescript";
 
 // TODO: Style Logo, style header text, style slogan text, add clouds for buttons, cloud themed divs for homepage. Sky, cloud, sky, cloud, etc.
 
@@ -55,56 +56,114 @@ export function HomePage(): JSX.Element {
     
     return (
         <div className = "home">
-            <div className = "websiteTitle">
-                <span className="title">Profession Pilot</span>
-                <div className="slogan">
-                    <div className = "sloganContainer">
-                        <div className = "sloganText">Now Boarding: </div><div className="listTerm">{careerList[index]}</div>
+            <div className = "main">
+                {/* <Button
+                    className="cloud"
+                >
+                    <div className="cloudText">Go To Basic Quiz</div>
+                </Button> */}
+                <div className="website-title">
+                    <h1>Profession Pilot
+                        <span>Now Boarding:<div className="listTerm">{careerList[index]}</div></span>
+                    </h1>
+                </div>
+                {/* <div className="planes">
+                    <div className="paper-plane-side-border">
+                        <div className="paper-plane-side">
+                            <div className="paper-plane-side-inner-border">
+                                <div className="paper-plane-side-inner"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="paper-plane-side">
+                        <div className="paper-plane-side-inner"></div>
+                    </div>
+                    <div className="paper-plane-side">
+                        <div className="paper-plane-side-inner"></div>
+                    </div>
+                    <div className="gold-paper-plane-side">
+                        <div className="gold-paper-plane-side-inner"></div>
+                    </div>
+                </div> */}
+                {/* <div className="sun"></div> */}
+                <div className="logo-container">
+                    <div className="intro">
+                        <div className="paper-plane">
+                            <div className="paper-plane-inner"></div>
+                        </div>
+                    </div>
+                    <svg fill = "none" viewBox="0 0 500 200">
+                        {/* <path className = "logo-trail" d="M 50 80 C 150 -20 250 200 350 80 C 420 -100 450 -40 450 50" /> */}
+                        <path className = "logo-trail" d="M 0 100 C 150 -20 250 200 350 80 C 400 -20 250 -25 250 30 L 250 40" />
+                    </svg>
+                    <div className="suit">
+                        <div className = "suit-jacket">
+                            <div className = "suit-collar"></div>
+                            <div className = "suit-button-row">
+                                <div className = "suit-button"></div>
+                                <div className = "suit-button"></div>
+                            </div>
+                            <div className = "suit-bowtie-container">
+                                <div className = "suit-bowtie-wings"></div>
+                                <div className = "suit-bowtie-shading"></div>
+                                <div className = "suit-bowtie-knot"></div>
+                            </div>
+                        </div>
+                        <div className="paper-plane">
+                            <div className="paper-plane-inner"></div>
+                        </div>
+                    </div>
+                </div>
+                {/* <Button
+                    type="button"
+                    className="cloud"
+                >
+                    <div className="cloudText">Go To Detailed Quiz</div>
+                </Button> */}
+                {/* <div className="sun"></div> */}
+                <div className="border-container">
+                    <div className="row-container">
+                        <div className="border-cloud"></div>
+                        <div className="border-cloud"></div>
+                        <div className="border-cloud"></div>
+                        <div className="border-cloud"></div>
+                    </div>
+                    <div className="row-container">
+                        <div className="border-cloud"></div>
+                        <div className="border-cloud"></div>
+                        <div className="border-cloud"></div>
+                    </div>
+                    <div className="row-container">
+                        <div className="border-cloud"></div>
+                        <div className="border-cloud"></div>
+                    </div>
+                    <div className="row-container">
+                        <div className="border-cloud">
+                        </div>
                     </div>
                 </div>
             </div>
-            <div className = "main">
-                <Button
-                    type="button"
-                    className="cloud"
-                >
-                    <span className="cloudText">Go To Basic Quiz</span>
-                </Button>
-                <div className="sun"></div>
-                <img 
-                    src = {logo}
-                    alt = "Profession Pilot Logo">
-                </img>
-                <Button
-                    type="button"
-                    className="cloud"
-                >
-                    <span className="cloudText">Go To Detailed Quiz</span>
-                </Button>
-                <div className="sun"></div>
-            </div>
             {/* Assuring a smooth landing into your new career */}
             <div className = "features">
-                <div className="featureCloud">
-                    <div className = "featureCloudTitle">GPT Integration</div>
-                    <div className="featureCloudText">Seamless integration of ChatGPT to analyze your responses and give you the perfect career</div>
+                <div className="feature-cloud">
+                    <div className = "feature-cloud-title">GPT Integration</div>
+                    <div className="feature-cloud-text">Seamless integration of ChatGPT to analyze your responses and give you the perfect career</div>
                 </div>
-                <div className="featureCloud">
-                    <div className = "featureCloudTitle">Detailed Analysis</div>
-                    <div className = "featureCloudText">Detailed analysis of your responses to give you the best career options</div>
+                <div className="feature-cloud">
+                    <div className = "feature-cloud-title">Detailed Analysis</div>
+                    <div className = "feature-cloud-text">Detailed analysis of your responses to give you the best career options</div>
                 </div>
-                <div className="featureCloud">
-                    <div className = "featureCloudTitle">User Friendly</div>
-                    <div className = "featureCloudText">Easy to use interface that is user friendly and easy to navigate</div>
+                <div className="feature-cloud">
+                    <div className = "feature-cloud-title">User Friendly</div>
+                    <div className = "feature-cloud-text">Easy to use interface that is user friendly and easy to navigate</div>
                 </div>
             </div>
             <div className = "about">
-            <div className="featureCloud">
-                    <div className = "featureCloudTitle">Authors</div>
-                    <div className = "featureCloudText">Corey Mitterer, Ian Duffy, Logan Ponik, Junpuyin Wei</div>
+                <div className="feature-cloud">
+                    <div className = "feature-cloud-title">Authors</div>
+                    <div className = "feature-cloud-text">Corey Mitterer, Ian Duffy, Logan Ponik, Junpuyin Wei</div>
                 </div>
             </div>
-            
         </div>
     );
 }
