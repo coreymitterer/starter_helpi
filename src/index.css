@@ -142,7 +142,7 @@ html, body {
   flex-wrap: wrap;
   width: 100%;
   height: 60%;
-  margin-top: 35vh;
+  /* margin-top: 35vh; */
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -168,13 +168,21 @@ html, body {
   align-items: center;
 }
 
+.intro .paper-plane {
+  position: absolute;
+  top: 100px;
+  left: 0px;
+  /* animation: planeTrail 5s 3; */
+  transform: translate(300px,40px) rotate(290deg);
+}
 
 /* PAPER AIRPLANES */
 .paper-plane {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  /* position: relative; */
+  position: absolute;
   /* animation: flyIn 2s linear forwards; */
   z-index: 1;
   background-color: white;
@@ -291,9 +299,9 @@ svg {
   stroke-dasharray: 6;
 }
 
-svg .logo-trail {
+/* svg .logo-trail {
   transform: translate(-40%,10%);
-}
+} */
 
 @keyframes planeTrail {
   0% {
