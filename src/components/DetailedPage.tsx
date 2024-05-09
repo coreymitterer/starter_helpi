@@ -9,17 +9,18 @@ export function DetailedPage(): JSX.Element {
     <div>
       <div className="detailed">
         <div className="info-container">
-          <div className="info-puff"></div>
-          {/* <div className="info-cloud"> */}
-            <h1>Detailed Career Quiz</h1>
-            <p>Land Your Perfect Career</p>
-            <p>
-              Experience next level exploration into various aspects of professional life! 
-              This comprehensive quiz is tailored for you and your unique strengths and aspirations.
-              You'll reflect on your skills, values, work environment preferences, and
-              career goals. 
-            </p>
-          {/* </div> */}
+          <div className="puff"></div>
+          <div className="info-cloud">
+            <h1>Detailed Career Quiz
+              <span>Land Your Perfect Career</span>
+                <p>
+                  Experience next level exploration into various aspects of professional life! 
+                  This comprehensive quiz is tailored for you and your unique strengths and aspirations.
+                  You'll reflect on your skills, values, work environment preferences, and
+                  career goals.
+                </p>
+            </h1>
+          </div>
         </div>
         <div className="quiz-container">
           <div className="unfolded-plane">
