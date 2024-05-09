@@ -98,20 +98,27 @@ html, body {
   background: linear-gradient(#25b6f4, #007ced);
 }
 
+/* WEBSITE TITLE */
+.website-title {
+  flex: 100%;
+}
+
 .website-title h1 {
   text-align:center; font-size:60px; text-transform:uppercase; color:#222; letter-spacing:1px;
   font-family:"Playfair Display", serif; font-weight:400;
 }
+
 .website-title h1 span {
   margin-top: 5px;
   font-size:15px; color:#444; word-spacing:1px; font-weight:normal; letter-spacing:2px;
   text-transform: uppercase; font-family:"Raleway", sans-serif; font-weight:500;
 
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 15% 15% 15% 15%;
   grid-template-rows: 27px 0;
   grid-gap: 20px;
   align-items: center;
+  justify-content: center;
 }
 
 .website-title h1 span:after,.website-title h1 span:before {
@@ -124,12 +131,11 @@ html, body {
 }
 
 .listTerm {
-  animation: rotate;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
+  animation: rotate 3s infinite 3s;
 }
 
 
+/* CONTAINERS FOR CLOUDS */
 .border-container {
   position: relative;
   display: flex;
@@ -319,6 +325,7 @@ svg .trail {
 .suit {
   position: relative;
   display: flex;
+  
   justify-content: center;
   align-items: center;
   height: 120px;
