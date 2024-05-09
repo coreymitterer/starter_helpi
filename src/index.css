@@ -141,10 +141,18 @@ body {
   flex-wrap: wrap;
   width: 100%;
   height: 60%;
-  /* margin-top: 35vh; */
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  /* position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 60%;
+  margin-top: 100vh;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; */
 }
 
 .row-container {
@@ -687,13 +695,30 @@ svg {
 
 /* Detailed Page CSS */
 .detailed {
+  display: block;
+  background: linear-gradient(#25b6f4, #007ced);
+  /* background: linear-gradient(to right, #ECEFF1, #B0BEC5);
+  background-attachment: fixed; */
+}
+
+.info-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
+}
+
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* height: 100vh; */
   height: 100vh;
   text-align: center;
 }
+
 /* Detailed Page CSS */
 .report {
   /* background-color: #f8f9fa; */
@@ -704,8 +729,121 @@ svg {
   height: 100vh;
   text-align: center;
 }
+
+
+/* DETAILED QUIZ */
+.info-cloud{
+  z-index: 1;
+  box-sizing: border-box;
+  /* width:500px;
+  height:200px; */
+  width: 50%;
+  height:50%;
+  border-radius:100px;
+  background-color: white;
+  /* flex: 100%; */
+}
+
+.info-cloud h1 {
+  letter-spacing:1px;
+}
+
+.info-cloud h1 span {
+  font-size:12px;
+  color:#444;
+  font-weight:normal;
+  letter-spacing:2px;
+  text-transform: uppercase; 
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-cloud h1 p {
+  margin-top: 5px;
+  font-size:15px;
+  color:#555;
+  font-weight:normal;
+}
+
+.puff {
+  position: absolute;
+  box-sizing: border-box;
+  width:20%; 
+  height:30%;
+  top: 18%;
+  left: 44%;
+  border-radius:100%;
+  /* box-shadow: 0 0 100px rgba(0,0,0,.2); */
+  box-shadow: 0 0 100px rgba(0,0,0,.2);
+  background: white;
+}
+
+ .puff::after, .puff::before{
+  content:"";
+  position:relative;
+  display:inline-block;
+  background:inherit;
+  border-radius:inherit;
+  /* box-shadow: inherit; */
+}
+
+
+.puff::before{
+  width:100%;
+  height:100%;
+  bottom: 20%;
+  left: 50%;
+}
+
+
+.puff::after{
+  width:100%;
+  height:100%;
+  bottom: 120%;
+  right: 90%;
+}
+
+
+.unfolded-plane {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* height: 100vh; */
+  text-align: center;
+  /* background-color: whitesmoke; */
+  background: linear-gradient(white, lightgrey, white);
+  clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 10%, 90% 0%);
+  width: 70%;
+  height: 70%;
+  box-shadow: 0 0 100px rgba(0,0,0,.2);
+}
+
+.unfolded-plane::before {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.5%;
+  background-color: gray;
+  opacity: 0.2;
+}
+
+.unfolded-plane::after {
+  content: '';
+  position: absolute;
+  bottom: 90%;
+  left: 90%;
+  width: 10%;
+  height: 20%;
+  background-color: lightgrey;
+  clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
+}
+
 .carousel {
-  display: "block";
+  display: 'block';
   width: 700;
   padding: 30;
 }
@@ -714,10 +852,27 @@ svg {
   display: block;
   text-align: center;
   width: 75%;
+
 }
 
+
+
+/* DETAILED QUIZ */
+.progress {
+  background-color: transparent;
+}
+
+.progress-bar {
+  background: linear-gradient(to right, black, red, orange, yellow, yellowgreen, limegreen, black);
+  background-attachment: fixed;
+  border: 3px solid black;
+  border-radius: 10px;
+  color: black;
+  width: 50%;
+  transition: width 0.5s ease;
+}
 /* Previous Button and Next Button Designs */
-.prevButton .nextButton {
+.prevButton, .nextButton, .submitButton {
   color: #fff;
 }
 
@@ -730,7 +885,7 @@ svg {
 }
 
 .prevButton span:after {
-  content: "\00ab";
+  content: '\00ab';
   position: absolute;
   opacity: 0;
   top: 0;
@@ -748,10 +903,7 @@ svg {
 }
 
 /* Next Button Hover Effect*/
-.nextButton {
-  color: #fff;
-}
-.nextButton span {
+.nextButton span, .submitButton span{
   cursor: pointer;
   display: inline-block;
   position: relative;
@@ -759,7 +911,7 @@ svg {
 }
 
 .nextButton span:after {
-  content: "\00bb";
+  content: '\00bb';
   position: absolute;
   opacity: 0;
   top: 0;
@@ -767,14 +919,25 @@ svg {
   transition: 0.3s;
 }
 
-.nextButton:hover span {
+.submitButton span:after {
+  content: '\27A4';
+  /* content: '\27A2'; */
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.3s;
+}
+
+.nextButton:hover span, .submitButton:hover span{
   padding-right: 25px;
 }
 
-.nextButton:hover span:after {
+.nextButton:hover span:after, .submitButton:hover span:after{
   opacity: 1;
   right: 0;
 }
+
 
 .footer {
   display: flex;

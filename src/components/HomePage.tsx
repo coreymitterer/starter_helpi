@@ -27,7 +27,6 @@ What Makes a Good Website:
     Footer summarizing your web pages using quick links.
 */
 
-
 export function HomePage(): JSX.Element {
     const [index, setIndex] = useState<number>(0);
     const careerList = [
