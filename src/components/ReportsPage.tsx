@@ -1,28 +1,39 @@
 import React from "react";
+
 interface Reports {
-    basicReport: string;
-    detailedReport: string;
-  }
-export function ReportsPage({basicReport, detailedReport}: Reports): JSX.Element {
-    
-    function changeReport(){
-        if(basicReport !== '' && detailedReport !==''){
-            return(<span>{detailedReport}</span>)
-        }
-        else if(basicReport === '' && detailedReport !==''){
-            return(<span>{detailedReport}</span>)
-        }
-        else if(basicReport !== '' && detailedReport ===''){
-            return(<span>{basicReport}</span>)
-        }
-        else {
-           return(<span>You have not taken either of the Quizzes yet</span>)
-        }
-    }
-    return (
-        <div>
-        <h1>Welcome to the Reports Page!</h1>
-        {changeReport()}
-        </div>
-    )
+    Report: string;
 }
+
+interface Career {
+    Job_title: string;
+    Description: string;
+}
+
+export function ReportsPage({ Report }: Reports): JSX.Element {
+        // Parse the JSON string into an object
+        const reportObject = JSON.parse(Report);
+
+        // Extract careers and descriptions into arrays
+        const careers: string[] = [];
+        const descriptions: string[] = [];
+    
+        Object.keys(reportObject).forEach((key: string) => {
+            const career: Career = reportObject[key];
+            careers.push(career.Job_title); // Push job titles into the careers array
+            descriptions.push(career.Description); // Push descriptions into the descriptions array
+        });
+
+        return (
+            <div>
+                <h1>Welcome to the Reports Page!</h1>
+                <div>
+                    {careers.map((career, index) => (
+                        <div key={index}>
+                            <h2>{career}</h2>
+                            <p>{descriptions[index]}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        );
+    }

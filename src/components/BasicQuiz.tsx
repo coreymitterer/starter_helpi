@@ -8,11 +8,11 @@ const QUESTIONS: string[] = BaseQuestion.map(question => question.question);
 const DEFAULT_QUESTION_INDEX: number = 0;
 
 interface BasicString {
-    setBasicReport: (newString: string) => void;
+    setReports: (newString: string) => void;
 }
 
 // DFI: number = 0;
-export function BasicQuiz({setBasicReport}: BasicString): JSX.Element {
+export function BasicQuiz({setReports}: BasicString): JSX.Element {
     const [output, setOutput] = useState<string>("");
     const [questionIndex, setQuestionIndex] = useState<number>(DEFAULT_QUESTION_INDEX);
     const [userResponses, setUserResponses] = useState<string[]>(new Array(QUESTIONS.length).fill(''));
@@ -44,14 +44,14 @@ export function BasicQuiz({setBasicReport}: BasicString): JSX.Element {
         const completion = await openai.chat.completions.create({
             model: "gpt-4",
             messages: [
-                { role: "system", content: "You are a career advisor who is trying to help college students find out there perfect career" },
-                { role: "user", content: "Here are Questions and answers to a career quiz the student took. After taking these questions and their respective answers, I need you to give me 5 career choices based on these responses.  Here is a list of questions: " + QUESTIONS.join(", ") + " And here is the combined output of answers: " + userResponses.join(', ') + " Give these in a bullet list with only the careers"}
+                { role: "system", content: "You will be provided with a list of questions and answers, your job is to turn these questions and answers into 5 different career options with the job title and a short description of each career. You will format these 5 careers into a Json format" },
+                { role: "user", content: "Here is a list of questions: " + QUESTIONS.join(", ") + " And here is the combined output of answers: " + userResponses.join(', ')}
             ],
         });
         //Puts the output right under the submit button
         setOutput(completion.choices[0]?.message.content || ""); // Handle null value by providing a default value of an empty string
         console.log(output)
-        setBasicReport(completion.choices[0]?.message.content || "");
+        setReports(completion.choices[0]?.message.content || "");
     }
 
   return (

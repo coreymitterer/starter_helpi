@@ -5,9 +5,9 @@ import { BasicQuiz } from "./BasicQuiz";
 //Creates the detailed page with the title and description as well as the 
 //Actual questions progress bar and submit
 interface BasicString {
-    setBasicReport: (newString: string) => void;
+    setReports: (newString: string) => void;
 }
-export function BasicPage({setBasicReport}: BasicString): JSX.Element {
+export function BasicPage({setReports}: BasicString): JSX.Element {
   return (
     <div>
       <div className="basic">
@@ -21,7 +21,7 @@ export function BasicPage({setBasicReport}: BasicString): JSX.Element {
             point for your career journey.
         </p>
         <div className="quiz">
-          <BasicQuiz setBasicReport={setBasicReport}></BasicQuiz>
+          <BasicQuiz setReports={setReports}></BasicQuiz>
         </div>
       </div>
     </div>
