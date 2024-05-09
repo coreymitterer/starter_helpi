@@ -135,7 +135,7 @@ html, body {
 }
 
 
-/* CONTAINERS FOR CLOUDS */
+/* CONTAINERS FOR MAIN */
 .border-container {
   position: relative;
   display: flex;
@@ -156,6 +156,16 @@ html, body {
 .row-container > * {
   background: linear-gradient(to right, #ECEFF1, #B0BEC5);
   background-attachment: fixed;
+}
+
+.logo-container {
+  position: relative;
+  display: flex;
+  flex: 100%;
+  height: 50%;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -269,10 +279,18 @@ html, body {
   height:2px;
   background: repeating-linear-gradient(90deg, silver 0 6px, transparent 0 12px);
 } */
+svg {
+  position: absolute;
+  overflow: visible;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+}
 
 svg .trail {
-  stroke: red;
-  stroke-width: 2;
+  stroke: lightgray;
+  stroke-width: 1;
   stroke-dasharray: 6;
 }
 
@@ -283,41 +301,6 @@ svg .trail {
   100% {
     offset-distance: 100%;
   }
-}
-
-.circle-trail {
-  margin:0 auto;
-  position:relative;
-  width:300px;
-  height:300px;
-  /* animation: AnimationName 3s ease infinite; */
-}
-.circle-trail::after {
-  content:"";
-  position:absolute;
-  width:50%;
-  height:100px;
-  border-radius:50%;
-  left:50%;
-  top:10%;
-  border-top: lightblue 2px dashed;
-}
-.circle-trail::before {
-  content:"";
-  position:absolute;
-  width:50%;
-  height:100px;
-  border-bottom: lightblue 2px dashed;
-  border-radius:50%;
-  left:.2%;
-  margin-top:-1%;
-}
-
-
-@keyframes AnimationName { 
-  0%{background-position:43% 0%}
-  50%{background-position:58% 100%}
-  100%{background-position:43% 0%}
 }
 
 

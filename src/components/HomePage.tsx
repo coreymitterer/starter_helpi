@@ -86,28 +86,26 @@ export function HomePage(): JSX.Element {
                     </div>
                 </div> */}
                 {/* <div className="sun"></div> */}
-                <svg fill = "none">
-                    <path className = "trail" d="M 50 80 C 150 -20 250 180 350 80" />
-                    <path d="M 50 80 C 150 -20 250 180 350 80" />
-                </svg>
-                {/* <div className="golden-trail"></div> */}
-                {/* <div className="circle-trail"></div> */}
-                {/* ADD BLACK SQUARE AND EVERYTHING UNTIL PLANE CLICKS */}
-                <div className="suit">
-                    <div className = "suit-jacket">
-                        <div className = "suit-collar"></div>
-                        <div className = "suit-button-row">
-                            <div className = "suit-button"></div>
-                            <div className = "suit-button"></div>
+                <div className="logo-container">
+                    <svg fill = "none" viewBox="0 0 500 200">
+                        <path className = "trail" d="M 50 80 C 150 -20 250 180 350 80 C 450 -28 462 -41 462 75" />
+                    </svg>
+                    <div className="suit">
+                        <div className = "suit-jacket">
+                            <div className = "suit-collar"></div>
+                            <div className = "suit-button-row">
+                                <div className = "suit-button"></div>
+                                <div className = "suit-button"></div>
+                            </div>
+                            <div className = "suit-bowtie-container">
+                                <div className = "suit-bowtie-wings"></div>
+                                <div className = "suit-bowtie-shading"></div>
+                                <div className = "suit-bowtie-knot"></div>
+                            </div>
                         </div>
-                        <div className = "suit-bowtie-container">
-                            <div className = "suit-bowtie-wings"></div>
-                            <div className = "suit-bowtie-shading"></div>
-                            <div className = "suit-bowtie-knot"></div>
+                        <div className="paper-plane">
+                            <div className="paper-plane-inner"></div>
                         </div>
-                    </div>
-                    <div className="paper-plane">
-                        <div className="paper-plane-inner"></div>
                     </div>
                 </div>
                 {/* <Button
