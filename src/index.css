@@ -140,16 +140,11 @@ html, body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  justify-content: space-around;
 }
 
 .row-container {
   position: absolute;
   display: flex;
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center; */
 }
 
 .row-container > * {
@@ -545,7 +540,7 @@ svg .trail {
 
 .border-cloud::before{
   width:180px;
-  height:180px;
+  height:280px;
   top: -80px;
   left:70px;
   /* background: linear-gradient(90deg, #ECEFF1, #B0BEC5) */
@@ -553,7 +548,7 @@ svg .trail {
 
 .border-cloud::after{
   width:200px;
-  height:200px;
+  height:300px;
   top:-80px;
   left:40px;
 }
@@ -643,7 +638,7 @@ svg .trail {
   flex-wrap: wrap;
   height: 150vh;
   flex-wrap: wrap;
-  background: linear-gradient(to top, #009DE0, #FEFEFE);
+  background: linear-gradient(#009DE0, skyblue);
 
   /* background: linear-gradient(#00A4E4, #009DE0); */
 }
@@ -702,14 +697,11 @@ svg .trail {
   justify-content: center;
   align-items: center;
   height: 50vh;
-  background-color: brown;
-  /* background-color: #009DE0; */
-  background: linear-gradient(#009DE0, #FEFEFE);
+  background: linear-gradient(skyblue, #FEFEFE);
 }
 
 /* Detailed Page CSS */
 .detailed {
-  /* background-color: #f8f9fa; */
   display: flex;
   flex-direction: column;
   align-items: center;

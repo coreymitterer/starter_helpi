@@ -122,6 +122,12 @@ export function HomePage(): JSX.Element {
                         <div className="border-cloud"></div>
                         <div className="border-cloud"></div>
                         <div className="border-cloud"></div>
+                        <div className="border-cloud"></div>
+                    </div>
+                    <div className="row-container">
+                        <div className="border-cloud"></div>
+                        <div className="border-cloud"></div>
+                        <div className="border-cloud"></div>
                     </div>
                     <div className="row-container">
                         <div className="border-cloud"></div>
@@ -131,11 +137,6 @@ export function HomePage(): JSX.Element {
                         <div className="border-cloud">
                         </div>
                     </div>
-                    {/* <div className="row-container" style={{rotate: "180deg"}}>
-                        <div className="border-cloud"></div>
-                        <div className="border-cloud"></div>
-                        <div className="border-cloud"></div>
-                    </div> */}
                 </div>
             </div>
             {/* Assuring a smooth landing into your new career */}
