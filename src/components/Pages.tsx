@@ -147,10 +147,8 @@ export function Pages(): JSX.Element {
             )}
               {isReport&& (
                 <div className = "report">
-                  <ReportsPage></ReportsPage>
-                  {<span>{basicReport}</span>}
+                  <ReportsPage Reports={basicReport, DetailedReport}></ReportsPage>
                 </div>
-                
             )}
             <center>
         <Form>
