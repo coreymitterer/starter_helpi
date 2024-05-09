@@ -5,6 +5,8 @@ import Survey from "./Survey";
 
 interface DetailedString {
   setReports: (newString: string) => void;
+  income: number;
+  education: string;
   setIncome: (income: number) => void;
   setEducation: (education: string) => void;
 }
@@ -12,7 +14,7 @@ interface DetailedString {
 
 
 
-export function DetailedPage({ setReports, setIncome, setEducation}: DetailedString): JSX.Element {
+export function DetailedPage({ setReports, income, education, setIncome, setEducation}: DetailedString): JSX.Element {
   const [surveyCompleted, setSurveyCompleted] = useState(false);
 
   return (
@@ -36,10 +38,10 @@ export function DetailedPage({ setReports, setIncome, setEducation}: DetailedStr
           </p>
           <div className="quiz">
             <DetailedQuiz 
-            setReports={setReports}
-            setEducation={setEducation}
-            setIncome={setIncome}
-             />
+              setReports={setReports}
+              education={education}
+              income={income}
+            />
           </div>
         </div>
       )}

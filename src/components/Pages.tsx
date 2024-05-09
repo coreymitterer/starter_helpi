@@ -146,8 +146,10 @@ export function Pages(): JSX.Element {
                 <div>
                   <DetailedPage 
                   setReports={setReports}
-                  setEducation={setEducation}
+                  education={education}
+                  income={income}
                   setIncome={setIncome}
+                  setEducation={setEducation}
                   ></DetailedPage>  
                 </div>               
             )}
