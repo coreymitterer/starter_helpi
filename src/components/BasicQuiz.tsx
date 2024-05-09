@@ -130,9 +130,6 @@ export function BasicQuiz({setReports}: BasicString): JSX.Element {
               disabled={userResponses.includes('') || questionIndex !== QUESTIONS.length - 1}>
                   <span className="submitButton-span">Submit</span>
           </Button>
-          <div>
-              {output && <p>Possible Career Choices: { output }</p>}
-          </div>
       </center>
   </div>
   );
