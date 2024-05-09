@@ -286,12 +286,13 @@ svg {
   height: auto;
   top: 0;
   left: 0;
-}
-
-svg .trail {
   stroke: lightgray;
   stroke-width: 1;
   stroke-dasharray: 6;
+}
+
+svg .logo-trail {
+  transform: translate(-40%,10%);
 }
 
 @keyframes planeTrail {

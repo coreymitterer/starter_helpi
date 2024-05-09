@@ -88,7 +88,7 @@ export function HomePage(): JSX.Element {
                 {/* <div className="sun"></div> */}
                 <div className="logo-container">
                     <svg fill = "none" viewBox="0 0 500 200">
-                        <path className = "trail" d="M 50 80 C 150 -20 250 180 350 80 C 450 -28 462 -41 462 75" />
+                        <path className = "logo-trail" d="M 50 80 C 150 -20 250 200 350 80 C 420 -100 450 -40 450 50" />
                     </svg>
                     <div className="suit">
                         <div className = "suit-jacket">
