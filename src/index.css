@@ -82,48 +82,8 @@ html, body {
 
 /* Home Page CSS */
 .home {
-  /* background-color: #ffffff; */
-  /* background: linear-gradient(to bottom, #007ced 1%,#cce7ff 100%); */
-  /* Use This ^ */
   display: block;
   
-}
-
-.website-title {
-  justify-content: space-around;
-  display: content-box;
-  text-align: center;
-  font-weight: bolder;
-  font-size: 50px;
-}
-
-.title {
-  text-align: center;
-}
-
-.slogan {
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 40px;
-  /* display: content-box; */
-  /* background-color: #009DE0; */
-}
-
-.sloganText {
-  flex: 50%;
-  text-align: right;
-  padding-right: 3%;
-}
-
-.listTerm {
-  text-align: left;
-  padding-left: 3%;
-  flex: 50%;
-  opacity: 0;
-  text-transform: uppercase;
-  animation: rotate;
-  animation-duration: 3000ms;
-  animation-iteration-count: infinite;
 }
 
 .main {
@@ -133,18 +93,47 @@ html, body {
   flex-wrap: wrap;
   height: 100vh;
   background: linear-gradient(#25b6f4, #007ced);
-  /* background-image: url("C:\Users\ianan\starter_helpi\src\components\ProfessionPilotLogo.png");
-  background-size: cover;
-  background-position: right; */
 }
 
 .title-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: red;
   width: 100vw;
 }
+
+.website-title h1 {
+  text-align:center; font-size:60px; text-transform:uppercase; color:#222; letter-spacing:1px;
+  font-family:"Playfair Display", serif; font-weight:400;
+}
+.website-title h1 span {
+  margin-top: 5px;
+  font-size:15px; color:#444; word-spacing:1px; font-weight:normal; letter-spacing:2px;
+  text-transform: uppercase; font-family:"Raleway", sans-serif; font-weight:500;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 27px 0;
+  grid-gap: 20px;
+  align-items: center;
+}
+
+.website-title h1 span:after,.website-title h1 span:before {
+  content: " ";
+  display: block;
+  border-bottom: 2px solid #ccc;
+  border-top: 2px solid #ccc;
+  height: 10px;
+  background-color:transparent;
+}
+
+.listTerm {
+  animation: rotate;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+
 
 .border-container {
   position: relative;
@@ -157,14 +146,8 @@ html, body {
   align-items: center;
   overflow: hidden;
   justify-content: space-around;
-  /* background: linear-gradient(to right, black, transparent); */
-  /* background:#ECEFF1; */
-  /* mask-image: linear-gradient(to right, black, transparent);
-  mask-mode: alpha; */
-  
-  /* mask-image: linear-gradient(90deg, #ECEFF1, #B0BEC5);
-  mask-mode: alpha; */
 }
+
 .row-container {
   position: absolute;
   display: flex;

@@ -68,8 +68,10 @@ export function HomePage(): JSX.Element {
                 >
                     <div className="cloudText">Go To Basic Quiz</div>
                 </Button> */}
-                <div className="title-container">
-                    <div className="website-title">Profession Pilot</div>
+                <div className="website-title">
+                    <h1>Profession Pilot
+                        <span>Now Boarding:<div className="listTerm">{careerList[index]}</div></span>
+                    </h1>
                 </div>
                 {/* <div className="planes">
                     <div className="paper-plane-side-border">
