@@ -17,6 +17,9 @@
 
 /*Navigation Bar and updating Nav Buttons*/
 .nav {
+  /* position: sticky;
+  top: 0;
+  Add the two lines above for navbar to follow the user's scroll patterns */
   display: flex;
   justify-content: space-around;
   background-color: #134265;
@@ -95,13 +98,6 @@ html, body {
   background: linear-gradient(#25b6f4, #007ced);
 }
 
-.title-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-}
-
 .website-title h1 {
   text-align:center; font-size:60px; text-transform:uppercase; color:#222; letter-spacing:1px;
   font-family:"Playfair Display", serif; font-weight:400;
@@ -132,7 +128,6 @@ html, body {
   animation-duration: 3s;
   animation-iteration-count: infinite;
 }
-
 
 
 .border-container {
@@ -534,11 +529,12 @@ svg .trail {
 
 .border-cloud{
   box-sizing: border-box;
-  width:500px; /* CHANGE WIDTH AND HEIGHT LATER TO MAKE BOX SIZING DIFFERENT*/
+  width:500px; 
   height:200px;
-  box-shadow: 10px 10px rgba(0,0,0,0.2);
   border-radius:100px;
+  box-shadow: 0 0 100px rgba(0,0,0,.2);
 }
+
 .border-cloud::after, .border-cloud::before{
   content:"";
   position:relative;

@@ -56,12 +56,6 @@ export function HomePage(): JSX.Element {
     
     return (
         <div className = "home">
-            {/* <div className = "websiteTitle">
-                <div className="title">Profession Pilot</div>
-                <div className="slogan">
-                    <div className = "sloganText">Now Boarding: </div><div className="listTerm">{careerList[index]}</div>
-                </div>
-            </div> */}
             <div className = "main">
                 {/* <Button
                     className="cloud"
@@ -134,7 +128,8 @@ export function HomePage(): JSX.Element {
                         <div className="border-cloud"></div>
                     </div>
                     <div className="row-container">
-                        <div className="border-cloud"></div>
+                        <div className="border-cloud">
+                        </div>
                     </div>
                     {/* <div className="row-container" style={{rotate: "180deg"}}>
                         <div className="border-cloud"></div>
