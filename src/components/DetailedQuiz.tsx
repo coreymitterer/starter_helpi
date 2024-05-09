@@ -83,8 +83,7 @@ export function DetailedQuiz(): JSX.Element {
                     type="button"
                     className="nextButton"
                     onClick={nextQuestion}
-                    // disabled={questionIndex === QUESTIONS.length - 1 || userResponses[questionIndex] === ""}
-                    >
+                    disabled={questionIndex === QUESTIONS.length - 1 || userResponses[questionIndex] === ""}>
                         <span className="prevButton-span">Next Question</span>
                 </Button>
             </div>
