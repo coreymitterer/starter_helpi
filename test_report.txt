@@ -36,7 +36,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (76 ms)
+  ✕ renders learn react link (82 ms)
 
   ● renders learn react link
 
@@ -99,107 +99,180 @@ FAIL src/App.test.tsx
                 [33mclass[39m=[32m"home"[39m
               [36m>[39m
                 [36m<div[39m
-                  [33mclass[39m=[32m"websiteTitle"[39m
+                  [33mclass[39m=[32m"main"[39m
                 [36m>[39m
-                  [36m<span[39m
-                    [33mclass[39m=[32m"title"[39m
-                  [36m>[39m
-                    [0mProfession Pilot[0m
-                  [36m</span>[39m
                   [36m<div[39m
-                    [33mclass[39m=[32m"slogan"[39m
+                    [33mclass[39m=[32m"website-title"[39m
+                  [36m>[39m
+                    [36m<h1>[39m
+                      [0mProfession Pilot[0m
+                      [36m<span>[39m
+                        [0mNow Boarding:[0m
+                        [36m<div[39m
+                          [33mclass[39m=[32m"listTerm"[39m
+                        [36m>[39m
+                          [0mDevelopers[0m
+                        [36m</div>[39m
+                      [36m</span>[39m
+                    [36m</h1>[39m
+                  [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"logo-container"[39m
                   [36m>[39m
                     [36m<div[39m
-                      [33mclass[39m=[32m"sloganContainer"[39m
+                      [33mclass[39m=[32m"intro"[39m
                     [36m>[39m
                       [36m<div[39m
-                        [33mclass[39m=[32m"sloganText"[39m
+                        [33mclass[39m=[32m"paper-plane"[39m
                       [36m>[39m
-                        [0mNow Boarding: [0m
+                        [36m<div[39m
+                          [33mclass[39m=[32m"paper-plane-inner"[39m
+                        [36m/>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                    [36m<svg[39m
+                      [33mfill[39m=[32m"none"[39m
+                      [33mviewBox[39m=[32m"0 0 500 200"[39m
+                    [36m>[39m
+                      [36m<path[39m
+                        [33mclass[39m=[32m"logo-trail"[39m
+                        [33md[39m=[32m"M 0 100 C 150 -20 250 200 350 80 C 400 -20 250 -25 250 30 L 250 40"[39m
+                      [36m/>[39m
+                    [36m</svg>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"suit"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"suit-jacket"[39m
+                      [36m>[39m
+                        [36m<div[39m
+                          [33mclass[39m=[32m"suit-collar"[39m
+                        [36m/>[39m
+                        [36m<div[39m
+                          [33mclass[39m=[32m"suit-button-row"[39m
+                        [36m>[39m
+                          [36m<div[39m
+                            [33mclass[39m=[32m"suit-button"[39m
+                          [36m/>[39m
+                          [36m<div[39m
+                            [33mclass[39m=[32m"suit-button"[39m
+                          [36m/>[39m
+                        [36m</div>[39m
+                        [36m<div[39m
+                          [33mclass[39m=[32m"suit-bowtie-container"[39m
+                        [36m>[39m
+                          [36m<div[39m
+                            [33mclass[39m=[32m"suit-bowtie-wings"[39m
+                          [36m/>[39m
+                          [36m<div[39m
+                            [33mclass[39m=[32m"suit-bowtie-shading"[39m
+                          [36m/>[39m
+                          [36m<div[39m
+                            [33mclass[39m=[32m"suit-bowtie-knot"[39m
+                          [36m/>[39m
+                        [36m</div>[39m
                       [36m</div>[39m
                       [36m<div[39m
-                        [33mclass[39m=[32m"listTerm"[39m
+                        [33mclass[39m=[32m"paper-plane"[39m
                       [36m>[39m
-                        [0mDevelopers[0m
+                        [36m<div[39m
+                          [33mclass[39m=[32m"paper-plane-inner"[39m
+                        [36m/>[39m
                       [36m</div>[39m
                     [36m</div>[39m
                   [36m</div>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"main"[39m
-                [36m>[39m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"cloud btn btn-primary"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [36m<span[39m
-                      [33mclass[39m=[32m"cloudText"[39m
-                    [36m>[39m
-                      [0mGo To Basic Quiz[0m
-                    [36m</span>[39m
-                  [36m</button>[39m
                   [36m<div[39m
-                    [33mclass[39m=[32m"sun"[39m
-                  [36m/>[39m
-                  [36m<img[39m
-                    [33malt[39m=[32m"Profession Pilot Logo"[39m
-                    [33msrc[39m=[32m"ProfessionPilotLogo.png"[39m
-                  [36m/>[39m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"cloud btn btn-primary"[39m
-                    [33mtype[39m=[32m"button"[39m
+                    [33mclass[39m=[32m"border-container"[39m
                   [36m>[39m
-                    [36m<span[39m
-                      [33mclass[39m=[32m"cloudText"[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"row-container"[39m
                     [36m>[39m
-                      [0mGo To Detailed Quiz[0m
-                    [36m</span>[39m
-                  [36m</button>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"sun"[39m
-                  [36m/>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"border-cloud"[39m
+                      [36m/>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"border-cloud"[39m
+                      [36m/>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"border-cloud"[39m
+                      [36m/>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"border-cloud"[39m
+                      [36m/>[39m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"row-container"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"border-cloud"[39m
+                      [36m/>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"border-cloud"[39m
+                      [36m/>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"border-cloud"[39m
+                      [36m/>[39m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"row-container"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"border-cloud"[39m
+                      [36m/>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"border-cloud"[39m
+                      [36m/>[39m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"row-container"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"border-cloud"[39m
+                      [36m/>[39m
+                    [36m</div>[39m
+                  [36m</div>[39m
                 [36m</div>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"features"[39m
                 [36m>[39m
                   [36m<div[39m
-                    [33mclass[39m=[32m"featureCloud"[39m
+                    [33mclass[39m=[32m"feature-cloud"[39m
                   [36m>[39m
                     [36m<div[39m
-                      [33mclass[39m=[32m"featureCloudTitle"[39m
+                      [33mclass[39m=[32m"feature-cloud-title"[39m
                     [36m>[39m
                       [0mGPT Integration[0m
                     [36m</div>[39m
                     [36m<div[39m
-                      [33mclass[39m=[32m"featureCloudText"[39m
+                      [33mclass[39m=[32m"feature-cloud-text"[39m
                     [36m>[39m
                       [0mSeamless integration of ChatGPT to analyze your responses and give you the perfect career[0m
                     [36m</div>[39m
                   [36m</div>[39m
                   [36m<div[39m
-                    [33mclass[39m=[32m"featureCloud"[39m
+                    [33mclass[39m=[32m"feature-cloud"[39m
                   [36m>[39m
                     [36m<div[39m
-                      [33mclass[39m=[32m"featureCloudTitle"[39m
+                      [33mclass[39m=[32m"feature-cloud-title"[39m
                     [36m>[39m
                       [0mDetailed Analysis[0m
                     [36m</div>[39m
                     [36m<div[39m
-                      [33mclass[39m=[32m"featureCloudText"[39m
+                      [33mclass[39m=[32m"feature-cloud-text"[39m
                     [36m>[39m
                       [0mDetailed analysis of your responses to give you the best career options[0m
                     [36m</div>[39m
                   [36m</div>[39m
                   [36m<div[39m
-                    [33mclass[39m=[32m"featureCloud"[39m
+                    [33mclass[39m=[32m"feature-cloud"[39m
                   [36m>[39m
                     [36m<div[39m
-                      [33mclass[39m=[32m"featureCloudTitle"[39m
+                      [33mclass[39m=[32m"feature-cloud-title"[39m
                     [36m>[39m
                       [0mUser Friendly[0m
                     [36m</div>[39m
                     [36m<div[39m
-                      [33mclass[39m=[32m"featureCloudText"[39m
+                      [33mclass[39m=[32m"feature-cloud-text"[39m
                     [36m>[39m
                       [0mEasy to use interface that is user friendly and easy to navigate[0m
                     [36m</div>[39m
@@ -209,15 +282,15 @@ FAIL src/App.test.tsx
                   [33mclass[39m=[32m"about"[39m
                 [36m>[39m
                   [36m<div[39m
-                    [33mclass[39m=[32m"featureCloud"[39m
+                    [33mclass[39m=[32m"feature-cloud"[39m
                   [36m>[39m
                     [36m<div[39m
-                      [33mclass[39m=[32m"featureCloudTitle"[39m
+                      [33mclass[39m=[32m"feature-cloud-title"[39m
                     [36m>[39m
                       [0mAuthors[0m
                     [36m</div>[39m
                     [36m<div[39m
-                      [33mclass[39m=[32m"featureCloudText"[39m
+                      [33mclass[39m=[32m"feature-cloud-text"[39m
                     [36m>[39m
                       [0mCorey Mitterer, Ian Duffy, Logan Ponik, Junpuyin Wei[0m
                     [36m</div>[39m
@@ -225,7 +298,9 @@ FAIL src/App.test.tsx
                 [36m</div>[39m
               [36m</div>[39m
             [36m</div>[39m
-            [36m<center>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"footer"[39m
+            [36m>[39m
               [36m<form[39m
                 [33mclass[39m=[32m""[39m
               [36m>[39m
@@ -248,7 +323,7 @@ FAIL src/App.test.tsx
                   [0mSubmit[0m
                 [36m</button>[39m
               [36m</form>[39m
-            [36m</center>[39m
+            [36m</div>[39m
           [36m</div>[39m
         [36m</div>[39m
       [36m</div>[39m
@@ -301,7 +376,7 @@ All files                  |      16 |     1.34 |   13.55 |   14.28 |
   DetailedPage.tsx         |       0 |      100 |       0 |       0 | 12                
   DetailedQuestionBank.tsx |     100 |      100 |     100 |     100 |                   
   DetailedQuiz.tsx         |   20.83 |        0 |      25 |   13.63 | 16-59             
-  HomePage.tsx             |    87.5 |      100 |      75 |   85.71 | 47                
+  HomePage.tsx             |    87.5 |      100 |      75 |   85.71 | 48                
   Pages.tsx                |      40 |       60 |   14.28 |      40 | 23,43-67,76-83    
   ReportsPage.tsx          |       0 |      100 |       0 |       0 | 14-31             
   Survey.tsx               |       0 |        0 |       0 |       0 | 8-50              
@@ -309,5 +384,5 @@ All files                  |      16 |     1.34 |   13.55 |   14.28 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        4.041 s
+Time:        3.988 s
 Ran all test suites.
