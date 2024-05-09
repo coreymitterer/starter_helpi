@@ -5,14 +5,15 @@ import { DetailedPage } from "./DetailedPage";
 import { HomePage } from './HomePage'
 import { BasicPage } from "./BasicPage";
 import {ReportsPage} from './ReportsPage'
-export function Pages(): JSX.Element {
-    
 
+export function Pages(): JSX.Element {    
     const [isHome, setHome] = useState<boolean>(true);
     const [isBasic, setBasic] = useState<boolean>(false);
     const [isDetailed, setDetailed] = useState<boolean>(false);
     const [isReport, setReport] = useState<boolean>(false);
     const [Report,setReports] = useState<string>('');
+    const [income, setIncome] = useState<number>(0);
+    const [education, setEducation] = useState<string>("");
 
 
     //Key information
@@ -137,11 +138,18 @@ export function Pages(): JSX.Element {
             )}
             {isBasic && (
                 <div className = "basic">
-                  <BasicPage setReports={setReports}></BasicPage>
+                  <BasicPage setReports={setReports}
+                  ></BasicPage>
                 </div>
             )}
             {isDetailed && (
-                  <DetailedPage setReports={setReports}></DetailedPage>
+                <div>
+                  <DetailedPage 
+                  setReports={setReports}
+                  setEducation={setEducation}
+                  setIncome={setIncome}
+                  ></DetailedPage>  
+                </div>               
             )}
               {isReport&& (
                 <div className = "report">

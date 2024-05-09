@@ -4,13 +4,17 @@ import detailedQuestionBank from './DetailedQuestionBank';
 import OpenAi from "openai";
 
 
-
 const QUESTIONS: string[] = detailedQuestionBank.map(question => question.question);
 const TOPICS: string[] = detailedQuestionBank.map(question => question.topic);
 const DEFAULT_QUESTION_INDEX: number = 0;
+
 interface DetailedString {
     setReports: (DetailedString: string) => void;
+    setIncome: (income: number) => void;
+    setEducation: (education: string) => void;
 }
+
+
 
 export function DetailedQuiz({setReports}: DetailedString): JSX.Element {
     const [output, setOutput] = useState<string>("");

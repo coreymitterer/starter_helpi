@@ -1,9 +1,13 @@
 import React, { ChangeEvent, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 
+
 interface SurveyProps {
-  onCompletion: () => void; // Add a prop for the completion callback
+  onCompletion: () => void;
+  setIncome: (income: number) => void;
+  setEducation: (education: string) => void;
 }
+
 
 const EDUCATIONS = ["None", "Associates", "Bachelors", "Masters", "Doctorate"];
 const DEFAULT_EDUCATION = EDUCATIONS[0];
@@ -18,10 +22,8 @@ function RevealButton({ setVisible }: { setVisible: (visible: boolean) => void }
   );
 }
 
-const Survey: React.FC<SurveyProps> = ({ onCompletion }) => {
-  const [education, setEducation] = useState<string>(DEFAULT_EDUCATION);
+const Survey: React.FC<SurveyProps> = ({ onCompletion, setIncome, setEducation }) => {
   const [visible, setVisible] = useState<boolean>(false);
-  const [income, setIncome] = useState<number>(0);
 
   function updateEducation(event: ChangeEvent<HTMLSelectElement>): void {
     setEducation(event.target.value);
@@ -45,18 +47,19 @@ const Survey: React.FC<SurveyProps> = ({ onCompletion }) => {
         <Form onSubmit={(e) => e.preventDefault()}>
           <Form.Group controlId="PreferredLevelOfEducation">
             <Form.Label>What is the highest education you would be willing to do?</Form.Label>
-            <Form.Select value={education} onChange={updateEducation}>
+            <Form.Select defaultValue={DEFAULT_EDUCATION} onChange={updateEducation}>
               {EDUCATIONS.map((education) => (
                 <option key={education} value={education}>
                   {education}
                 </option>
+                
               ))}
             </Form.Select>
           </Form.Group>
           <Form.Group controlId="IncomePreference">
             <Form.Label>Preferred Income:</Form.Label>
-            <Form.Control type="range" min={0} max={100000} value={income} onChange={updateIncome} />
-            <Form.Label>{income.toLocaleString()}</Form.Label>
+            <Form.Control type="range" min={0} max={100000} defaultValue={0} onChange={updateIncome} />
+            {/* Form.Label can still show local value if needed */}
           </Form.Group>
           <Button type="button" className="button-submit" onClick={handleSubmission}>Submit</Button>
         </Form>
