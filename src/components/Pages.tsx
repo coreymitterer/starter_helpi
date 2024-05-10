@@ -20,6 +20,7 @@ export function Pages(): JSX.Element {
       htmlElement.setAttribute('data-bs-theme', isDarkMode ? 'dark' : 'light');
     }
 
+
     //Key information
     let keyData = "";
     const saveKeyData = "MYKEY";
@@ -136,7 +137,7 @@ export function Pages(): JSX.Element {
               <span>Reports</span>
           </Button>
           <ToggleButton
-            className="dark-mode"
+            className="sun-moon"
             type="checkbox"
             variant="warning"
             id="night-mode"
@@ -144,7 +145,7 @@ export function Pages(): JSX.Element {
             value="1"
             onChange={toggleNightMode}>
           </ToggleButton>  
-          <div className="dark-mode-outer"></div>
+          <div className="sun-moon-outer"></div>
           
       </div>
       
