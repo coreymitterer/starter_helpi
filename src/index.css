@@ -1,3 +1,19 @@
+:root {
+  --darkbg: #251d29;
+  --darkt: #ffd1f7;
+  --lightbg: #fff;
+  --lightt: #d43370;
+
+  --toggleHeight: 16em;
+  --toggleWidth: 30em;
+  --toggleBtnRadius: 10em;
+
+  --bgColor--night: #423966;
+  --mooncolor: #d9fbff;
+  --bgColor--day: #9ee3fb;
+}
+
+
 .button {
   display: inline-block;
   border-radius: 4px;

@@ -69,9 +69,8 @@ export function Pages(): JSX.Element {
   }
 
   function toggleNightMode(): void {
-    setChecked(!checked)
+    setChecked(!checked);
   }
-
     const [key, setKey] = useState<string>(keyData); //for api key input
 
     //sets the local storage item to the api key the user inputed
