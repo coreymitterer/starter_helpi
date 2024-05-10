@@ -1,6 +1,8 @@
 :root {
   --darkbg: #251d29;
   --darkt: #ffd1f7;
+  --darkg1: #283e51;
+  --darkg2: #0a2342;
   --lightbg: #fff;
   --lightt: #d43370;
 
@@ -184,7 +186,8 @@ body {
   align-items: center;
   flex-wrap: wrap;
   height: 100vh;
-  background: linear-gradient(#25b6f4, #007ced);
+  /* background: linear-gradient(#25b6f4, #007ced); */
+  background: linear-gradient(--darkg1, --darkg2);
 }
 
 /* WEBSITE TITLE */

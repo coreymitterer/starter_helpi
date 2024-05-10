@@ -13,15 +13,19 @@ export function Pages(): JSX.Element {
     const [isDetailed, setDetailed] = useState<boolean>(false);
     const [isReport, setReport] = useState<boolean>(false);
     const [Report,setReports] = useState<string>('');
-    const [checked, setChecked] = useState(false);
-  
+    const [isDarkMode, setDarkMode] = useState(false);
+    
+    const htmlElement = document.querySelector('html');
+    if (htmlElement) {
+      htmlElement.setAttribute('data-bs-theme', isDarkMode ? 'dark' : 'light');
+    }
 
     //Key information
     let keyData = "";
     const saveKeyData = "MYKEY";
     const prevKey = localStorage.getItem(saveKeyData); //so it'll look like: MYKEY: <api_key_value here> in the local storage when you inspect
     if (prevKey !== null) {
-        keyData = JSON.parse(prevKey);
+      keyData = JSON.parse(prevKey);
     }
 
 
@@ -69,7 +73,7 @@ export function Pages(): JSX.Element {
   }
 
   function toggleNightMode(): void {
-    setChecked(!checked);
+    setDarkMode(!isDarkMode);
   }
     const [key, setKey] = useState<string>(keyData); //for api key input
 
@@ -136,7 +140,7 @@ export function Pages(): JSX.Element {
             type="checkbox"
             variant="warning"
             id="night-mode"
-            checked={checked}
+            checked={isDarkMode}
             value="1"
             onChange={toggleNightMode}>
           </ToggleButton>  
