@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Form, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Button, Form, OverlayTrigger, ToggleButton, Tooltip } from "react-bootstrap";
 import '../index.css';
 import { DetailedPage } from "./DetailedPage";
 import { HomePage } from './HomePage'
@@ -13,7 +13,8 @@ export function Pages(): JSX.Element {
     const [isDetailed, setDetailed] = useState<boolean>(false);
     const [isReport, setReport] = useState<boolean>(false);
     const [Report,setReports] = useState<string>('');
-
+    const [checked, setChecked] = useState(false);
+  
 
     //Key information
     let keyData = "";
@@ -65,9 +66,11 @@ export function Pages(): JSX.Element {
       setBasic(false);
       setDetailed(false);
       setReport(true);
-
   }
 
+  function toggleNightMode(): void {
+    setChecked(!checked)
+  }
 
     const [key, setKey] = useState<string>(keyData); //for api key input
 
@@ -82,80 +85,90 @@ export function Pages(): JSX.Element {
     function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
       setKey(event.target.value);
     }
+
   return (
     <div>
       <div className="nav">
-      <div>
-          <OverlayTrigger
-            placement="bottom"
-            delay={{ show: 250, hide: 400 }}
-            overlay={homeTooltip}
-          >
-            <Button
-              className="button"
-              onClick={updateSetHome}
-              disabled={isHome}
-            >
-              <span className="button-span">Home</span>
+      <div className="gold-paper-plane-side">
+        <div className="gold-paper-plane-side-inner"></div>
+      </div>
+        <OverlayTrigger
+          placement="bottom"
+          delay={{ show: 250, hide: 400 }}
+          overlay={homeTooltip}>
+          <Button
+            className="button"
+            onClick={updateSetHome}
+            disabled={isHome}>
+              <span>Home</span>
             </Button>
           </OverlayTrigger>
-        </div>
-        <div>
-        <OverlayTrigger
+          <OverlayTrigger
             trigger="hover"
             placement="bottom"
-            overlay={basicTooltip}
-        >
+            overlay={basicTooltip}>
             <Button
                 type="button"
                 className="button"
                 onClick={updateSetBasic}
-                disabled={isBasic}
-            >
-                <span className="button-span">Basic</span>
+                disabled={isBasic}>
+                  <span>Basic</span>
             </Button>
           </OverlayTrigger>
-        </div>
-        <div>
           <OverlayTrigger
             placement="bottom"
             delay={{ show: 100, hide: 100 }}
-            overlay={detailedTooltip}
-            >
-                <Button className = "button" onClick={updateSetDetailed} disabled={isDetailed}>Detailed</Button>
-            </OverlayTrigger>
-                </div>
-                        <Button className = "button" onClick={updateSetReport} disabled={isReport}>Reports</Button>
-            </div>
-
-            {isHome && (
-              //Does a shift between pages by hiding each feature 
-                <div className = "home">
-                  <HomePage></HomePage>
-                </div>
-                
-            )}
-            {isBasic && (
-                <div className = "basic">
-                  <BasicPage setReports={setReports}></BasicPage>
-                </div>
-            )}
-            {isDetailed && (
-                  <DetailedPage setReports={setReports}></DetailedPage>
-            )}
-              {isReport&& (
-                <div className = "report">
-                  <ReportsPage Report={Report}></ReportsPage>
-                </div>
-            )}
-            <div className="footer">
-        <Form>
-            <Form.Label>API Key:</Form.Label>
-            <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey} size="sm" style={{ width: "200px" }} />
-            <br></br>
-            <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-      </Form>
+            overlay={detailedTooltip}>
+            <Button 
+              className = "button" 
+              onClick={updateSetDetailed} 
+              disabled={isDetailed}>
+                <span>Detailed</span>
+            </Button>
+          </OverlayTrigger>
+          <Button 
+            className = "button" 
+            onClick={updateSetReport} 
+            disabled={isReport}>
+              <span>Reports</span>
+          </Button>
+          <ToggleButton
+            className="dark-mode"
+            type="checkbox"
+            variant="warning"
+            id="night-mode"
+            checked={checked}
+            value="1"
+            onChange={toggleNightMode}>
+          </ToggleButton>  
+          <div className="dark-mode-outer"></div>
+          
       </div>
-          </div>
-    );
+      
+      {isHome && (
+          <HomePage></HomePage>
+      )}
+      {isBasic && (
+        <div className = "basic">
+          <BasicPage setReports={setReports}></BasicPage>
+        </div>
+      )}
+      {isDetailed && (
+        <DetailedPage setReports={setReports}></DetailedPage>
+      )}
+      {isReport && (
+        <div className = "report">
+          <ReportsPage Report={Report}></ReportsPage>
+        </div>
+      )}
+      <div className="footer">
+        <Form>
+          <Form.Label>API Key:</Form.Label>
+          <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey} size="sm" style={{ width: "200px" }} />
+          <br></br>
+          <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+        </Form>
+      </div>
+    </div>
+  );
 }
