@@ -153,9 +153,7 @@ export function Pages(): JSX.Element {
           <HomePage></HomePage>
       )}
       {isBasic && (
-        <div className = "basic">
           <BasicPage setReports={setReports}></BasicPage>
-        </div>
       )}
       {isDetailed && (
         <DetailedPage setReports={setReports}></DetailedPage>

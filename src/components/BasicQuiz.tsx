@@ -57,9 +57,15 @@ export function BasicQuiz({setReports}: BasicString): JSX.Element {
   return (
       //All of the HTML that will be returned for detailed Quiz including Progress bar Prev and Next question, Submit Button as well as the Text box for each questions response
       <div>
+        <p>
+            {QUESTIONS.length - questionIndex === 1 ? 
+            `${QUESTIONS.length - questionIndex} Question Left` : 
+            `${QUESTIONS.length - questionIndex} Questions Left`}
+        </p>
       <ProgressBar 
           now={(questionIndex + 1) / QUESTIONS.length * 100}
-          label={(QUESTIONS.length - questionIndex === 1) ? `${QUESTIONS.length - questionIndex} Question Left` : `${QUESTIONS.length - questionIndex} Questions Left`}/>
+          label={`${Math.floor(((questionIndex + 1)/QUESTIONS.length)*100)}%`}
+          />
       <div>
             <Form.Label>{QUESTIONS[questionIndex]}</Form.Label>
             <Form.Check

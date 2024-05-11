@@ -781,7 +781,7 @@ svg {
 }
 
 /* Detailed Page CSS */
-.detailed {
+.quiz-page {
   display: block;
   /* background: linear-gradient(var(--skyGrad1), var(--skyGrad2)); */
   background: linear-gradient(var(--skyGrad1), var(--skyGrad4));
@@ -816,6 +816,8 @@ svg {
 
 .quiz-container h1 span {
   font-size:10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
   color:var(--webTitle);
   font-weight:normal;
   letter-spacing:2px;

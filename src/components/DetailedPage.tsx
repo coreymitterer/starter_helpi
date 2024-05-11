@@ -18,7 +18,7 @@ export function DetailedPage({setReports}: DetailedString): JSX.Element {
   }
 
   return (
-    <div className="detailed">
+    <div className="quiz-page">
       <div className="quiz">
         <div className="unfolded-plane">
           <div className="quiz-container">
