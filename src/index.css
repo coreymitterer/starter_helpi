@@ -1,3 +1,74 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* .App {
+  background-color: #99cff8;
+  background: linear-gradient(var(--skyGrad1), var(--skyGrad2));
+  background-color: var(--skyGrad1);
+} */
+
+
+/* This will select the html element when the data-bs-theme attribute is set to 'light' */
+html[data-bs-theme='light'] {
+  /* Your styles for light mode go here */
+  --webTitle: #222;
+  --webSub: #444;
+  
+  --navButton: #333;
+
+  --skyGrad1: #2d91c2;
+  --skyGrad2: #1e528e;
+  --skyGrad3: #009DE0;
+  --skyGrad4: #7bdaf2;
+
+  --cloudGrad1: #d1cfcf;
+  --cloudGrad2: #c4c4c4;
+
+  --suitJacket: #000;
+  --suitCollar: #111;
+  
+  /* --quizButton: */
+
+
+}
+
+html[data-bs-theme='dark'] {
+  /* Your styles for dark mode go here */
+  /* --skyGrad1: #283e51;
+  --skyGrad2: #0a2342; */
+  --webTitle: #fff;
+  --webSub: #ccc;
+  
+  --navButton: #ccc;
+
+  --skyGrad1: #020111;
+  --skyGrad2: #191621;
+  --skyGrad3: #201b2d;
+  --skyGrad4: #0d324d;
+  
+  --skyGrad1: #020111;
+  --skyGrad2: #03021a;
+  --skyGrad3: #060327;
+  --skyGrad4: #130F40;
+
+  --cloudGrad1: #5e679f;
+  --cloudGrad2: #363b5d;
+
+  --suitJacket: #000;
+  --suitCollar: #111;
+  
+  
+  --darkbg: #251d29;
+  --bgColor--night: #423966;
+
+
+}
+
+
+
+
 .button {
   display: inline-block;
   border-radius: 4px;
@@ -23,7 +94,8 @@
   display: grid;
   grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 0.5fr;
   grid-auto-flow: column;
-  background-color: rgba(0, 0, 0, 0.1);
+  /* background-color: rgba(0, 0, 0, 0.1); */
+  background-color: var(--skyGrad1);
   justify-content: center;
   align-items: center;
   position: relative;
@@ -31,10 +103,16 @@
   padding: 10px;
 }
 
-.nav .gold-paper-plane-side, .nav .sun-moon-outer {
+/* .nav .gold-paper-plane-side, .nav .sun-moon-outer {
+  justify-self: center;
+  align-self: center;
+} */
+
+.nav .nav .sun-moon-outer {
   justify-self: center;
   align-self: center;
 }
+
 
 .nav .button {
   background-color: transparent;
@@ -142,63 +220,6 @@
   text-align: center;
 }
 
-.App {
-  /* background-color: #99cff8; */
-  background: linear-gradient(var(--skyGrad1), var(--skyGrad2));
-}
-html, body {
-  margin: 0;
-  padding: 0;
-}
-/* This will select the html element when the data-bs-theme attribute is set to 'light' */
-html[data-bs-theme='light'] {
-  /* Your styles for light mode go here */
-  --webTitle: #222;
-  --webSub: #444;
-  
-  --navButton: #333;
-
-  /* --skyGrad1: #25b6f4;
-  --skyGrad2: #007ced; */
-  
-  --skyGrad1: #2d91c2;
-  --skyGrad2: #1e528e;
-  --cloudGrad1: #ECEFF1;
-  --cloudGrad2: #B0BEC5;
-
-  --suitJacket: #000;
-  --suitCollar: #111;
-  
-  /* --quizButton: */
-
-
-}
-
-html[data-bs-theme='dark'] {
-  /* Your styles for dark mode go here */
-  /* --skyGrad1: #283e51;
-  --skyGrad2: #0a2342; */
-  --webTitle: #fff;
-  --webSub: #ccc;
-  
-  --navButton: #ccc;
-
-  --skyGrad1: #020111;
-  --skyGrad2: #191621;
-  
-  --cloudGrad1: #5e679f;
-  --cloudGrad2: #363b5d;
-
-  --suitJacket: #000;
-  --suitCollar: #111;
-  
-  
-  --darkbg: #251d29;
-  --bgColor--night: #423966;
-
-
-  
-}
 
 /* Home Page CSS */
 .home {
@@ -271,7 +292,7 @@ html[data-bs-theme='dark'] {
 }
 
 .row-container > * {
-  background: linear-gradient(to right, var(--cloudGrad1), var(--cloudGrad2));
+  background: radial-gradient(circle, var(--cloudGrad1), var(--cloudGrad2));
   background-attachment: fixed;
 }
 
@@ -700,7 +721,7 @@ svg {
   flex-wrap: wrap;
   height: 150vh;
   flex-wrap: wrap;
-  background: linear-gradient(#009DE0, skyblue);
+  background: linear-gradient(var(--skyGrad2), var(--skyGrad3));
 }
 
 .feature-cloud{
@@ -757,7 +778,7 @@ svg {
   justify-content: center;
   align-items: center;
   height: 50vh;
-  background: linear-gradient(skyblue, #FEFEFE);
+  background: linear-gradient(var(--skyGrad3), var(--skyGrad4));
 }
 
 /* Detailed Page CSS */
