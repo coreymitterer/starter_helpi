@@ -82,14 +82,14 @@ export function DetailedQuiz({setReports}: DetailedString): JSX.Element {
                     className="prevButton"
                     onClick={prevQuestion}
                     disabled={questionIndex === 0}>
-                        <span className="prevButton-span">Previous Question</span>
+                        <span className="prevButton-span">Back</span>
                 </Button>
                 <Button 
                     type="button"
                     className="nextButton"
                     onClick={nextQuestion}
                     disabled={questionIndex === QUESTIONS.length - 1 || userResponses[questionIndex] === ""}>
-                        <span className="prevButton-span">Next Question</span>
+                        <span className="prevButton-span">Next</span>
                 </Button>
             </div>
             <center>
