@@ -56,7 +56,7 @@ export function DetailedQuiz({setReports}: DetailedString): JSX.Element {
 
     return (
         //All of the HTML that will be returned for detailed Quiz including Progress bar Prev and Next question, Submit Button as well as the Text box for each questions response
-        <div>
+        <div className='quiz-text'>
             <p>
                 {QUESTIONS.length - questionIndex === 1 ? 
                 `${QUESTIONS.length - questionIndex} Question Left` : 
@@ -77,6 +77,8 @@ export function DetailedQuiz({setReports}: DetailedString): JSX.Element {
                         value={userResponses[questionIndex]} 
                         onChange={changeUserResponse} />
                 </Form.Group>
+            </div>
+            <div>
                 <Button 
                     type="button"
                     className="prevButton"
@@ -91,7 +93,6 @@ export function DetailedQuiz({setReports}: DetailedString): JSX.Element {
                     disabled={questionIndex === QUESTIONS.length - 1 || userResponses[questionIndex] === ""}>
                         <span className="prevButton-span">Next</span>
                 </Button>
-            </div>
             <center>
                 <Button 
                     type="button"
@@ -104,6 +105,7 @@ export function DetailedQuiz({setReports}: DetailedString): JSX.Element {
                     {output && <p>Possible Career Choices: { output }</p>}
                 </div>
             </center>
+        </div>
         </div>
     );
 

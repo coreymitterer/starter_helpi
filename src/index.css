@@ -880,6 +880,8 @@ svg {
   grid-template-columns: 1fr;
   grid-area: span;
   place-content: center;
+  align-items: center;
+  justify-content: center;
   width: 70%;
   height: 90%;
 }
@@ -895,7 +897,6 @@ svg {
   background-color: var(--cloudGrad2);
   border-color: var(--suitJacket);
 }
-
 
 .form-check-input:checked {
   background-color: var(--suitJacket);
