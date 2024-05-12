@@ -60,9 +60,13 @@ html[data-bs-theme='dark'] {
   --cloudGrad1: #5e679f;
   --cloudGrad2: #363b5d;
 
-  --suitJacket: #000;
-  --suitCollar: #111;
-  
+  /* --suitJacket: #000;
+  --suitCollar: #111; */
+  --suitJacket: #08223e;
+  --suitCollar: #0c345f;
+
+
+
   --planePaper1: #649dde;
   --planePaper2: #4b79ae;
   --planePaper3: #315b8b;
@@ -72,8 +76,6 @@ html[data-bs-theme='dark'] {
 
 
 }
-
-
 
 
 .button {
@@ -93,7 +95,7 @@ html[data-bs-theme='dark'] {
   background-color: #357ed7;
 }
 
-/*Navigation Bar and updating Nav Buttons*/
+/* NAVIGATION */
 .nav {
   /* position: sticky;
   top: 0;
@@ -101,12 +103,10 @@ html[data-bs-theme='dark'] {
   display: grid;
   grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 0.5fr;
   grid-auto-flow: column;
-  /* background-color: rgba(0, 0, 0, 0.1); */
   background-color: var(--skyGrad1);
   justify-content: center;
   align-items: center;
   position: relative;
-  /* background-color: #134265; COME BACK FOR THIS */
   padding: 10px;
 }
 
@@ -115,11 +115,10 @@ html[data-bs-theme='dark'] {
   align-self: center;
 } */
 
-.nav .nav .sun-moon-outer {
+.nav .sun-moon-outer {
   justify-self: center;
   align-self: center;
 }
-
 
 .nav .button {
   background-color: transparent;
@@ -231,7 +230,7 @@ html[data-bs-theme='dark'] {
 /* Home Page CSS */
 .home {
   display: block;
-  
+  background: linear-gradient(var(--skyGrad1), var(--skyGrad2), var(--skyGrad3), var(--skyGrad4));
 }
 
 .main {
@@ -240,8 +239,6 @@ html[data-bs-theme='dark'] {
   align-items: center;
   flex-wrap: wrap;
   height: 100vh;
-  /* background: linear-gradient(#25b6f4, #007ced); */
-  background: linear-gradient(var(--skyGrad1), var(--skyGrad2));
 }
 
 /* WEBSITE TITLE */
@@ -283,11 +280,12 @@ html[data-bs-theme='dark'] {
 
 /* CONTAINERS FOR MAIN */
 .border-container {
+  /* position: absolute; */
   position: relative;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  height: 60%;
+  height: 60vh;
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -330,7 +328,8 @@ html[data-bs-theme='dark'] {
   position: absolute;
   /* animation: flyIn 2s linear forwards; */
   z-index: 1;
-  background-color: #fff;
+  /* background-color: #fff; */
+  background-color: var(--planePaper1);
   width: 100px;
   height: 100px;
   clip-path: polygon(50% 5%, 90% 0%, 50% 100%, 10% 0%);
@@ -339,7 +338,8 @@ html[data-bs-theme='dark'] {
 .paper-plane-inner {
   position: relative;
   z-index: 2;
-  background-color: #ccc;
+  /* background-color: #ccc; */
+  background-color: var(--planePaper2);
   width: 100px;
   height:100px;
   clip-path: polygon(50% 100%, 40% 0%, 60% 0%);
@@ -723,69 +723,85 @@ svg {
 
 .features {
   display: flex;
-  justify-content: center;
+  position: relative;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  height: 150vh;
-  flex-wrap: wrap;
-  background: linear-gradient(var(--skyGrad2), var(--skyGrad3));
+  text-align: center;
+  flex-direction: row;
+  height: 100vh;
+  margin-top: 20%;
 }
 
-.feature-cloud{
+.features-container {
+  display: flex;
+  position: absolute;
+  margin-top: 20px;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  color: var(--suitJacket);
+}
+
+.text-cloud{
   box-sizing: border-box;
+  position: relative;
   width:500px; /* CHANGE WIDTH AND HEIGHT LATER TO MAKE BOX SIZING DIFFERENT*/
   height:200px;
-  background:#ECEFF1;
+  background-color: var(--cloudGrad1);
   box-shadow: 10px 10px rgba(0,0,0,0.2);
   border-radius:100px;
 }
-.feature-cloud::after, .feature-cloud::before{
+
+.text-cloud::after, .text-cloud::before{
   content: '';
-  position:relative;
+  position:absolute;
   display:inline-block;
   background:inherit;
   border-radius:inherit;
+  z-index: 0;
 }
-.feature-cloud::after{
+.text-cloud::after{
   width:200px;
   height:200px;
-  top:-320px;
-  left:250px;
+  bottom: 100px;
 }
-.feature-cloud::before{
+
+.text-cloud::before{
   width:180px;
   height:180px;
-  top: -70px;
+  bottom:90px;
   left:110px;
 }
 
-.feature-cloud-title {
-  position: relative;
-  z-index: 1;
-  top: -80%;
-  text-align: center;
-  color: black;
-  text-transform: uppercase;
-  font-weight: bold;
+.text-cloud h1 {
+  /* letter-spacing:1px; */
+  font-size: 35px;
 }
-.feature-cloud-text {
-  position: relative;
-  width: 50%;
-  height: 5%;
-  z-index: 1;
-  top: -60%;
-  left: 25%;
-  text-align: center;
-  color: black; 
+
+.text-cloud h1 span {
+  font-size:15px;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-weight:normal;
+  text-transform: uppercase; 
+  display: block;
+  align-items: center;
+  justify-content: center;
 }
 
 .about {
   display: flex;
-  flex-wrap: wrap;
+  position: relative;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  flex-direction: row;
   height: 50vh;
-  background: linear-gradient(var(--skyGrad3), var(--skyGrad4));
 }
 
 /* QUIZ PAGES */
