@@ -27,7 +27,6 @@ What Makes a Good Website:
     Footer summarizing your web pages using quick links.
 */
 
-
 export function HomePage(): JSX.Element {
     const [index, setIndex] = useState<number>(0);
     const careerList = [
@@ -145,23 +144,35 @@ export function HomePage(): JSX.Element {
             </div>
             {/* Assuring a smooth landing into your new career */}
             <div className = "features">
-                <div className="feature-cloud">
-                    <div className = "feature-cloud-title">GPT Integration</div>
-                    <div className="feature-cloud-text">Seamless integration of ChatGPT to analyze your responses and give you the perfect career</div>
+                <div className="text-cloud">
+                    <div className = "features-container">
+                        <h1>GPT Integration
+                            <span>Seamless integration of ChatGPT to analyze your responses and give you the perfect career</span>
+                        </h1>
+                    </div>
                 </div>
-                <div className="feature-cloud">
-                    <div className = "feature-cloud-title">Detailed Analysis</div>
-                    <div className = "feature-cloud-text">Detailed analysis of your responses to give you the best career options</div>
+                <div className="text-cloud">
+                    <div className = "features-container">
+                        <h1>Detailed Analysis
+                            <span>Detailed analysis of your responses to give you the best career options</span>
+                        </h1>
+                    </div>
                 </div>
-                <div className="feature-cloud">
-                    <div className = "feature-cloud-title">User Friendly</div>
-                    <div className = "feature-cloud-text">Easy to use interface that is user friendly and easy to navigate</div>
+                <div className="text-cloud">
+                    <div className = "features-container">
+                        <h1>User Friendly
+                            <span>Easy to use interface that is user friendly and easy to navigate</span>
+                        </h1>
+                    </div>
                 </div>
             </div>
             <div className = "about">
-                <div className="feature-cloud">
-                    <div className = "feature-cloud-title">Authors</div>
-                    <div className = "feature-cloud-text">Corey Mitterer, Ian Duffy, Logan Ponik, Junpuyin Wei</div>
+                <div className="text-cloud">
+                    <div className = "features-container">
+                        <h1>Authors
+                            <span>Corey Mitterer, Ian Duffy, Logan Ponik, Junpuyin Wei</span>
+                        </h1>
+                    </div>
                 </div>
             </div>
         </div>
