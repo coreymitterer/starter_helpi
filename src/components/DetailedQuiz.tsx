@@ -54,14 +54,17 @@ export function DetailedQuiz({setReports}: DetailedString): JSX.Element {
         setReports(completion.choices[0]?.message.content || "");
     }
 
-// label={(QUESTIONS.length - questionIndex === 1) ? `${QUESTIONS.length - questionIndex} Question Left` : `${QUESTIONS.length - questionIndex} Questions Left`}
-// variant="detailed-bar"
     return (
         //All of the HTML that will be returned for detailed Quiz including Progress bar Prev and Next question, Submit Button as well as the Text box for each questions response
         <div>
+            <p>
+                {QUESTIONS.length - questionIndex === 1 ? 
+                `${QUESTIONS.length - questionIndex} Question Left` : 
+                `${QUESTIONS.length - questionIndex} Questions Left`}
+            </p>
             <ProgressBar 
                 now={(questionIndex + 1) / QUESTIONS.length * 100}
-                label={`${questionIndex + 1} / ${QUESTIONS.length}`}
+                label={`${Math.floor(((questionIndex + 1)/QUESTIONS.length)*100)}%`}
                 />
             <h3>Topic: {TOPICS[questionIndex]}</h3>
             <div>

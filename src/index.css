@@ -1,10 +1,80 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* .App {
+  background-color: #99cff8;
+  background: linear-gradient(var(--skyGrad1), var(--skyGrad2));
+  background-color: var(--skyGrad1);
+} */
+
+/* This will select the html element when the data-bs-theme attribute is set to 'light' */
+html[data-bs-theme='light'] {
+  /* Your styles for light mode go here */
+  --webTitle: #222;
+  --webSub: #444;
+  
+  --navButton: #333;
+
+  --skyGrad1: #2d91c2;
+  --skyGrad2: #1e528e;
+  --skyGrad3: #009DE0;
+  --skyGrad4: #7bdaf2;
+
+  --cloudGrad1: #d1cfcf;
+  --cloudGrad2: #c4c4c4;
+
+  --suitJacket: #000;
+  --suitCollar: #111;
+  
+  /* --quizButton: */
+
+
+}
+
+html[data-bs-theme='dark'] {
+  /* Your styles for dark mode go here */
+  /* --skyGrad1: #283e51;
+  --skyGrad2: #0a2342; */
+  --webTitle: #fff;
+  --webSub: #ccc;
+  
+  --navButton: #ccc;
+
+  --skyGrad1: #020111;
+  --skyGrad2: #191621;
+  --skyGrad3: #201b2d;
+  --skyGrad4: #0d324d;
+  
+  --skyGrad1: #020111;
+  --skyGrad2: #03021a;
+  --skyGrad3: #060327;
+  --skyGrad4: #130F40;
+
+  --cloudGrad1: #5e679f;
+  --cloudGrad2: #363b5d;
+
+  --suitJacket: #000;
+  --suitCollar: #111;
+  
+  
+  --darkbg: #251d29;
+  --bgColor--night: #423966;
+
+
+}
+
+
+
+
 .button {
   display: inline-block;
   border-radius: 4px;
   text-align: center;
   font-size: 20px;
   padding: 10px 20px;
-  width: 200px;
+  /* width: 200px; */
   transition: background-color 0.3s ease;
   cursor: pointer;
   background-color: #357ed7;
@@ -20,21 +90,38 @@
   /* position: sticky;
   top: 0;
   Add the two lines above for navbar to follow the user's scroll patterns */
-  display: flex;
-  justify-content: space-around;
-  background-color: #134265;
-  padding: 10px 0;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 0.5fr;
+  grid-auto-flow: column;
+  /* background-color: rgba(0, 0, 0, 0.1); */
+  background-color: var(--skyGrad1);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* background-color: #134265; COME BACK FOR THIS */
+  padding: 10px;
 }
+
+/* .nav .gold-paper-plane-side, .nav .sun-moon-outer {
+  justify-self: center;
+  align-self: center;
+} */
+
+.nav .nav .sun-moon-outer {
+  justify-self: center;
+  align-self: center;
+}
+
 
 .nav .button {
   background-color: transparent;
-  color: #fff;
-  border: 1px solid #fff;
+  color: var(--navButton);
+  border: 1px solid var(--navButton);
 }
 
 .nav .button:hover {
-  background-color: #b4d8fd;
-  color: #0a0a23;
+  background-color: palegoldenrod;
+  color: #222;
 }
 
 /*Adding an Arrow to the Button on Hover*/
@@ -63,6 +150,65 @@
   right: 0;
 }
 
+.sun-moon {
+  position: absolute;
+  grid-column: 6;
+  background: radial-gradient(circle, #FFEB3B, #FFC107 80%, #FF9800);
+  height: 3em;
+  width: 3em;
+  border-radius: 100%;
+  border-color: transparent;
+  box-shadow: 0 0 15px rgba(255, 255, 8, 0.2);
+  justify-self: center;
+  align-self: center;
+  z-index: 2;
+}
+
+.btn-warning {
+  border: transparent;
+}
+
+.btn-check:checked + .sun-moon {
+  background: transparent;
+  box-shadow: inset -16px 0px palegoldenrod, inset -16px 0px 1px 2px palegoldenrod;
+}
+
+.sun-moon-outer {
+  content: '';
+  grid-column: 6;
+  position: absolute;
+  background: repeating-conic-gradient(#FF9800 0deg 5deg, transparent 5deg 15deg);
+  height: 4em;
+  width: 4em;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  align-self: center;
+  z-index: 1;
+}
+
+.sun-moon:hover + .sun-moon-outer {
+  animation: spin 5s linear infinite;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.btn-check:checked ~ .sun-moon-outer {
+  border-color: transparent;
+  background: transparent;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
 /*Pages and App Styling*/
 .basic {
   display: flex;
@@ -73,14 +219,6 @@
   text-align: center;
 }
 
-.App {
-  background-color: #99cff8;
-}
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
 
 /* Home Page CSS */
 .home {
@@ -94,7 +232,8 @@ body {
   align-items: center;
   flex-wrap: wrap;
   height: 100vh;
-  background: linear-gradient(#25b6f4, #007ced);
+  /* background: linear-gradient(#25b6f4, #007ced); */
+  background: linear-gradient(var(--skyGrad1), var(--skyGrad2));
 }
 
 /* WEBSITE TITLE */
@@ -103,13 +242,13 @@ body {
 }
 
 .website-title h1 {
-  text-align:center; font-size:60px; text-transform:uppercase; color:#222; letter-spacing:1px;
+  text-align:center; font-size:60px; text-transform:uppercase; color: var(--webTitle); letter-spacing:1px;
   font-family:"Playfair Display", serif; font-weight:400;
 }
 
 .website-title h1 span {
   margin-top: 5px;
-  font-size:15px; color:#444; word-spacing:1px; font-weight:normal; letter-spacing:2px;
+  font-size:15px; color:var(--webSub); word-spacing:1px; font-weight:normal; letter-spacing:2px;
   text-transform: uppercase; font-family:"Raleway", sans-serif; font-weight:500;
 
   display: grid;
@@ -123,8 +262,8 @@ body {
 .website-title h1 span:after,.website-title h1 span:before {
   content: " ";
   display: block;
-  border-bottom: 2px solid #ccc;
-  border-top: 2px solid #ccc;
+  border-bottom: 2px solid var(--webSub);
+  border-top: 2px solid var(--webSub);
   height: 10px;
   background-color:transparent;
 }
@@ -144,15 +283,6 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  /* position: fixed;
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  height: 60%;
-  margin-top: 100vh;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden; */
 }
 
 .row-container {
@@ -161,7 +291,7 @@ body {
 }
 
 .row-container > * {
-  background: linear-gradient(to right, #ECEFF1, #B0BEC5);
+  background: radial-gradient(circle, var(--cloudGrad1), var(--cloudGrad2));
   background-attachment: fixed;
 }
 
@@ -192,15 +322,16 @@ body {
   position: absolute;
   /* animation: flyIn 2s linear forwards; */
   z-index: 1;
-  background-color: white;
+  background-color: #fff;
   width: 100px;
   height: 100px;
   clip-path: polygon(50% 5%, 90% 0%, 50% 100%, 10% 0%);
 }
+
 .paper-plane-inner {
   position: relative;
   z-index: 2;
-  background-color: lightgray;
+  background-color: #ccc;
   width: 100px;
   height:100px;
   clip-path: polygon(50% 100%, 40% 0%, 60% 0%);
@@ -226,7 +357,7 @@ body {
   position: relative;
   /* animation: flyIn 2s linear forwards; */
   z-index: 1;
-  background-color: white;
+  background-color: #fff;
   width: 100px;
   height: 100px;
   clip-path: polygon(100% 0%, 0% 25%, 43% 48%, 40% 70%, 50% 54%, 70% 100%);
@@ -259,24 +390,17 @@ body {
 }
 
 .gold-paper-plane-side {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
-  /* animation: flyIn 2s linear forwards; */
-  z-index: 1;
   background-color: gold;
-  width: 100px;
-  height: 100px;
+  width: 4rem;
+  height: 4rem;
   clip-path: polygon(100% 0%, 0% 25%, 43% 48%, 40% 70%, 50% 54%, 70% 100%);
-  transform: translate(2px, -3px);
 }
 .gold-paper-plane-side-inner {
   position: relative;
-  z-index: 2;
   background-color: goldenrod;
-  width: 100px;
-  height:100px;
+  width: 100%;
+  height:100%;
   clip-path: polygon(100% 0%, 43% 48%, 40% 70%, 50% 54%);
   
 }
@@ -284,12 +408,6 @@ body {
 
 
 /* TRAILS */
-/* .trail {
-  width: 50%;
-  margin:5px 0;
-  height:2px;
-  background: repeating-linear-gradient(90deg, silver 0 6px, transparent 0 12px);
-} */
 svg {
   position: absolute;
   overflow: visible;
@@ -302,10 +420,6 @@ svg {
   stroke-dasharray: 6;
 }
 
-/* svg .logo-trail {
-  transform: translate(-40%,10%);
-} */
-
 @keyframes planeTrail {
   0% {
     offset-distance: 0%;
@@ -314,7 +428,6 @@ svg {
     offset-distance: 100%;
   }
 }
-
 
 /* SUIT PIECES */
 .suit {
@@ -325,7 +438,7 @@ svg {
   align-items: center;
   height: 120px;
   width: 120px;
-  background-color: black;
+  background-color: var(--suitJacket);
   border-radius: 10%;
 }
 
@@ -342,7 +455,8 @@ svg {
 
 .suit-collar {
   box-sizing: border-box;
-  background-color: rgb(50, 50, 50);
+  /* background-color: rgb(50, 50, 50); */
+  background-color: var(--suitCollar);
   height: 12px;
 	width: 50px;
   border-radius: 30% 30% 0 0;
@@ -356,7 +470,7 @@ svg {
 }
 
 .suit-collar::after{
-  background-color:black;
+  background-color:var(--suitJacket);
   width:40px;
   height:15px;
   top:-16px;
@@ -365,7 +479,7 @@ svg {
   transform: rotate(-60deg);
 }
 .suit-collar::before{
-  background-color: black;
+  background-color: var(--suitJacket);
   width:40px;
   height:15px;
   top: 8px;
@@ -419,15 +533,6 @@ svg {
   transform: translate(-0.1rem,0.8rem) rotate(180deg);
 }
 
-.center-line {
-  position: absolute;
-  width: 1px;
-  height: 100px;
-  background-color: yellow;
-  z-index: 10;
-  opacity: 0.5;
-}
-
 .suit-button-row {
   position: absolute;
   align-items: center;
@@ -445,27 +550,9 @@ svg {
   z-index: 3;
   height: 7px;
   width: 7px;
-  background-color: black;
+  background-color: var(--suitJacket);
   border-radius: 50%;
   display: inline-block;
-}
-
-@keyframes flyIn {
-  0% {
-    transform: rotate(0deg) translateX(-50vw) rotate(-50deg);
-  }
-  40% {
-    transform: rotate(0deg) translate(0vw, 25vh) rotate(-90deg);
-  }
-  90% {
-    transform: rotate(-180deg) translateY(25vh) rotate(-180deg);
-  }
-  95% {
-    transform: translate(10px,2vh) rotate(-360deg);
-  }
-  100% {
-    transform: translate(10px,10px) rotate(-360deg);
-  }
 }
 
 .cloud{
@@ -633,7 +720,7 @@ svg {
   flex-wrap: wrap;
   height: 150vh;
   flex-wrap: wrap;
-  background: linear-gradient(#009DE0, skyblue);
+  background: linear-gradient(var(--skyGrad2), var(--skyGrad3));
 }
 
 .feature-cloud{
@@ -690,31 +777,21 @@ svg {
   justify-content: center;
   align-items: center;
   height: 50vh;
-  background: linear-gradient(skyblue, #FEFEFE);
+  background: linear-gradient(var(--skyGrad3), var(--skyGrad4));
 }
 
 /* Detailed Page CSS */
 .detailed {
   display: block;
-  background: linear-gradient(#25b6f4, #007ced);
-  /* background: linear-gradient(to right, #ECEFF1, #B0BEC5);
-  background-attachment: fixed; */
+  /* background: linear-gradient(var(--skyGrad1), var(--skyGrad2)); */
+  background: linear-gradient(var(--skyGrad1), var(--skyGrad4));
 }
 
-.info-container {
+.quiz {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-}
-
-.quiz-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /* height: 100vh; */
   height: 100vh;
   text-align: center;
 }
@@ -732,25 +809,14 @@ svg {
 
 
 /* DETAILED QUIZ */
-.info-cloud{
-  z-index: 1;
-  box-sizing: border-box;
-  /* width:500px;
-  height:200px; */
-  width: 50%;
-  height:50%;
-  border-radius:100px;
-  background-color: white;
-  /* flex: 100%; */
-}
-
-.info-cloud h1 {
+.quiz-container h1 {
   letter-spacing:1px;
+  font-size: 35px;
 }
 
-.info-cloud h1 span {
-  font-size:12px;
-  color:#444;
+.quiz-container h1 span {
+  font-size:10px;
+  color:var(--webTitle);
   font-weight:normal;
   letter-spacing:2px;
   text-transform: uppercase; 
@@ -759,51 +825,12 @@ svg {
   justify-content: center;
 }
 
-.info-cloud h1 p {
+.quiz-container h1 p {
   margin-top: 5px;
   font-size:15px;
-  color:#555;
+  color:var(--webTitle);
   font-weight:normal;
 }
-
-.puff {
-  position: absolute;
-  box-sizing: border-box;
-  width:20%; 
-  height:30%;
-  top: 18%;
-  left: 44%;
-  border-radius:100%;
-  /* box-shadow: 0 0 100px rgba(0,0,0,.2); */
-  box-shadow: 0 0 100px rgba(0,0,0,.2);
-  background: white;
-}
-
- .puff::after, .puff::before{
-  content:"";
-  position:relative;
-  display:inline-block;
-  background:inherit;
-  border-radius:inherit;
-  /* box-shadow: inherit; */
-}
-
-
-.puff::before{
-  width:100%;
-  height:100%;
-  bottom: 20%;
-  left: 50%;
-}
-
-
-.puff::after{
-  width:100%;
-  height:100%;
-  bottom: 120%;
-  right: 90%;
-}
-
 
 .unfolded-plane {
   position: relative;
@@ -811,13 +838,11 @@ svg {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* height: 100vh; */
   text-align: center;
-  /* background-color: whitesmoke; */
   background: linear-gradient(white, lightgrey, white);
   clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 10%, 90% 0%);
-  width: 70%;
-  height: 70%;
+  width: 50%;
+  height: 60%;
   box-shadow: 0 0 100px rgba(0,0,0,.2);
 }
 
@@ -848,11 +873,12 @@ svg {
   padding: 30;
 }
 
-.quiz {
-  display: block;
+.quiz-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   width: 75%;
-
 }
 
 
