@@ -131,10 +131,10 @@ export function Pages(): JSX.Element {
             </Button>
           </OverlayTrigger>
           <Button 
-            className = "button" 
+            className="button" 
             onClick={updateSetReport} 
-            disabled={isReport}>
-              <span>Reports</span>
+            disabled={isReport || Report === ''}>
+            <span>Reports</span>
           </Button>
           <ToggleButton
             className="sun-moon"
