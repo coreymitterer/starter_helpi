@@ -111,4 +111,4 @@ export function DetailedQuiz({setReports, education, income}: DetailedString,): 
 
 }
 
-
+//Trying to fix
