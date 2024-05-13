@@ -135,6 +135,14 @@ export function BasicQuiz({setReports}: BasicString): JSX.Element {
             disabled={userResponses.includes('') || questionIndex !== QUESTIONS.length - 1}>
                 <span className="submitButton-span">Submit</span>
         </Button>
+        <br></br>
+        {isLoading && (
+            <>
+                <p>Processing Results...</p>
+                <br />
+                <Spinner animation="border" role="status" />
+            </>
+        )}
       </div>
   </div>
   );

@@ -110,10 +110,10 @@ export function DetailedQuiz({setReports}: DetailedString): JSX.Element {
                         <br />
                         <Spinner animation="border" role="status" />
                     </>
-                    )}
+                )}
             </center>
         </div>
-        </div>
+    </div>
     );
 
 }
