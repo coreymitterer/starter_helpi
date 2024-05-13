@@ -78,6 +78,7 @@ export function BasicQuiz({setReports}: BasicString): JSX.Element {
             id="Agreement-check-strongly-agree"
             label="Strongly Agree"
             value="strongly agree"
+            checked={userResponses[questionIndex] === "strongly agree"}
         />
         <Form.Check
             type="radio"
@@ -86,6 +87,7 @@ export function BasicQuiz({setReports}: BasicString): JSX.Element {
             id="Agreement-check-agree"
             label="Agree"
             value="agree"
+            checked={userResponses[questionIndex] === "agree"}
         />
         <Form.Check
             type="radio"
@@ -94,6 +96,7 @@ export function BasicQuiz({setReports}: BasicString): JSX.Element {
             id="Agreement-check-Neutral"
             label="Neutral"
             value="neutral"
+            checked={userResponses[questionIndex] === "neutral"}
         />
         <Form.Check
             type="radio"
@@ -102,6 +105,7 @@ export function BasicQuiz({setReports}: BasicString): JSX.Element {
             id="Agreement-check-disagree"
             label="Disagree"
             value="disagree"
+            checked={userResponses[questionIndex] === "disagree"}
         />
         <Form.Check
             type="radio"
@@ -110,6 +114,7 @@ export function BasicQuiz({setReports}: BasicString): JSX.Element {
             id="Agreement-check-strongly-disagree"
             label="Strongly Disagree"
             value="strongly disagree"
+            checked={userResponses[questionIndex] === "strongly disagree"}
         />
       </div>
       <div>
