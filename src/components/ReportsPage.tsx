@@ -9,7 +9,13 @@ interface Career {
     description: string;
 }
 
-export function ReportsPage({ Report }: Reports): JSX.Element {
+interface reportsBoolean {
+    setReport: React.Dispatch<React.SetStateAction<boolean>>;
+    setDetailed: React.Dispatch<React.SetStateAction<boolean>>;
+    setBasic: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export function ReportsPage({ Report, setReport, setBasic, setDetailed }: Reports & reportsBoolean): JSX.Element {
     // Parse the JSON string into an object
     const reportObject = JSON.parse(Report);
 
@@ -23,6 +29,9 @@ export function ReportsPage({ Report }: Reports): JSX.Element {
             title: job.title,
             description: job.description
         });
+        setReport(true)
+        setDetailed(false)
+        setBasic(false)
     });
 
     return (

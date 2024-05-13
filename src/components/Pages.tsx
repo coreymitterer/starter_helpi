@@ -162,7 +162,7 @@ export function Pages(): JSX.Element {
       )}
       {isReport && (
         <div className = "report">
-          <ReportsPage Report={Report}></ReportsPage>
+          <ReportsPage Report={Report} setReport={setReport} setBasic={setBasic} setDetailed={setDetailed}></ReportsPage>
         </div>
       )}
       <div className="footer">

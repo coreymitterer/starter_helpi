@@ -48,7 +48,7 @@ export function DetailedQuiz({setReports}: DetailedString): JSX.Element {
                 { role: "user", content: "Here is a list of questions: " + QUESTIONS.join(", ") + " And here is the combined output of answers: " + userResponses.join(', ')}
             ],
         });
-        setIsLoading(false);
+        setIsLoading(false); // Set loading to false after receiving response
         setOutput(completion.choices[0]?.message.content || "");
         setReports(completion.choices[0]?.message.content || "");
         console.log(output)
