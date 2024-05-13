@@ -5,23 +5,24 @@ interface Reports {
 }
 
 interface Career {
-    Job_title: string;
-    Description: string;
+    title: string;
+    description: string;
 }
 
 export function ReportsPage({ Report }: Reports): JSX.Element {
-
     // Parse the JSON string into an object
     const reportObject = JSON.parse(Report);
 
     // Extract careers and descriptions into arrays
-    const careers: string[] = [];
-    const descriptions: string[] = [];
+    const careers: Career[] = [];
 
+    // Iterate over the keys (e.g., "Job1", "Job2", etc.)
     Object.keys(reportObject).forEach((key: string) => {
-        const career: Career = reportObject[key];
-        careers.push(career.Job_title);
-        descriptions.push(career.Description);
+        const job = reportObject[key];
+        careers.push({
+            title: job.title,
+            description: job.description
+        });
     });
 
     return (
@@ -30,8 +31,8 @@ export function ReportsPage({ Report }: Reports): JSX.Element {
             <div>
                 {careers.map((career, index) => (
                     <div key={index}>
-                        <h2>{career}</h2>
-                        <p>{descriptions[index]}</p>
+                        <h2><strong>{career.title}</strong></h2>
+                        <p>{career.description}</p>
                     </div>
                 ))}
             </div>
