@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 
-
+//Props for the Survey component
 interface SurveyProps {
   onCompletion: () => void;
   setIncome: (income: number) => void;
