@@ -55,7 +55,8 @@ export function DetailedQuiz({setReports}: DetailedString): JSX.Element {
     }
 
     return (
-        <div>
+        //All of the HTML that will be returned for detailed Quiz including Progress bar Prev and Next question, Submit Button as well as the Text box for each questions response
+        <div className='quiz-text'>
             <p>
                 {QUESTIONS.length - questionIndex === 1 ? 
                 `${QUESTIONS.length - questionIndex} Question Left` : 
@@ -77,23 +78,22 @@ export function DetailedQuiz({setReports}: DetailedString): JSX.Element {
                         onChange={changeUserResponse} 
                     />
                 </Form.Group>
+            </div>
+            <div>
                 <Button 
                     type="button"
                     className="prevButton"
                     onClick={prevQuestion}
-                    disabled={questionIndex === 0}
-                >
-                    <span className="prevButton-span">Previous Question</span>
+                    disabled={questionIndex === 0}>
+                        <span className="prevButton-span">Back</span>
                 </Button>
                 <Button 
                     type="button"
                     className="nextButton"
                     onClick={nextQuestion}
-                    disabled={questionIndex === QUESTIONS.length - 1 || userResponses[questionIndex] === ""}
-                >
-                    <span className="prevButton-span">Next Question</span>
+                    disabled={questionIndex === QUESTIONS.length - 1 || userResponses[questionIndex] === ""}>
+                        <span className="prevButton-span">Next</span>
                 </Button>
-            </div>
             <center>
                 <Button 
                     type="button"
@@ -112,6 +112,7 @@ export function DetailedQuiz({setReports}: DetailedString): JSX.Element {
                     </>
                     )}
             </center>
+        </div>
         </div>
     );
 
