@@ -1016,13 +1016,15 @@ svg {
 }
 
 .report {
-  /* background-color: #f8f9fa; */
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  position: relative; */
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
+  /* flex-wrap: wrap; */
   text-align: center;
+  /* flex-direction: row; */
+  display: block;
+  background: linear-gradient(var(--skyGrad1), var(--skyGrad4));
 }
 
 .carousel {

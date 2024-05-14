@@ -26,14 +26,23 @@ export function ReportsPage({ Report }: Reports): JSX.Element {
     });
 
     return (
-        <div>
-            <h1>Welcome to the Reports Page!</h1>
+        <div className="report">
+            {/* <h1>Welcome to the Reports Page!</h1> */}
             <div>
                 {careers.map((career, index) => (
-                    <div key={index}>
-                        <h2><strong>{career.title}</strong></h2>
-                        <p>{career.description}</p>
+                    // <div key={index}>
+                    //     <h2><strong>{career.title}</strong></h2>
+                    //     <p>{career.description}</p>
+                    // </div>
+                    <div className="text-cloud">
+                    <div className = "features-container">
+                        <div key={index}>
+                            <h1>{career.title}
+                                <span>{career.description}</span>
+                            </h1>
+                        </div>
                     </div>
+                </div>
                 ))}
             </div>
         </div>

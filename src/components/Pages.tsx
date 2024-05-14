@@ -159,9 +159,7 @@ export function Pages(): JSX.Element {
         <DetailedPage setReports={setReports}></DetailedPage>
       )}
       {isReport && (
-        <div className = "report">
           <ReportsPage Report={Report}></ReportsPage>
-        </div>
       )}
       <div className="footer">
         <Form>
