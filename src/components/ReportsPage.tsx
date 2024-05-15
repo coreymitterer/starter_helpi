@@ -29,12 +29,12 @@ export function ReportsPage({ Report }: Reports): JSX.Element {
         <div className="quiz-page">
             <div className="quiz">
                 <div className="unfolded-plane">
-                    <div className="quiz-container">
+                    <div className="report-container">
                         <div>
                             {careers.map((career, index) => (
                             <div key={index}>
                                 <h1>{career.title}
-                                    <span>{career.description}</span>
+                                    <p>{career.description}</p>
                                 </h1>
                             </div>
                             ))}
