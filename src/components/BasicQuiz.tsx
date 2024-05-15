@@ -59,91 +59,91 @@ export function BasicQuiz({setReports}: BasicString): JSX.Element {
 
   return (
       //All of the HTML that will be returned for detailed Quiz including Progress bar Prev and Next question, Submit Button as well as the Text box for each questions response
-      <div>
+      <div className="quiz-text">
+        <p>
+            {QUESTIONS.length - questionIndex === 1 ? 
+            `${QUESTIONS.length - questionIndex} Question Left` : 
+            `${QUESTIONS.length - questionIndex} Questions Left`}
+        </p>
       <ProgressBar 
           now={(questionIndex + 1) / QUESTIONS.length * 100}
-          label={(QUESTIONS.length - questionIndex === 1) ? `${QUESTIONS.length - questionIndex} Question Left` : `${QUESTIONS.length - questionIndex} Questions Left`}/>
-      <div>
-            <Form.Label>{QUESTIONS[questionIndex]}</Form.Label>
-            <Form.Check
-                type="radio"
-                name="Agreement"
-                onChange={changeUserResponse}
-                id="Agreement-check-strongly-agree"
-                label="Strongly Agree"
-                value="strongly ageee"
-                checked={userResponses[questionIndex] === 'Strongly Agree'}
-            />
-            <Form.Check
-                type="radio"
-                name="Agreement"
-                onChange={changeUserResponse}
-                id="Agreement-check-agree"
-                label="Agree"
-                value="ageee"
-                checked={userResponses[questionIndex] === 'Agree'}
-            />
-            <Form.Check
-                type="radio"
-                name="Agreement"
-                onChange={changeUserResponse}
-                id="Agreement-check-Neutral"
-                label="Neutral"
-                value="neutral"
-                checked={userResponses[questionIndex] === 'Neutral'}
-            />
-            <Form.Check
-                type="radio"
-                name="Agreement"
-                onChange={changeUserResponse}
-                id="Agreement-check-disagree"
-                label="Disagree"
-                value="disagree"
-                checked={userResponses[questionIndex] === 'Disagree'}
-            />
-            <Form.Check
-                type="radio"
-                name="Agreement"
-                onChange={changeUserResponse}
-                id="Agreement-check-strongly-disagree"
-                label="Strongly Disagree"
-                value="strongly disagree"
-                checked={userResponses[questionIndex] === 'Stronly Disagree'}
-            />
-          <Button 
-              type="button"
-              className="prevButton"
-              onClick={prevQuestion}
-              disabled={questionIndex === 0}>
-                  <span className="prevButton-span">Previous Question</span>
-          </Button>
-          <Button 
-              type="button"
-              className="nextButton"
-              onClick={nextQuestion}
-              disabled={questionIndex === QUESTIONS.length - 1 || userResponses[questionIndex] === ""}>
-                  <span className="prevButton-span">Next Question</span>
-          </Button>
+          label={`${Math.floor(((questionIndex + 1)/QUESTIONS.length)*100)}%`}
+        />
+        <Form.Label>{QUESTIONS[questionIndex]}</Form.Label>
+      <div className="quiz-answers">
+        <Form.Check
+            type="radio"
+            name="Agreement"
+            onChange={changeUserResponse}
+            id="Agreement-check-strongly-agree"
+            label="Strongly Agree"
+            value="strongly agree"
+        />
+        <Form.Check
+            type="radio"
+            name="Agreement"
+            onChange={changeUserResponse}
+            id="Agreement-check-agree"
+            label="Agree"
+            value="agree"
+        />
+        <Form.Check
+            type="radio"
+            name="Agreement"
+            onChange={changeUserResponse}
+            id="Agreement-check-Neutral"
+            label="Neutral"
+            value="neutral"
+        />
+        <Form.Check
+            type="radio"
+            name="Agreement"
+            onChange={changeUserResponse}
+            id="Agreement-check-disagree"
+            label="Disagree"
+            value="disagree"
+        />
+        <Form.Check
+            type="radio"
+            name="Agreement"
+            onChange={changeUserResponse}
+            id="Agreement-check-strongly-disagree"
+            label="Strongly Disagree"
+            value="strongly disagree"
+        />
       </div>
-      <center>
-          <Button 
-              type="button"
-              className="submitButton"
-              onClick={callOpenAI}
-              disabled={userResponses.includes('') || questionIndex !== QUESTIONS.length - 1}>
-                  <span className="submitButton-span">Submit</span>
-          </Button>
-      </center>
       <div>
-      <br></br>
-                {isLoading && (
-                    <>
-                        <p>Processing Results...</p>
-                        <br />
-                        <Spinner animation="border" role="status" />
-                    </>
-                    )}
-     </div>
+      <Button 
+            type="button"
+            className="prevButton"
+            onClick={prevQuestion}
+            disabled={questionIndex === 0}>
+                <span className="prevButton-span">Back</span>
+        </Button>
+        <Button 
+            type="button"
+            className="nextButton"
+            onClick={nextQuestion}
+            disabled={questionIndex === QUESTIONS.length - 1 || userResponses[questionIndex] === ""}>
+                <span className="prevButton-span">Next</span>
+        </Button>
+        <br></br>
+        <Button 
+            type="button"
+            className="submitButton"
+            onClick={callOpenAI}
+            disabled={userResponses.includes('') || questionIndex !== QUESTIONS.length - 1}>
+                <span className="submitButton-span">Submit</span>
+        </Button>
+        <br></br>
+        {isLoading && (
+            <>
+                <p>Processing Results...</p>
+                <br />
+                <Spinner animation="border" role="status" />
+            </>
+        )}
+      </div>
   </div>
   );
 }
