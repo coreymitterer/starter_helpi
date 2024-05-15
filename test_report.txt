@@ -36,7 +36,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (85 ms)
+  ✕ renders learn react link (90 ms)
 
   ● renders learn react link
 
@@ -360,31 +360,6 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
----------------------------|---------|----------|---------|---------|-------------------
-File                       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
----------------------------|---------|----------|---------|---------|-------------------
-All files                  |   29.28 |    16.12 |   17.39 |    27.2 |                   
- src                       |    8.33 |        0 |   33.33 |    8.33 |                   
-  App.tsx                  |     100 |      100 |     100 |     100 |                   
-  index.tsx                |       0 |      100 |     100 |       0 | 8-20              
-  reportWebVitals.ts       |       0 |        0 |       0 |       0 | 3-10              
- src/components            |   31.25 |    17.24 |   16.27 |   29.03 |                   
-  BaseQuestion.tsx         |     100 |      100 |     100 |     100 |                   
-  BasicPage.tsx            |       0 |        0 |       0 |       0 | 13-21             
-  BasicQuiz.tsx            |      12 |        0 |   14.28 |    8.33 | 16-60             
-  DetailedPage.tsx         |       0 |        0 |       0 |       0 | 23-34             
-  DetailedQuestionBank.tsx |     100 |      100 |     100 |     100 |                   
-  DetailedQuiz.tsx         |   20.83 |        0 |      25 |   13.63 | 22-65             
-  HomePage.tsx             |    87.5 |      100 |      75 |   85.71 | 47                
-  Pages.tsx                |   47.61 |     62.5 |    12.5 |   47.61 | 31,51-79,85-92    
-  ReportsPage.tsx          |       0 |      100 |       0 |       0 | 14-33             
-  Survey.tsx               |      25 |        0 |       0 |      25 | 16-18,26-52       
----------------------------|---------|----------|---------|---------|-------------------
-Test Suites: 1 failed, 1 total
-Tests:       1 failed, 1 total
-Snapshots:   0 total
-Time:        3.34 s
-Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
 declaring it in its dependencies. This is currently working because
@@ -397,3 +372,28 @@ ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
 your devDependencies to work around this error. This will make this message
 go away.[0m
   
+---------------------------|---------|----------|---------|---------|-------------------
+File                       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------------|---------|----------|---------|---------|-------------------
+All files                  |   25.35 |    16.66 |   17.77 |   23.18 |                   
+ src                       |    8.33 |        0 |   33.33 |    8.33 |                   
+  App.tsx                  |     100 |      100 |     100 |     100 |                   
+  index.tsx                |       0 |      100 |     100 |       0 | 8-20              
+  reportWebVitals.ts       |       0 |        0 |       0 |       0 | 3-10              
+ src/components            |   26.92 |    17.85 |   16.66 |    24.6 |                   
+  BaseQuestion.tsx         |     100 |      100 |     100 |     100 |                   
+  BasicPage.tsx            |       0 |        0 |       0 |       0 | 13-21             
+  BasicQuiz.tsx            |      12 |        0 |   14.28 |    8.33 | 16-60             
+  DetailedPage.tsx         |       0 |        0 |       0 |       0 | 14-20             
+  DetailedQuestionBank.tsx |     100 |      100 |     100 |     100 |                   
+  DetailedQuiz.tsx         |   18.51 |        0 |      25 |      12 | 14-57             
+  HomePage.tsx             |    87.5 |      100 |      75 |   85.71 | 47                
+  Pages.tsx                |      45 |     62.5 |    12.5 |      45 | 29,50-79,85-92    
+  ReportsPage.tsx          |       0 |      100 |       0 |       0 | 20-42             
+  Survey.tsx               |       0 |        0 |       0 |       0 | 12-52             
+---------------------------|---------|----------|---------|---------|-------------------
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 total
+Snapshots:   0 total
+Time:        3.547 s
+Ran all test suites.
