@@ -11,7 +11,7 @@ const BaseQuestion = [
   {
     id: 3,
     question:
-      "I enjoy working in small groups on large projects I would rather work at a desk for the majority of my work",
+      "I would rather work at a desk for the majority of my work",
   },
   {
     id: 4,

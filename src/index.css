@@ -1015,14 +1015,26 @@ svg {
   font-size: 25px;
 }
 
-.report {
-  /* background-color: #f8f9fa; */
+.report-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   text-align: center;
+  /* width: 75%;
+  height: 75%; */
+  width: 100%;
+  height: 100%;
+  color: var(--suitJacket);
+}
+
+.report-container h1 {
+  letter-spacing:1px;
+  font-size: 20px;
+}
+
+.report-container h1 p {
+  font-size: 12px;
+  font-weight:normal;
 }
 
 .carousel {

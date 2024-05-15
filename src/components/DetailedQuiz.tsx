@@ -6,11 +6,12 @@ import OpenAi from "openai";
 const QUESTIONS: string[] = detailedQuestionBank.map(question => question.question);
 const TOPICS: string[] = detailedQuestionBank.map(question => question.topic);
 const DEFAULT_QUESTION_INDEX: number = 0;
+
 interface DetailedString {
     setReports: (DetailedString: string) => void;
 }
 
-export function DetailedQuiz({setReports}: DetailedString): JSX.Element {
+export function DetailedQuiz({setReports, education, income}: DetailedString): JSX.Element {
     const [output, setOutput] = useState<string>("");
     const [questionIndex, setQuestionIndex] = useState<number>(DEFAULT_QUESTION_INDEX);
     const [userResponses, setUserResponses] = useState<string[]>(new Array(QUESTIONS.length).fill(''));
@@ -51,11 +52,12 @@ export function DetailedQuiz({setReports}: DetailedString): JSX.Element {
         setIsLoading(false); // Set loading to false after receiving response
         setOutput(completion.choices[0]?.message.content || "");
         setReports(completion.choices[0]?.message.content || "");
-        console.log(output);
+        console.log(output)
     }
 
     return (
-        <div>
+        //All of the HTML that will be returned for detailed Quiz including Progress bar Prev and Next question, Submit Button as well as the Text box for each questions response
+        <div className='quiz-text'>
             <p>
                 {QUESTIONS.length - questionIndex === 1 ? 
                 `${QUESTIONS.length - questionIndex} Question Left` : 
@@ -77,23 +79,22 @@ export function DetailedQuiz({setReports}: DetailedString): JSX.Element {
                         onChange={changeUserResponse} 
                     />
                 </Form.Group>
+            </div>
+            <div>
                 <Button 
                     type="button"
                     className="prevButton"
                     onClick={prevQuestion}
-                    disabled={questionIndex === 0}
-                >
-                    <span className="prevButton-span">Previous Question</span>
+                    disabled={questionIndex === 0}>
+                        <span className="prevButton-span">Back</span>
                 </Button>
                 <Button 
                     type="button"
                     className="nextButton"
                     onClick={nextQuestion}
-                    disabled={questionIndex === QUESTIONS.length - 1 || userResponses[questionIndex] === ""}
-                >
-                    <span className="prevButton-span">Next Question</span>
+                    disabled={questionIndex === QUESTIONS.length - 1 || userResponses[questionIndex] === ""}>
+                        <span className="prevButton-span">Next</span>
                 </Button>
-            </div>
             <center>
                 <Button 
                     type="button"
@@ -110,9 +111,10 @@ export function DetailedQuiz({setReports}: DetailedString): JSX.Element {
                         <br />
                         <Spinner animation="border" role="status" />
                     </>
-                    )}
+                )}
             </center>
         </div>
+    </div>
     );
 
 }

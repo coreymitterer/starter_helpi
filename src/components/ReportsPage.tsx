@@ -9,13 +9,7 @@ interface Career {
     description: string;
 }
 
-interface reportsBoolean {
-    setReport: React.Dispatch<React.SetStateAction<boolean>>;
-    setDetailed: React.Dispatch<React.SetStateAction<boolean>>;
-    setBasic: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-export function ReportsPage({ Report, setReport, setBasic, setDetailed }: Reports & reportsBoolean): JSX.Element {
+export function ReportsPage({ Report }: Reports): JSX.Element {
     // Parse the JSON string into an object
     const reportObject = JSON.parse(Report);
 
@@ -29,21 +23,24 @@ export function ReportsPage({ Report, setReport, setBasic, setDetailed }: Report
             title: job.title,
             description: job.description
         });
-        setReport(true)
-        setDetailed(false)
-        setBasic(false)
     });
 
     return (
-        <div>
-            <h1>Welcome to the Reports Page!</h1>
-            <div>
-                {careers.map((career, index) => (
-                    <div key={index}>
-                        <h2><strong>{career.title}</strong></h2>
-                        <p>{career.description}</p>
+        <div className="quiz-page">
+            <div className="quiz">
+                <div className="unfolded-plane">
+                    <div className="report-container">
+                        <div>
+                            {careers.map((career, index) => (
+                            <div key={index}>
+                                <h1>{career.title}
+                                    <p>{career.description}</p>
+                                </h1>
+                            </div>
+                            ))}
+                        </div>
                     </div>
-                ))}
+                </div>
             </div>
         </div>
     );
