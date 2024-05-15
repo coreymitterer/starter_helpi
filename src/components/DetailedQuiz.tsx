@@ -51,6 +51,7 @@ export function DetailedQuiz({setReports}: DetailedString): JSX.Element {
         setIsLoading(false); // Set loading to false after receiving response
         setOutput(completion.choices[0]?.message.content || "");
         setReports(completion.choices[0]?.message.content || "");
+        console.log(output);
     }
 
     return (
