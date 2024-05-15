@@ -56,6 +56,7 @@ export function BasicQuiz({setReports}: BasicString): JSX.Element {
         console.log(output)
     }
 
+
   return (
       //All of the HTML that will be returned for detailed Quiz including Progress bar Prev and Next question, Submit Button as well as the Text box for each questions response
       <div className="quiz-text">

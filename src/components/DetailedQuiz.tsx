@@ -7,11 +7,8 @@ const QUESTIONS: string[] = detailedQuestionBank.map(question => question.questi
 const TOPICS: string[] = detailedQuestionBank.map(question => question.topic);
 const DEFAULT_QUESTION_INDEX: number = 0;
 
-
 interface DetailedString {
     setReports: (DetailedString: string) => void;
-    education: string;
-    income : number;
 }
 
 export function DetailedQuiz({setReports, education, income}: DetailedString): JSX.Element {
