@@ -7,15 +7,15 @@ import Survey from "./Survey";
 
 interface DetailedString {
   setReports: (newString: string) => void;
-  income: number;
-  education: string;
-  setIncome: (income: number) => void;
-  setEducation: (education: string) => void;
+  // setIncome: (income: number) => void;
+  // setEducation: (education: string) => void;
 }
 
-export function DetailedPage({ setReports, income, education, setIncome, setEducation}: DetailedString): JSX.Element {
+export function DetailedPage({ setReports }: DetailedString): JSX.Element {
   const [surveyStarted, setSurveyStarted] = useState<boolean>(false);
   const [quizStarted, setQuizStarted] = useState<boolean>(false);
+  const [income, setIncome] = useState<number>(0);
+  const [education,setEducation] = useState<string>('');
 
   function startSurvey(): void {
     setSurveyStarted(true);
@@ -23,6 +23,8 @@ export function DetailedPage({ setReports, income, education, setIncome, setEduc
   function startQuiz(): void {
     setQuizStarted(true);
   }
+
+  
 
   return (
     <div className="quiz-page">

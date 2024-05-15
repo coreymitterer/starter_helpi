@@ -156,9 +156,7 @@ export function Pages(): JSX.Element {
           <BasicPage setReports={setReports}></BasicPage>
       )}
       {isDetailed && (
-        <DetailedPage 
-        setReports={setReports}
-        ></DetailedPage>
+        <DetailedPage setReports={setReports}></DetailedPage>
       )}
       {isReport && (
           <ReportsPage Report={Report}></ReportsPage>
