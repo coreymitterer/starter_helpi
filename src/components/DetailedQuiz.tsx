@@ -49,7 +49,7 @@ export function DetailedQuiz({setReports, education, income}: DetailedString): J
             model: "gpt-4",
             messages: [
                 { role: "system", content: "You will be provided with a list of questions and answers, your job is to turn these questions and answers into 5 different career options with the job title and a short description of each career. You will format these 5 careers into a Json file and only a Json format where the Job title should be under the name {title} and the description should be called {description}" },
-                { role: "user", content: "Here is a list of questions: " + QUESTIONS.join(", ") + " And here is the combined output of answers: " + userResponses.join(', ')}
+                { role: "user", content: "Here is a list of questions: " + QUESTIONS.join(", ") + " And here is the combined output of answers: " + userResponses.join(', ') + "Here is the highest education level the user is willing to complete" + education + "Here is the preferred income of the user" + income}
             ],
         });
         setIsLoading(false); // Set loading to false after receiving response
