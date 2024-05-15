@@ -3,15 +3,6 @@ import { useState } from "react";
 import { Button } from "react-bootstrap";
 import { DetailedQuiz } from "./DetailedQuiz";
 import "../index.css";
-import Survey from "./Survey";
-
-interface DetailedString {
-  setReports: (newString: string) => void;
-  income: number;
-  education: string;
-  setIncome: (income: number) => void;
-  setEducation: (education: string) => void;
-}
 
 //Creates the detailed page with the title and description as well as the 
 //Actual questions progress bar and submit
@@ -19,8 +10,7 @@ interface DetailedString {
   setReports: (DetailedString: string) => void;
 }
 
-export function DetailedPage({ setReports, income, education, setIncome, setEducation}: DetailedString): JSX.Element {
-  const [surveyCompleted, setSurveyCompleted] = useState(false);
+export function DetailedPage({ setReports}: DetailedString): JSX.Element {
   const [quizStarted, setQuizStarted] = useState<boolean>(false);
 
   function startQuiz(): void {
@@ -29,13 +19,6 @@ export function DetailedPage({ setReports, income, education, setIncome, setEduc
 
   return (
     <div>
-      {!surveyCompleted ? (
-        <Survey
-          onCompletion={() => setSurveyCompleted(true)}
-          setEducation={setEducation}
-          setIncome={setIncome}
-        />
-      ) : (
         <div className="quiz-page">
           <div className="quiz">
             <div className="unfolded-plane">
@@ -59,15 +42,12 @@ export function DetailedPage({ setReports, income, education, setIncome, setEduc
                 {quizStarted && (
                   <DetailedQuiz
                     setReports={setReports}
-                    education={education}
-                    income={income}
                   />
                 )}
               </div>
             </div>
           </div>
         </div>
-      )}
     </div>
   );
 }
