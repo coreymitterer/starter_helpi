@@ -47,26 +47,28 @@ export function Pages(): JSX.Element {
           Home Is Where The Career Quizzes Are
         </Tooltip>
       );
+      //Changes to homepage
   function updateSetHome(): void {
         setHome(true);
         setBasic(false);
         setDetailed(false);
         setReport(false);
     }
-
+    //Changes to Basic
   function updateSetBasic(): void {
     setHome(false);
     setBasic(true);
     setDetailed(false);
     setReport(false);
   }
-
+    //Changes to Detailed
     function updateSetDetailed(): void {
         setHome(false);
         setBasic(false);
         setDetailed(true);
         setReport(false);
     }
+    //Changes to Reports
     
     function updateSetReport(): void {
       setHome(false);
@@ -74,7 +76,7 @@ export function Pages(): JSX.Element {
       setDetailed(false);
       setReport(true);
   }
-
+  //Changes to the nightmode 
   function toggleNightMode(): void {
     setDarkMode(!isDarkMode);
   }
@@ -168,7 +170,7 @@ export function Pages(): JSX.Element {
       )}
       {isReport && (
         <div className = "report">
-          <ReportsPage Report={Report}></ReportsPage>
+          <ReportsPage Report={Report} setReport={setReport} setBasic={setBasic} setDetailed={setDetailed}></ReportsPage>
         </div>
       )}
       <div className="footer">

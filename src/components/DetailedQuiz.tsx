@@ -54,12 +54,11 @@ export function DetailedQuiz({setReports, education, income}: DetailedString,): 
                 { role: "user", content: "Here is a list of questions: " + QUESTIONS.join(", ") + " And here is the combined output of answers: " + userResponses.join(", ") + "Here are the survey results that the user also inputted, Their preferred level of education is" + education + ": and here is their preferred income: " + String(income)}
             ],
         });
+        setIsLoading(false); // Set loading to false after receiving response
+        setOutput(completion.choices[0]?.message.content || "");
+        setReports(completion.choices[0]?.message.content || "");
         //Puts the output right under the submit button
         setOutput(completion.choices[0]?.message.content || ""); // Handle null value by providing a default value of an empty string
-        console.log(output)
-        setReports(completion.choices[0]?.message.content || "");
-    }
-
 
 
     return (
