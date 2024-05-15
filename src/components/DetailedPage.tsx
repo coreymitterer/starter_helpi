@@ -3,16 +3,23 @@ import "../index.css";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
 import { DetailedQuiz } from "./DetailedQuiz";
+import Survey from "./Survey";
 
-//Creates the detailed page with the title and description as well as the 
-//Actual questions progress bar and submit
 interface DetailedString {
-  setReports: (DetailedString: string) => void;
+  setReports: (newString: string) => void;
+  income: number;
+  education: string;
+  setIncome: (income: number) => void;
+  setEducation: (education: string) => void;
 }
 
-export function DetailedPage({setReports}: DetailedString): JSX.Element {
+export function DetailedPage({ setReports, income, education, setIncome, setEducation}: DetailedString): JSX.Element {
+  const [surveyStarted, setSurveyStarted] = useState<boolean>(false);
   const [quizStarted, setQuizStarted] = useState<boolean>(false);
 
+  function startSurvey(): void {
+    setSurveyStarted(true);
+  }
   function startQuiz(): void {
     setQuizStarted(true);
   }
@@ -22,7 +29,7 @@ export function DetailedPage({setReports}: DetailedString): JSX.Element {
       <div className="quiz">
         <div className="unfolded-plane">
           <div className="quiz-container">
-          {!quizStarted && (
+          {!quizStarted && !surveyStarted && (
           <div>
             <h1>Detailed Career Quiz
               <span>Land Your Perfect Career</span>
@@ -36,13 +43,20 @@ export function DetailedPage({setReports}: DetailedString): JSX.Element {
             </h1>
             <Button
               className="button"
-              onClick={startQuiz}
+              onClick={startSurvey}
               >
                 <span>Start Quiz</span>
             </Button>
           </div>)
           }
-          {quizStarted && (<DetailedQuiz setReports={setReports}></DetailedQuiz>)}
+          {surveyStarted && !quizStarted && (
+            <Survey
+              onCompletion={startQuiz}
+              setIncome={setIncome}
+              setEducation={setEducation}
+            ></Survey>
+          )}
+          {quizStarted && (<DetailedQuiz setReports={setReports} education={education} income={income}></DetailedQuiz>)}
           </div>
         </div>
       </div>
