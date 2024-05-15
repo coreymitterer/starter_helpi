@@ -14,8 +14,6 @@ export function Pages(): JSX.Element {
     const [isReport, setReport] = useState<boolean>(false);
     const [Report,setReports] = useState<string>('');
     const [isDarkMode, setDarkMode] = useState(false);
-    const [income, setIncome] = useState<number>(0);
-    const [education, setEducation] = useState<string>("");
     
     const htmlElement = document.querySelector('html');
     if (htmlElement) {
@@ -162,10 +160,6 @@ export function Pages(): JSX.Element {
       {isDetailed && (
         <DetailedPage 
         setReports={setReports}
-        education={education}
-        income={income}
-        setIncome={setIncome}
-        setEducation={setEducation}
         ></DetailedPage>
       )}
       {isReport && (

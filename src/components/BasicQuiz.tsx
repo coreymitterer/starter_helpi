@@ -41,21 +41,21 @@ export function BasicQuiz({setReports}: BasicString): JSX.Element {
     }
     //Makes an Async call to GPT fall containing the questions and answers supplied from the user after they take the detailed quiz and sputs out a specific output
     async function callOpenAI() {
-        setIsLoading(true);
+        setIsLoading(true); // Set loading to true when submit button is clicked
         const openai = new OpenAi({apiKey: apiKey, dangerouslyAllowBrowser: true});
         const completion = await openai.chat.completions.create({
             model: "gpt-4",
             messages: [
-                { role: "system", content: "You will be provided with a list of questions and answers, your job is to turn these questions and answers into 5 different career options with the job title and a short description of each career. Try to make them slightly differnet everytime and in a random order You will format these 5 careers into a Json file and only a Json format where the Job title should be under the name {title} and the description should be called {description}" },
+                { role: "system", content: "You will be provided with a list of questions and answers, your job is to turn these questions and answers into 5 different career options with the job title and a short description of each career. You will format these 5 careers into a Json file and only a Json format where the Job title should be under the name {title} and the description should be called {description}" },
                 { role: "user", content: "Here is a list of questions: " + QUESTIONS.join(", ") + " And here is the combined output of answers: " + userResponses.join(', ')}
             ],
         });
-        //Puts the output right under the submit button
-        setOutput(completion.choices[0]?.message.content || ""); // Handle null value by providing a default value of an empty string
-        console.log(output)
+        setIsLoading(false); // Set loading to false after receiving response
+        setOutput(completion.choices[0]?.message.content || "");
         setReports(completion.choices[0]?.message.content || "");
-        setIsLoading(false);
+        console.log(output)
     }
+
 
   return (
       //All of the HTML that will be returned for detailed Quiz including Progress bar Prev and Next question, Submit Button as well as the Text box for each questions response
