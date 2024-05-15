@@ -56,7 +56,7 @@ export function DetailedPage({ setReports, income, education, setIncome, setEduc
               setEducation={setEducation}
             ></Survey>
           )}
-          {quizStarted && (<DetailedQuiz setReports={setReports} education={education} income={income}></DetailedQuiz>)}
+          {quizStarted && (<DetailedQuiz setReports={setReports}></DetailedQuiz>)}
           </div>
         </div>
       </div>
