@@ -59,7 +59,7 @@ export function DetailedQuiz({setReports, education, income}: DetailedString,): 
         setReports(completion.choices[0]?.message.content || "");
         //Puts the output right under the submit button
         setOutput(completion.choices[0]?.message.content || ""); // Handle null value by providing a default value of an empty string
-
+    }
 
     return (
         //All of the HTML that will be returned for detailed Quiz including Progress bar Prev and Next question, Submit Button as well as the Text box for each questions response
@@ -108,7 +108,6 @@ export function DetailedQuiz({setReports, education, income}: DetailedString,): 
         </div>
     );
 
-}
 }
 
 //Trying to fix
