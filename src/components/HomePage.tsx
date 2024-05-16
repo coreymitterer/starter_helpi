@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Card, Placeholder } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import "../index.css";
 import corey from "./coreyCISC275.jpg";
 import ian from "./ianCISC275.jpg";
