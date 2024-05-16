@@ -61,8 +61,8 @@ html[data-bs-theme='dark'] {
   --planePaper2: #4b79ae;
   --planePaper3: #315b8b;
 
-  --buttonColor: palegoldenrod;
-  --buttonText: #222;
+  --buttonColor: #357ed7;
+  --buttonText: #fff;
 
   --darkbg: #251d29;
   --bgColor--night: #423966;
