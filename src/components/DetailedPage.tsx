@@ -58,7 +58,7 @@ export function DetailedPage({ setReports }: DetailedString): JSX.Element {
               setEducation={setEducation}
             ></Survey>
           )}
-          {quizStarted && (<DetailedQuiz setReports={setReports}></DetailedQuiz>)}
+          {quizStarted && (<DetailedQuiz setReports={setReports} education={education} income={income}></DetailedQuiz>)}
           </div>
         </div>
       </div>
