@@ -1068,7 +1068,7 @@ svg {
 
 .authors span {
   font-size:15px;
-  font-weight:lighter;
+  font-style: italic;
   align-items: center;
   justify-content: center;
 }
