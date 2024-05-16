@@ -792,12 +792,12 @@ svg {
 .about {
   display: flex;
   position: relative;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   text-align: center;
   flex-direction: row;
-  height: 50vh;
+  /* height: 50vh; */
 }
 
 /* QUIZ PAGES */
@@ -1041,4 +1041,32 @@ svg {
   display: 'block';
   width: 700;
   padding: 30;
+}
+
+.authors {
+  background-color: var(--cloudGrad1);
+  /* box-shadow: 10px 10px rgba(0,0,0,0.2); */
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  border-radius:50px;
+  margin-bottom: 10%;
+  height: 400px;
+  color: black;
+  /* clip-path: circle(50%); */
+}
+
+.authors img {
+  width: 200px;
+  height: 200px;
+  margin-top: 5%;
+  object-fit: cover;
+  clip-path: circle();
+}
+
+.authors span {
+  font-size:15px;
+  font-weight:lighter;
+  align-items: center;
+  justify-content: center;
 }
