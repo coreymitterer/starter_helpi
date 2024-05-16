@@ -3,15 +3,8 @@ html, body {
   padding: 0;
 }
 
-/* .App {
-  background-color: #99cff8;
-  background: linear-gradient(var(--skyGrad1), var(--skyGrad2));
-  background-color: var(--skyGrad1);
-} */
-
 /* This will select the html element when the data-bs-theme attribute is set to 'light' */
 html[data-bs-theme='light'] {
-  /* Your styles for light mode go here */
   --webTitle: #222;
   --webSub: #444;
   
@@ -34,7 +27,8 @@ html[data-bs-theme='light'] {
   --planePaper3: #888888;
   
   /* --quizButton: */
-
+  --buttonColor: #357ed7;
+  --buttonText: #fff;
 
 }
 
@@ -58,14 +52,19 @@ html[data-bs-theme='dark'] {
 
   /* --suitJacket: #000;
   --suitCollar: #111; */
-  --suitJacket: #08223e;
-  --suitCollar: #0c345f;
-
-
+  /* --suitJacket: #08223e;
+  --suitCollar: #0c345f; */
+  /* --suitJacket: #031528;
+  --suitCollar: #062546; */
+  --suitJacket: #031528;
+  --suitCollar: #051c35;
 
   --planePaper1: #649dde;
   --planePaper2: #4b79ae;
   --planePaper3: #315b8b;
+
+  --buttonColor: #357ed7;
+  --buttonText: #fff;
 
   --darkbg: #251d29;
   --bgColor--night: #423966;
@@ -83,12 +82,15 @@ html[data-bs-theme='dark'] {
   /* width: 200px; */
   transition: background-color 0.3s ease;
   cursor: pointer;
-  background-color: #357ed7;
-  color: #fff;
+  background-color: var(--buttonColor);
+  color: var(--buttonText);
+  border-color: var(--buttonColor);
 }
 
 .button:hover {
-  background-color: #357ed7;
+  background-color: var(--buttonColor);
+  color: var(--buttonText);
+  border-color: var(--buttonColor);
 }
 
 /* NAVIGATION */
@@ -792,12 +794,12 @@ svg {
 .about {
   display: flex;
   position: relative;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   text-align: center;
   flex-direction: row;
-  height: 50vh;
+  /* height: 50vh; */
 }
 
 /* QUIZ PAGES */
@@ -1041,4 +1043,64 @@ svg {
   display: 'block';
   width: 700;
   padding: 30;
+}
+
+.authors {
+  background-color: var(--cloudGrad1);
+  /* box-shadow: 10px 10px rgba(0,0,0,0.2); */
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  border-radius:50px;
+  margin-bottom: 10%;
+  height: 400px;
+  color: black;
+  /* clip-path: circle(50%); */
+}
+
+.authors img {
+  width: 200px;
+  height: 200px;
+  margin-top: 5%;
+  object-fit: cover;
+  clip-path: circle();
+}
+
+.authors span {
+  font-size:15px;
+  font-style: italic;
+  align-items: center;
+  justify-content: center;
+}
+
+.adhd {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.rainbow-button {
+  /* background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%); */
+  background: var(--suitJacket);
+  border-radius:100px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+}
+.rainbow-button:hover {
+  animation:slidebg 2s linear infinite;
+  background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+}
+
+.btn-check:checked + .rainbow-button {
+  animation:slidebg 3s linear infinite;
+  background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+}
+
+@keyframes slidebg {
+  to {
+    background-position:20vw;
+  }
 }

@@ -146,7 +146,6 @@ export function Pages(): JSX.Element {
             onChange={toggleNightMode}>
           </ToggleButton>  
           <div className="sun-moon-outer"></div>
-          
       </div>
       
       {isHome && (

@@ -1,7 +1,7 @@
 
 import "../index.css";
 import { useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, ToggleButton } from "react-bootstrap";
 import { DetailedQuiz } from "./DetailedQuiz";
 import Survey from "./Survey";
 
@@ -16,6 +16,10 @@ export function DetailedPage({ setReports }: DetailedString): JSX.Element {
   const [quizStarted, setQuizStarted] = useState<boolean>(false);
   const [income, setIncome] = useState<number>(0);
   const [education,setEducation] = useState<string>('');
+  const [adhdMode, setAdhdMode] = useState<boolean>(false);
+  const [videoIndex, setVideoIndex] = useState<number>(0);
+
+  const videos = ["https://www.youtube.com/embed/urFF8-PjQBE?si=3SaaFqZUTrQxr6KK&amp;start=60&autoplay=1&mute=1&controls=0", "https://www.youtube.com/embed/b65MoVwANq4?si=aX2TMMfmPsbbBmtI&amp;start=60&autoplay=1&controls=0", "https://www.youtube.com/embed/u7kdVe8q5zs?si=M5hTizZPJgrAhsR9&amp;start=120&autoplay=1&mute=1&controls=0"]
 
   function startSurvey(): void {
     setSurveyStarted(true);
@@ -23,12 +27,24 @@ export function DetailedPage({ setReports }: DetailedString): JSX.Element {
   function startQuiz(): void {
     setQuizStarted(true);
   }
-
-  
+  function toggleADHDMode(): void {
+    setAdhdMode(!adhdMode);
+  }
+  function nextVideo(): void {
+    setVideoIndex((videoIndex+1)%videos.length);
+  }
 
   return (
     <div className="quiz-page">
       <div className="quiz">
+        {adhdMode && (<div className="adhd">
+          <iframe width="400" height="225"
+          src={videos[videoIndex]}
+          title="ADHD" 
+          allow="autoplay"
+          >
+        </iframe>
+        </div>)}
         <div className="unfolded-plane">
           <div className="quiz-container">
           {!quizStarted && !surveyStarted && (
@@ -61,6 +77,21 @@ export function DetailedPage({ setReports }: DetailedString): JSX.Element {
           {quizStarted && (<DetailedQuiz setReports={setReports} education={education} income={income}></DetailedQuiz>)}
           </div>
         </div>
+        <ToggleButton
+          className="rainbow-button"
+          type="checkbox"
+          id="adhd-mode"
+          checked={adhdMode}
+          value="1"
+          onChange={toggleADHDMode}>
+            ADHD Mode
+        </ToggleButton>
+        {adhdMode && (
+          <Button
+          className="rainbow-button"
+          onClick={nextVideo}>
+            <span>Next Video</span>
+          </Button>)}
       </div>
     </div>
   );

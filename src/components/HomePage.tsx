@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
-//import { Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import "../index.css";
+import corey from "./coreyCISC275.jpg";
+import ian from "./ianCISC275.jpg";
+import logan from "./loganCISC275.png";
+import jun from "./junCISC275.jpg";
+import github from "./githubLogo.png";
 //import logo from "./ProfessionPilotLogo.png";
 //import { transform } from "typescript";
 
@@ -56,35 +61,11 @@ export function HomePage(): JSX.Element {
     return (
         <div className = "home">
             <div className = "main">
-                {/* <Button
-                    className="cloud"
-                >
-                    <div className="cloudText">Go To Basic Quiz</div>
-                </Button> */}
                 <div className="website-title">
                     <h1>Profession Pilot
                         <span>Now Boarding:<div className="listTerm">{careerList[index]}</div></span>
                     </h1>
                 </div>
-                {/* <div className="planes">
-                    <div className="paper-plane-side-border">
-                        <div className="paper-plane-side">
-                            <div className="paper-plane-side-inner-border">
-                                <div className="paper-plane-side-inner"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="paper-plane-side">
-                        <div className="paper-plane-side-inner"></div>
-                    </div>
-                    <div className="paper-plane-side">
-                        <div className="paper-plane-side-inner"></div>
-                    </div>
-                    <div className="gold-paper-plane-side">
-                        <div className="gold-paper-plane-side-inner"></div>
-                    </div>
-                </div> */}
-                {/* <div className="sun"></div> */}
                 <div className="logo-container">
                     <div className="intro">
                         <div className="paper-plane">
@@ -113,13 +94,6 @@ export function HomePage(): JSX.Element {
                         </div>
                     </div>
                 </div>
-                {/* <Button
-                    type="button"
-                    className="cloud"
-                >
-                    <div className="cloudText">Go To Detailed Quiz</div>
-                </Button> */}
-                {/* <div className="sun"></div> */}
                 <div className="border-container">
                     <div className="row-container">
                         <div className="border-cloud"></div>
@@ -142,7 +116,6 @@ export function HomePage(): JSX.Element {
                     </div>
                 </div>
             </div>
-            {/* Assuring a smooth landing into your new career */}
             <div className = "features">
                 <div className="text-cloud">
                     <div className = "features-container">
@@ -167,13 +140,61 @@ export function HomePage(): JSX.Element {
                 </div>
             </div>
             <div className = "about">
-                <div className="text-cloud">
+                <Card className="authors" style={{ width: '18rem' }}>
+                    <Card.Img variant="top" src={corey} />
+                    <Card.Body>
+                        <Card.Title>Corey Mitterer <span>Team Lead</span></Card.Title>
+                        <Card.Text>
+                            GPT Integration, Basic Quiz, Survey, Reports
+                        </Card.Text>
+                        <a href="https://github.com/connorbutsmaller">
+                            <img src={github} alt="GitHub" style={{width: "50px", height: "50px"}}/>
+                        </a>
+                    </Card.Body>
+                </Card>
+                <Card className="authors" style={{ width: '18rem' }}>
+                    <Card.Img variant="top" src={ian} />
+                    <Card.Body>
+                        <Card.Title>Ian Duffy</Card.Title>
+                        <Card.Text>
+                            Home Page, Detailed Quiz, Survey, Reports, CSS
+                        </Card.Text>
+                        <a href="https://github.com/connorbutsmaller">
+                            <img src={github} alt="GitHub" style={{width: "50px", height: "50px"}}/>
+                        </a>
+                    </Card.Body>
+                </Card>
+                <Card className="authors" style={{ width: '18rem' }}>
+                    <Card.Img variant="top" src={logan} />
+                    <Card.Body>
+                        <Card.Title>Logan Ponik</Card.Title>
+                        <Card.Text>
+                            GPT Implementation, Detailed Quiz, Survey, Reports
+                        </Card.Text>
+                        <a href="https://github.com/connorbutsmaller">
+                            <img src={github} alt="GitHub" style={{width: "50px", height: "50px"}}/>
+                        </a>
+                    </Card.Body>
+                </Card>
+                <Card className="authors" style={{ width: '18rem' }}>
+                    <Card.Img variant="top" src={jun} />
+                    <Card.Body>
+                        <Card.Title>Junpuyin Wei</Card.Title>
+                        <Card.Text>
+                            Basic Quiz, Quiz Questions, Survey
+                        </Card.Text>
+                        <a href="https://github.com/connorbutsmaller">
+                            <img src={github} alt="GitHub" style={{width: "50px", height: "50px"}}/>
+                        </a>
+                    </Card.Body>
+                </Card>
+                {/* <div className="text-cloud">
                     <div className = "features-container">
                         <h1>Authors
                             <span>Corey Mitterer, Ian Duffy, Logan Ponik, Junpuyin Wei</span>
                         </h1>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     );
