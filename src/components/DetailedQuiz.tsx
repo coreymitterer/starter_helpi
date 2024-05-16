@@ -13,7 +13,7 @@ interface DetailedString {
     income: number;
 }
 
-export function DetailedQuiz({setReports}: DetailedString): JSX.Element {
+export function DetailedQuiz({setReports, education, income}: DetailedString): JSX.Element {
     const [output, setOutput] = useState<string>("");
     const [questionIndex, setQuestionIndex] = useState<number>(DEFAULT_QUESTION_INDEX);
     const [userResponses, setUserResponses] = useState<string[]>(new Array(QUESTIONS.length).fill(''));
