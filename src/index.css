@@ -52,10 +52,12 @@ html[data-bs-theme='dark'] {
 
   /* --suitJacket: #000;
   --suitCollar: #111; */
-  --suitJacket: #08223e;
-  --suitCollar: #0c345f;
-
-
+  /* --suitJacket: #08223e;
+  --suitCollar: #0c345f; */
+  /* --suitJacket: #031528;
+  --suitCollar: #062546; */
+  --suitJacket: #031528;
+  --suitCollar: #051c35;
 
   --planePaper1: #649dde;
   --planePaper2: #4b79ae;
