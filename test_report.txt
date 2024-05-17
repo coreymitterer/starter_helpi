@@ -501,16 +501,16 @@ All files                  |      25 |     14.7 |   16.66 |   23.02 |
   BaseQuestion.tsx         |     100 |      100 |     100 |     100 |                   
   BasicPage.tsx            |       0 |        0 |       0 |       0 | 13-21             
   BasicQuiz.tsx            |   10.71 |        0 |   14.28 |     7.4 | 16-67             
-  DetailedPage.tsx         |       0 |        0 |       0 |       0 | 15-37             
+  DetailedPage.tsx         |       0 |        0 |       0 |       0 | 18-41             
   DetailedQuestionBank.tsx |     100 |      100 |     100 |     100 |                   
-  DetailedQuiz.tsx         |   16.66 |        0 |      25 |   10.71 | 17-66             
+  DetailedQuiz.tsx         |   16.66 |        0 |      25 |   10.71 | 22-76             
   HomePage.tsx             |    87.5 |      100 |      75 |   85.71 | 52                
   Pages.tsx                |      45 |     62.5 |    12.5 |      45 | 29,49-77,83-90    
   ReportsPage.tsx          |       0 |      100 |       0 |       0 | 14-35             
-  Survey.tsx               |   21.42 |        0 |       0 |   21.42 | 15-17,25-53       
+  Survey.tsx               |   21.42 |        0 |       0 |   21.42 | 23-25,35-69       
 ---------------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.466 s
+Time:        3.448 s
 Ran all test suites.
