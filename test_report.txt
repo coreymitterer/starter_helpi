@@ -36,7 +36,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (96 ms)
+  ✕ renders learn react link (127 ms)
 
   ● renders learn react link
 
@@ -320,7 +320,7 @@ FAIL src/App.test.tsx
                       [0mGPT Integration, Basic Quiz, Survey, Reports[0m
                     [36m</p>[39m
                     [36m<a[39m
-                      [33mhref[39m=[32m"https://github.com/connorbutsmaller"[39m
+                      [33mhref[39m=[32m"https://github.com/coreymitterer"[39m
                     [36m>[39m
                       [36m<img[39m
                         [33malt[39m=[32m"GitHub"[39m
@@ -384,7 +384,7 @@ FAIL src/App.test.tsx
                       [0mGPT Implementation, Detailed Quiz, Survey, Reports[0m
                     [36m</p>[39m
                     [36m<a[39m
-                      [33mhref[39m=[32m"https://github.com/connorbutsmaller"[39m
+                      [33mhref[39m=[32m"https://github.com/lponik"[39m
                     [36m>[39m
                       [36m<img[39m
                         [33malt[39m=[32m"GitHub"[39m
@@ -416,7 +416,7 @@ FAIL src/App.test.tsx
                       [0mBasic Quiz, Quiz Questions, Survey[0m
                     [36m</p>[39m
                     [36m<a[39m
-                      [33mhref[39m=[32m"https://github.com/connorbutsmaller"[39m
+                      [33mhref[39m=[32m"https://github.com/naiqi666"[39m
                     [36m>[39m
                       [36m<img[39m
                         [33malt[39m=[32m"GitHub"[39m
@@ -512,5 +512,5 @@ All files                  |      25 |     14.7 |   16.66 |   23.02 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.448 s
+Time:        3.672 s
 Ran all test suites.
