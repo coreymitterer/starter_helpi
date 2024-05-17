@@ -1,7 +1,11 @@
 import React, { ChangeEvent, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 
-//Props for the Survey component
+/*
+Interface used for the Survey component.  This is used to be able to pass the values
+obtained from the Survey to the Detailed Questions Quiz, as well as checking the status of the survey,
+specifically, what will happen when the survey is completed.
+*/
 interface SurveyProps {
   onCompletion: () => void;
   setIncome: (income: number) => void;
@@ -11,6 +15,10 @@ interface SurveyProps {
 const EDUCATIONS = ["None", "Trade School", "Bootcamp", "Associates", "Bachelors", "Masters", "Doctorate"];
 const DEFAULT_EDUCATION = EDUCATIONS[0];
 
+/*
+This function is used to load the actual survey.  When the user clicks on the button, 
+it will load the survey by setting setVisible to true.  Otherwise, the survey will stay hidden.
+*/
 function RevealButton({ setVisible }: { setVisible: (visible: boolean) => void }): JSX.Element {
   return (
     <div>
@@ -20,7 +28,9 @@ function RevealButton({ setVisible }: { setVisible: (visible: boolean) => void }
     </div>
   );
 }
-
+/*
+Function to display the main Survey component.
+*/
 const Survey: React.FC<SurveyProps> = ({ onCompletion, setIncome, setEducation }) => {
   const [visible, setVisible] = useState<boolean>(false);
   const [sliderValue, setSliderValue] = useState(165000);
@@ -35,10 +45,16 @@ const Survey: React.FC<SurveyProps> = ({ onCompletion, setIncome, setEducation }
   }
 
   function handleSubmission(): void {
-    onCompletion(); // Call the completion callback after survey is done
+    onCompletion(); 
   }
 
   return (
+    /*
+    All of the HTML that is returned from the Survey component.  
+    Utilizes the React Form and Button from Bootstrap.  Will save
+    the users data of their preferred education and income, then is sent
+    to the Detailed Quiz by using the interface defined above.
+    */
     <div className="survey-container">
       <div>
         <h1>Take a quick survey before taking the Detailed Quiz!</h1>
