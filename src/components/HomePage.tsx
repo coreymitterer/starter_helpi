@@ -147,7 +147,7 @@ export function HomePage(): JSX.Element {
                         <Card.Text>
                             GPT Integration, Basic Quiz, Survey, Reports
                         </Card.Text>
-                        <a href="https://github.com/connorbutsmaller">
+                        <a href="https://github.com/coreymitterer">
                             <img src={github} alt="GitHub" style={{width: "50px", height: "50px"}}/>
                         </a>
                     </Card.Body>
@@ -171,7 +171,7 @@ export function HomePage(): JSX.Element {
                         <Card.Text>
                             GPT Implementation, Detailed Quiz, Survey, Reports
                         </Card.Text>
-                        <a href="https://github.com/connorbutsmaller">
+                        <a href="https://github.com/lponik">
                             <img src={github} alt="GitHub" style={{width: "50px", height: "50px"}}/>
                         </a>
                     </Card.Body>
@@ -183,7 +183,7 @@ export function HomePage(): JSX.Element {
                         <Card.Text>
                             Basic Quiz, Quiz Questions, Survey
                         </Card.Text>
-                        <a href="https://github.com/connorbutsmaller">
+                        <a href="https://github.com/naiqi666">
                             <img src={github} alt="GitHub" style={{width: "50px", height: "50px"}}/>
                         </a>
                     </Card.Body>
