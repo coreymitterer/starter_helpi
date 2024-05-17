@@ -7,6 +7,11 @@ const QUESTIONS: string[] = detailedQuestionBank.map(question => question.questi
 const TOPICS: string[] = detailedQuestionBank.map(question => question.topic);
 const DEFAULT_QUESTION_INDEX: number = 0;
 
+/*
+This interface is used to be able to use the data that was obtained 
+from the survey that the user filled out before taking the detailed 
+question quiz.  It is passed through by using this interface.  
+*/
 interface DetailedString {
     setReports: (DetailedString: string) => void;
     education: string;
@@ -41,9 +46,14 @@ export function DetailedQuiz({setReports, education, income}: DetailedString): J
         setUserResponses(updatedResponses);
     }
 
-    // Function for DetailedQuiz to communicate with GPT, included error handling as well for an invalid API key.
+    /*
+    Function that calls openAI by using a try / catch statement.  If a valid API key
+    is detected, it will prompt GPT by using the results of the survey, and the results
+    of the detailed quiz itself.  If unsuccessful, the user will be alerted with a 
+    warning saying that the API key they inputted was invalid. 
+    */
     async function callOpenAI() {
-        setIsLoading(true); // Set loading to true when submit button is clicked
+        setIsLoading(true); 
         const openai = new OpenAi({apiKey: apiKey, dangerouslyAllowBrowser: true});
         try {
             const completion = await openai.chat.completions.create({
@@ -53,7 +63,7 @@ export function DetailedQuiz({setReports, education, income}: DetailedString): J
                     { role: "user", content: "Here is a list of questions: " + QUESTIONS.join(", ") + " And here is the combined output of answers: " + userResponses.join(', ') + "Here is the highest education level the user is willing to complete" + education + "Here is the preferred income of the user" + income}
                 ]
             });
-            setIsLoading(false); // Set loading to false after receiving response
+            setIsLoading(false); 
             setOutput(completion.choices[0]?.message.content || "");
             setReports(completion.choices[0]?.message.content || "");
             console.log(output);
@@ -64,7 +74,10 @@ export function DetailedQuiz({setReports, education, income}: DetailedString): J
     }
 
     return (
-        //All of the HTML that will be returned for detailed Quiz including Progress bar Prev and Next question, Submit Button as well as the Text box for each questions response
+        /*
+        All of the HTML that will be returned for detailed Quiz including Progress Bar, Prev and Next question, 
+        Submit Button as well as the Text box for each questions response.  
+        */
         <div className='quiz-text'>
             <p>
                 {QUESTIONS.length - questionIndex === 1 ? 

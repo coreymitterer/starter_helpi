@@ -7,10 +7,13 @@ import Survey from "./Survey";
 
 interface DetailedString {
   setReports: (newString: string) => void;
-  // setIncome: (income: number) => void;
-  // setEducation: (education: string) => void;
 }
 
+/*
+  This component is the main page for the Detailed Career Quiz.
+  It handles the survey and quiz progression, user income and education preferences,
+  and an optional ADHD mode with videos.
+*/
 export function DetailedPage({ setReports }: DetailedString): JSX.Element {
   const [surveyStarted, setSurveyStarted] = useState<boolean>(false);
   const [quizStarted, setQuizStarted] = useState<boolean>(false);
@@ -19,6 +22,7 @@ export function DetailedPage({ setReports }: DetailedString): JSX.Element {
   const [adhdMode, setAdhdMode] = useState<boolean>(false);
   const [videoIndex, setVideoIndex] = useState<number>(0);
 
+  // Video Array for the ADHD Mode.
   const videos = ["https://www.youtube.com/embed/urFF8-PjQBE?si=3SaaFqZUTrQxr6KK&amp;start=60&autoplay=1&mute=1&controls=0", "https://www.youtube.com/embed/b65MoVwANq4?si=aX2TMMfmPsbbBmtI&amp;start=60&autoplay=1&controls=0", "https://www.youtube.com/embed/u7kdVe8q5zs?si=M5hTizZPJgrAhsR9&amp;start=120&autoplay=1&mute=1&controls=0"]
 
   function startSurvey(): void {
@@ -35,6 +39,13 @@ export function DetailedPage({ setReports }: DetailedString): JSX.Element {
   }
 
   return (
+    /*
+    Returns all of the HTML for the Detailed Quiz landing page. 
+    Will also check if the survey has been completed, if not, it 
+    will prompt the user to fill out the survey before they complete
+    the detailed quiz.  The props, Reports, Income, and Education are 
+    defined in this return statement as well.
+    */
     <div className="quiz-page">
       <div className="quiz">
         {adhdMode && (<div className="adhd">
